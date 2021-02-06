@@ -20,4 +20,9 @@ module.exports = {
     semi: ["error", "always"],
     "react/display-name": 0,
   },
+  settings: {
+    react: {
+      version: "detect",
+    },
+  },
 };
