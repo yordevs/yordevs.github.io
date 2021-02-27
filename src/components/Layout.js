@@ -2,8 +2,13 @@ import React from "react";
 import PropTypes from "prop-types";
 import Helmet from "react-helmet";
 import styled from "styled-components";
+import "@fontsource/poppins/400.css";
+import "@fontsource/poppins/600.css";
+import "@fontsource/poppins/700.css";
 
-import GlobalStyle from "../globalStyles";
+import Navbar from "../components/Navbar";
+
+import GlobalStyle from "../theme/globalStyles";
 
 const StyledSite = styled.div`
   display: flex;
@@ -13,6 +18,13 @@ const StyledSite = styled.div`
 
 const StyledContent = styled.div`
   flex: 1;
+  width: 960px;
+  margin: 0 auto;
+
+  display: flex;
+  flex-direction: column;
+
+  padding: 1em 0;
 `;
 
 const Layout = ({ title, description, children }) => (
@@ -33,7 +45,7 @@ const Layout = ({ title, description, children }) => (
       <meta property="og:locale" content="en_GB" />
       <meta property="og:site_name" content="Yordevs" />
     </Helmet>
-    {/* <Navbar /> */}
+    <Navbar />
     <StyledContent>{children}</StyledContent>
     {/* <Footer /> */}
   </StyledSite>
