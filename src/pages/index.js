@@ -6,7 +6,6 @@ const IndexPage = () => (
   <Layout
     title="Home"
     description="Welcome to Yordevs, the University of York's Web Development Society!">
-    <h1>Yordevs</h1>
     <p>Hello, world!</p>
 
     <h1>This is a Heading 1</h1>

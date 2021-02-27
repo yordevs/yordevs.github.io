@@ -31,18 +31,23 @@ const StyledNav = styled.nav`
   }
 `;
 
-const StyledNavBrand = styled.h1`
+const StyledNavBrand = styled(Link)`
   font-size: 1.5rem;
   font-weight: bold;
   margin: 0;
   margin-right: auto;
+  text-decoration: none;
+  color: black;
+  outline: none;
+  transition: color 0.15s ease-in-out;
+
+  &:hover {
+    color: ${color.accent};
+  }
 
   &::before {
     content: "// ";
     color: ${color.accent};
-  }
-
-  @media (${breakpoint.lg}) {
   }
 `;
 
@@ -117,7 +122,7 @@ const Navbar = () => {
 const Nav = ({ isOpen }) => {
   return (
     <StyledNav isOpen={isOpen}>
-      <StyledNavLink to="/home">Home</StyledNavLink>
+      <StyledNavLink to="/">Home</StyledNavLink>
       <StyledNavLink to="/about">About Us</StyledNavLink>
       <StyledNavLink to="/projects">Our Work</StyledNavLink>
       <StyledNavLink to="/team">Meet the team</StyledNavLink>
@@ -135,7 +140,7 @@ const MenuToggle = ({ toggle, isOpen }) => (
 
 const NavHeader = ({ toggle, isOpen }) => (
   <StyledNavHeader>
-    <StyledNavBrand>Yordevs</StyledNavBrand>
+    <StyledNavBrand to="/">Yordevs</StyledNavBrand>
     <MenuToggle toggle={toggle} isOpen={isOpen} />
   </StyledNavHeader>
 );
