@@ -5,6 +5,7 @@
   "version": "0.1.0",
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
+    "@fontsource/poppins": "^4.2.1",
     "bootstrap": "^4.6.0",
     "feather-icons-react": "^0.4.3",
     "gatsby": "^2.31.1",

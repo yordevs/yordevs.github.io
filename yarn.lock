@@ -1112,6 +1112,11 @@
     minimatch "^3.0.4"
     strip-json-comments "^3.1.1"
 
+"@fontsource/poppins@^4.2.1":
+  version "4.2.1"
+  resolved "https://registry.yarnpkg.com/@fontsource/poppins/-/poppins-4.2.1.tgz#9580bb87ee54daaa67d05887e25a73b2ac239420"
+  integrity sha512-seL9/EdeaGOTMMfSQJ7epZSvWSqUcqzDGUcEPGgTAtcEANmlUkIj0R4WwDDusXvOkUlsm9G1Mar86JHOM+74EQ==
+
 "@graphql-tools/batch-execute@^7.0.0":
   version "7.0.0"
   resolved "https://registry.yarnpkg.com/@graphql-tools/batch-execute/-/batch-execute-7.0.0.tgz#e79d11bd5b39f29172f6ec2eafa71103c6a6c85b"
