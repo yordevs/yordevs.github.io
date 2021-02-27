@@ -14,7 +14,7 @@ const StyledSite = styled.div`
   display: flex;
   min-height: 100vh;
   flex-direction: column;
-  padding: 0 2em;
+  padding: 0 1.5em;
 `;
 
 const StyledContent = styled.div`
