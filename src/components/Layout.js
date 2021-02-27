@@ -1,11 +1,23 @@
 import React from "react";
 import PropTypes from "prop-types";
 import Helmet from "react-helmet";
+import styled from "styled-components";
 
-import styles from "./Layout.module.css";
+import GlobalStyle from "../globalStyles";
+
+const StyledSite = styled.div`
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+`;
+
+const StyledContent = styled.div`
+  flex: 1;
+`;
 
 const Layout = ({ title, description, children }) => (
-  <div className={styles.site}>
+  <StyledSite>
+    <GlobalStyle />
     <Helmet>
       <title>Yordevs » {title}</title>
       {/* Add SEO, og:graph and any other metadata stuff in here */}
@@ -22,9 +34,9 @@ const Layout = ({ title, description, children }) => (
       <meta property="og:site_name" content="Yordevs" />
     </Helmet>
     {/* <Navbar /> */}
-    <div className={styles.content}>{children}</div>
+    <StyledContent>{children}</StyledContent>
     {/* <Footer /> */}
-  </div>
+  </StyledSite>
 );
 
 export default Layout;
