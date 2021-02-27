@@ -53,11 +53,12 @@ const StyledNavBrand = styled(Link)`
 
 const StyledNavLink = styled(Link)`
   text-decoration: none;
-  color: black;
+  color: ${color.text};
   margin: 0.5em 0.3em;
   font-weight: ${font.weight.semibold};
   position: relative;
   outline: none;
+  z-index: 1;
 
   @media (${breakpoint.lg}) {
     padding: 0.5em 0.8em;
