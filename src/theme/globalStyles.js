@@ -25,8 +25,10 @@ const GlobalStyle = createGlobalStyle`
     - margin & padding for at least p, h1, h2, h3
   */
   body {
+    background-color: ${color.background};
     font-family: "Poppins", Arial, Helvetica, sans-serif;
     font-weight: ${font.weight.normal};
+    color: ${color.text};
   }
 
   h1 {font-size:2rem}
