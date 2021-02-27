@@ -18,6 +18,7 @@ module.exports = {
     quotes: ["error", "double"],
     semi: ["error", "always"],
     "react/display-name": 0,
+    "react/prop-types": 1,
   },
   settings: {
     react: {
