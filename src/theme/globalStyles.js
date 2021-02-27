@@ -41,6 +41,8 @@ const GlobalStyle = createGlobalStyle`
   p {
     margin-bottom: 0.8rem;
     line-height: 1.3;
+    text-align: justify;
+    text-justify: inter-word;
   }
 
   ::selection {

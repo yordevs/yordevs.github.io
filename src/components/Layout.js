@@ -14,11 +14,13 @@ const StyledSite = styled.div`
   display: flex;
   min-height: 100vh;
   flex-direction: column;
+  padding: 0 2em;
 `;
 
 const StyledContent = styled.div`
   flex: 1;
-  width: 960px;
+  width: 100%;
+  max-width: 960px;
   margin: 0 auto;
 
   display: flex;
