@@ -33,7 +33,7 @@ const Layout = ({ title, description, children }) => (
   <StyledSite>
     <GlobalStyle />
     <Helmet>
-      <title>Yordevs » {title}</title>
+      <title>Yordevs // {title}</title>
       {/* Add SEO, og:graph and any other metadata stuff in here */}
 
       <meta charset="utf-8" />
