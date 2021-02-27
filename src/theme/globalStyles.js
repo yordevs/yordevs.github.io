@@ -2,7 +2,7 @@ import { createGlobalStyle } from "styled-components";
 
 import config from "./config";
 
-const { colors, fonts } = config;
+const { color, font } = config;
 
 const GlobalStyle = createGlobalStyle`
   /* START OF CSS RESET */
@@ -15,7 +15,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   html {
-    font-size: ${fonts.sizes.base};
+    font-size: ${font.size.base};
   }
   /* END OF RESET */
 
@@ -26,7 +26,7 @@ const GlobalStyle = createGlobalStyle`
   */
   body {
     font-family: "Poppins", Arial, Helvetica, sans-serif;
-    font-weight: 300;
+    font-weight: ${font.weight.normal};
   }
 
   h1 {font-size:2rem}
@@ -35,7 +35,7 @@ const GlobalStyle = createGlobalStyle`
 
   h1, h2, h3 {
     margin-bottom: 0.5rem;
-    font-weight: 700;
+    font-weight: ${font.weight.bold};
   }
 
   p {
@@ -45,7 +45,7 @@ const GlobalStyle = createGlobalStyle`
 
   ::selection {
     color: white;
-    background: ${colors.accent};
+    background: ${color.accent};
   }
 `;
 

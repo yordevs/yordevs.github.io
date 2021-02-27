@@ -2,6 +2,9 @@ import React from "react";
 import { Link } from "gatsby";
 import styled from "styled-components";
 
+import config from "../theme/config";
+const { color, font } = config;
+
 const StyledNavbar = styled.div`
   width: 100%;
   display: flex;
@@ -24,7 +27,7 @@ const StyledNavLink = styled(Link)`
   padding: 0.5em 0.8em;
   color: black;
   margin: 0 0.3em;
-  font-weight: 600;
+  font-weight: ${font.weight.semibold};
   position: relative;
   outline: none;
 
@@ -38,7 +41,7 @@ const StyledNavLink = styled(Link)`
     bottom: 8px;
     left: 0;
     width: 0%;
-    border-bottom: 10px solid #ff5715;
+    border-bottom: 10px solid ${color.accent};
     transition: all 0.15s ease-in-out;
     mix-blend-mode: screen;
     z-index: -1;
