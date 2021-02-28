@@ -92,7 +92,10 @@ const StyledNavHeader = styled.div`
   justify-content: space-between;
   width: 100%;
 
+  margin-bottom: 1em;
+
   @media (${breakpoint.lg}) {
+    margin: 0;
     margin-right: auto;
     width: auto;
   }
