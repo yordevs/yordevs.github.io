@@ -32,3 +32,11 @@ The `gatsby` branch is set up as a protected branch and is used to build and dep
 2. Make your changes in that branch.
 3. [Create a pull request](https://docs.github.com/en/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request) with `gatsby` as the destination branch.
 4. Wait for someone to review and approve your changes (1 approval is required), after which they'll be merged into the `gatsby` branch and automatically deployed to the site!
+
+---
+
+## Common issues
+
+- Gastsby CLI not installed, can be solved by running ''' sudo npm install -g gatsby-cli '''
+
+- Yarn not installed, can be solved by running ''' sudo npm install -g yarn '''
