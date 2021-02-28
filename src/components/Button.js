@@ -29,6 +29,7 @@ const StyledButton = styled(({ as }) => as)`
   &:focus,
   &:active {
     background-color: ${({ variant }) =>
+      // eslint-disable-next-line indent
       variant === "primary" ? color.background : hexToRGBA(color.accent, 0.3)};
     color: ${color.accent};
   }
