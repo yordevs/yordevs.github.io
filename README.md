@@ -37,6 +37,12 @@ The `gatsby` branch is set up as a protected branch and is used to build and dep
 
 ## Common issues
 
-- Gastsby CLI not installed, can be solved by running ''' sudo npm install -g gatsby-cli '''
+- Gastsby CLI not installed, can be solved by running
+  '''
+  sudo npm install -g gatsby-cli
+  '''
 
-- Yarn not installed, can be solved by running ''' sudo npm install -g yarn '''
+- Yarn not installed, can be solved by running
+  '''
+  sudo npm install -g yarn
+  '''
