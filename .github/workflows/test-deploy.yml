@@ -1,7 +1,7 @@
-name: Deploy Gatsby Build
+name: Test Gatsby Build
 
 on:
-  push:
+  pull_request:
     branches:
       - gatsby
 
@@ -15,3 +15,4 @@ jobs:
           access-token: ${{ secrets.ACCESS_TOKEN }}
           deploy-branch: main
           gatsby-args: --verbose
+          skip-publish: true
