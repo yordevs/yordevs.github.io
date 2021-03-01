@@ -2,6 +2,7 @@
 import React from "react";
 import styled from "styled-components";
 import { Link } from "gatsby";
+import PropTypes from "prop-types";
 
 import config from "../theme/config";
 const { color, font } = config;
@@ -42,3 +43,10 @@ const Button = ({ to, href, children, primary = false }) => (
 );
 
 export default Button;
+
+Button.propTypes = {
+  to: PropTypes.string,
+  href: PropTypes.string,
+  children: PropTypes.node,
+  primary: PropTypes.bool,
+};
