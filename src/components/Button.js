@@ -11,8 +11,8 @@ import { hexToRGBA } from "../theme/util";
 const StyledButton = styled(({ as }) => as)`
   text-decoration: none;
   display: inline-block;
-  background-color: ${({ variant }) => (variant === "primary" ? color.accent : color.background)};
-  color: ${(props) => (props.variant === "primary" ? color.background : color.accent)};
+  background-color: ${({ primary }) => (primary ? color.accent : color.background)};
+  color: ${({ primary }) => (primary ? color.background : color.accent)};
 
   border: 2px solid ${color.accent};
   border-radius: 25rem;
@@ -29,14 +29,14 @@ const StyledButton = styled(({ as }) => as)`
   &:hover,
   &:focus,
   &:active {
-    background-color: ${({ variant }) =>
-      variant === "primary" ? color.background : hexToRGBA(color.accent, 0.3)};
+    background-color: ${({ primary }) =>
+      primary ? color.background : hexToRGBA(color.accent, 0.3)};
     color: ${color.accent};
   }
 `;
 
-const Button = ({ to, href, children, variant }) => (
-  <StyledButton as={to ? Link : "a"} to={to} href={href} variant={variant}>
+const Button = ({ to, href, children, primary = false }) => (
+  <StyledButton as={to ? Link : "a"} to={to} href={href} primary={primary}>
     {children}
   </StyledButton>
 );

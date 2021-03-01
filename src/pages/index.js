@@ -27,11 +27,11 @@ const IndexPage = () => (
       Buttons currently come in two types, and can either act as internal Gatsby{" "}
       <code>{"<Link/>"}</code> components or regular anchor tags
     </p>
-    <Button to="/about" variant="primary">
+    <Button to="/about" primary>
       Internal primary
     </Button>
     <Button to="/projects">Internal default</Button>
-    <Button href="https://google.com" variant="primary">
+    <Button href="https://google.com" primary>
       External primary
     </Button>
     <Button href="https://bing.com">External default</Button>
