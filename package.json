@@ -1,26 +1,25 @@
 {
-  "name": "gatsby-starter-default",
+  "name": "yordevs-site",
   "private": true,
-  "description": "A simple starter to get up and developing quickly with Gatsby",
+  "description": "The website for Yordevs, the University of York's Web Development Society.",
   "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "Yordevs",
   "dependencies": {
     "@fontsource/poppins": "^4.2.1",
     "babel-plugin-styled-components": "^1.12.0",
-    "bootstrap": "^4.6.0",
     "gatsby": "^2.31.1",
     "gatsby-image": "^2.10.0",
+    "gatsby-plugin-image": "^1.0.0",
     "gatsby-plugin-manifest": "^2.11.0",
     "gatsby-plugin-offline": "^3.9.0",
     "gatsby-plugin-react-helmet": "^3.9.0",
     "gatsby-plugin-sass": "^3.2.0",
-    "gatsby-plugin-sharp": "^2.13.2",
+    "gatsby-plugin-sharp": "^3.0.0",
     "gatsby-plugin-styled-components": "^3.10.0",
-    "gatsby-source-filesystem": "^2.10.0",
-    "gatsby-transformer-sharp": "^2.11.0",
+    "gatsby-source-filesystem": "^3.0.0",
+    "gatsby-transformer-sharp": "^3.0.0",
     "prop-types": "^15.7.2",
     "react": "^16.12.0",
-    "react-bootstrap": "^1.4.3",
     "react-dom": "^16.12.0",
     "react-helmet": "^6.1.0",
     "react-icons": "^4.2.0",
@@ -59,9 +58,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
+    "url": "https://github.com/yordevs/yordevs.github.io"
   },
   "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
+    "url": "https://github.com/yordevs/yordevs.github.io/issues"
   }
 }

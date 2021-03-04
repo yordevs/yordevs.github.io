@@ -1,4 +1,5 @@
 import React from "react";
+import { StaticImage } from "gatsby-plugin-image";
 
 import Layout from "../components/Layout";
 
@@ -33,6 +34,12 @@ const IndexPage = () => (
       tristique quis. Sed id urna sapien. Aenean convallis nulla id dui rutrum, ac molestie elit
       ultricies.
     </p>
+    <StaticImage
+      src="../images/longboi.jpg"
+      width={350}
+      placeholder="dominantColor"
+      objectFit="contain"
+    />
   </Layout>
 );
 
