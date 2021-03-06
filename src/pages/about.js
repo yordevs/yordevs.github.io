@@ -7,7 +7,8 @@ import HeaderBackground from "../images/GeometricOrangeBackground.svg";
 const HeaderDiv = styled.div`
   display: flex;
   min-width: 100%;
-  min-height: 40vh;
+  min-height: 20em;
+  height: 40vh;
   justify-content: center;
   align-items: center;
   padding: 1.5em;
