@@ -4,7 +4,7 @@ import styled from "styled-components";
 import { FiMenu, FiX } from "react-icons/fi";
 
 import config from "../theme/config";
-const { color, font, breakpoint } = config;
+const { color, font, breakpoint, transition } = config;
 
 const StyledNavbar = styled.div`
   padding-top: 2em;
@@ -39,7 +39,7 @@ const StyledNavBrand = styled(Link)`
   text-decoration: none;
   color: black;
   outline: none;
-  transition: color 0.15s ease-in-out;
+  transition: ${transition.standard};
 
   &:hover {
     color: ${color.accent};
@@ -74,8 +74,7 @@ const StyledNavLink = styled(Link)`
       left: 0;
       width: 0%;
       border-bottom: 10px solid ${color.accent};
-      transition: all 0.15s ease-in-out;
-      mix-blend-mode: screen;
+      transition: ${transition.standard};
       z-index: -1;
     }
 

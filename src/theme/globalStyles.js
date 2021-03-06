@@ -1,7 +1,7 @@
 import { createGlobalStyle } from "styled-components";
 
 import config from "./config";
-const { color, font } = config;
+const { color, font, transition } = config;
 
 import { hexToRGBA } from "./util";
 
@@ -60,6 +60,19 @@ const GlobalStyle = createGlobalStyle`
     background: ${hexToRGBA(color.accent, 0.15)};
     padding: 0.1em 0.3em;
     border-radius: 5px;
+  }
+
+  a {
+    color: ${color.accent};
+    font-weight: ${font.weight.semibold};
+
+    text-decoration: none;
+
+    transition: ${transition.standard};
+
+    &:hover {
+      color: ${color.text};
+    }
   }
 `;
 

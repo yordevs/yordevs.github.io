@@ -5,7 +5,7 @@ import { Link } from "gatsby";
 import PropTypes from "prop-types";
 
 import config from "../theme/config";
-const { color, font } = config;
+const { color, font, transition } = config;
 
 import { hexToRGBA } from "../theme/util";
 
@@ -25,7 +25,7 @@ const StyledButton = styled(({ as }) => as)`
 
   width: fit-content;
 
-  transition: all 0.15s ease-in-out;
+  transition: ${transition.standard};
 
   &:hover,
   &:focus,

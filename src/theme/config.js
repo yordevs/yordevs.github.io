@@ -15,6 +15,9 @@ const config = {
     md: "min-width: 540px",
     lg: "min-width: 1072px",
   },
+  transition: {
+    standard: "all 0.15s ease-in-out",
+  },
 };
 
 export default config;
