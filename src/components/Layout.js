@@ -22,11 +22,8 @@ const StyledContent = styled.div`
   flex: 1;
   width: 100%;
   max-width: 960px;
+
   margin: 0 auto;
-
-  display: flex;
-  flex-direction: column;
-
   padding: 1em 0;
 `;
 
