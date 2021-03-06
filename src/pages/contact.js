@@ -9,9 +9,7 @@ import config from "../theme/config";
 const { color, font, transition } = config;
 
 const StyledForm = styled.form`
-  /* display: flex; */
-  /* flex-direction: row;
-  flex-basis: 0; */
+  margin-top: 1em;
 `;
 
 const FormInput = styled.input`
