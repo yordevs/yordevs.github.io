@@ -16,7 +16,7 @@ const config = {
     lg: "min-width: 1072px",
   },
   transition: {
-    standard: "all 0.15s ease-in-out",
+    standard: "0.15s ease-in-out",
   },
 };
 

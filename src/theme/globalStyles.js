@@ -68,7 +68,7 @@ const GlobalStyle = createGlobalStyle`
 
     text-decoration: none;
 
-    transition: ${transition.standard};
+    transition: all ${transition.standard};
 
     &:hover {
       color: ${color.text};

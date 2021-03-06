@@ -39,7 +39,7 @@ const StyledNavBrand = styled(Link)`
   text-decoration: none;
   color: black;
   outline: none;
-  transition: ${transition.standard};
+  transition: all ${transition.standard};
 
   &:hover {
     color: ${color.accent};
@@ -74,7 +74,7 @@ const StyledNavLink = styled(Link)`
       left: 0;
       width: 0%;
       border-bottom: 10px solid ${color.accent};
-      transition: ${transition.standard};
+      transition: all ${transition.standard};
       z-index: -1;
     }
 
