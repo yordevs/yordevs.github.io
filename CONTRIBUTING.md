@@ -66,7 +66,7 @@ The calendar isn't working
 ## Making Pull Requests
 
 Similarly to commits, please write your PR title in the present/imperative tense, and describe what problem it fixes.  
-Additionally, include the issue number its related to at the end of the title, with something like `(closes #11)`. This makes it easier to track which PRs are related to which issues.
+Additionally, include the issue number its related to at the end of the title; this makes it easier to track which PRs are related to which issues.
 
 In the PR's description, it would be helpful to write a brief summary of the changes you made, too.
 
