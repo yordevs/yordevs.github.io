@@ -5,6 +5,7 @@ import styled from "styled-components";
 import "@fontsource/poppins/400.css";
 import "@fontsource/poppins/600.css";
 import "@fontsource/poppins/700.css";
+import "@fontsource/ibm-plex-mono/600.css";
 
 import Navbar from "../components/Navbar";
 

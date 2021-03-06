@@ -5,6 +5,7 @@
   "version": "0.1.0",
   "author": "Yordevs",
   "dependencies": {
+    "@fontsource/ibm-plex-mono": "^4.2.1",
     "@fontsource/poppins": "^4.2.1",
     "axios": "^0.21.1",
     "babel-plugin-styled-components": "^1.12.0",
