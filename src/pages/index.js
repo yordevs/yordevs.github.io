@@ -1,4 +1,5 @@
 import React from "react";
+import { StaticImage } from "gatsby-plugin-image";
 
 import Layout from "../components/Layout";
 import Button from "../components/Button";
@@ -35,6 +36,12 @@ const IndexPage = () => (
       External primary
     </Button>
     <Button href="https://bing.com">External default</Button>
+    <StaticImage
+      src="../images/longboi.jpg"
+      width={350}
+      placeholder="dominantColor"
+      objectFit="contain"
+    />
   </Layout>
 );
 
