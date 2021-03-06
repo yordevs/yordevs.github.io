@@ -3,6 +3,8 @@ const config = {
     text: "#000000",
     background: "#FFFFFF",
     accent: "#FF5715",
+    success: "#1E8800",
+    error: "#A4243B",
   },
   font: {
     size: { base: "16px" },
