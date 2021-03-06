@@ -2,6 +2,7 @@ import React from "react";
 import { StaticImage } from "gatsby-plugin-image";
 
 import Layout from "../components/Layout";
+import Button from "../components/Button";
 
 const IndexPage = () => (
   <Layout
@@ -22,18 +23,19 @@ const IndexPage = () => (
       convallis. Nam feugiat dui vel elementum euismod. Maecenas facilisis eleifend leo, in pulvinar
       orci fringilla vel. Suspendisse in libero ac ipsum condimentum pellentesque.
     </p>
-
+    <h2>Buttons</h2>
     <p>
-      Mauris malesuada hendrerit ex. Cras vulputate quis mauris quis varius. In vitae sodales neque.
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean consequat vel lacus eu
-      interdum. Pellentesque finibus metus tellus, quis semper ipsum rutrum quis. Vivamus
-      pellentesque nunc magna, a bibendum risus ullamcorper cursus. Nam commodo libero eu nulla
-      pharetra pretium. Morbi porta purus et semper pretium. Nullam eu turpis sit amet ipsum
-      elementum ullamcorper. Cras in lacus condimentum, luctus felis quis, auctor elit. Donec sit
-      amet massa nec ex bibendum iaculis non ac est. Fusce commodo volutpat mi, eu blandit libero
-      tristique quis. Sed id urna sapien. Aenean convallis nulla id dui rutrum, ac molestie elit
-      ultricies.
+      Buttons currently come in two types, and can either act as internal Gatsby{" "}
+      <code>{"<Link/>"}</code> components or regular anchor tags
     </p>
+    <Button to="/about" primary>
+      Internal primary
+    </Button>
+    <Button to="/projects">Internal default</Button>
+    <Button href="https://google.com" primary>
+      External primary
+    </Button>
+    <Button href="https://bing.com">External default</Button>
     <StaticImage
       src="../images/longboi.jpg"
       width={350}

@@ -1,8 +1,9 @@
 import { createGlobalStyle } from "styled-components";
 
 import config from "./config";
-
 const { color, font } = config;
+
+import { hexToRGBA } from "./util";
 
 const GlobalStyle = createGlobalStyle`
   /* START OF CSS RESET */
@@ -50,6 +51,15 @@ const GlobalStyle = createGlobalStyle`
   ::selection {
     color: white;
     background: ${color.accent};
+  }
+
+  code {
+    color: ${color.accent};
+    font-weight: ${font.weight.semibold};
+    font-family: "IBM Plex Mono", Courier, monospace;
+    background: ${hexToRGBA(color.accent, 0.15)};
+    padding: 0.1em 0.3em;
+    border-radius: 5px;
   }
 `;
 
