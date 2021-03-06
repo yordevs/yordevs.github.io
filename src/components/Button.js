@@ -5,27 +5,33 @@ import { Link } from "gatsby";
 import PropTypes from "prop-types";
 
 import config from "../theme/config";
-const { color, font, transition } = config;
+const { color, font, transition, breakpoint } = config;
 
 import { hexToRGBA } from "../theme/util";
 
 const StyledButton = styled(({ as }) => as)`
-  text-decoration: none;
   display: inline-block;
+
+  text-decoration: none;
+  text-align: center;
+  font-weight: ${font.weight.semibold};
+
   background-color: ${({ primary }) => (primary ? color.accent : color.background)};
   color: ${({ primary }) => (primary ? color.background : color.accent)};
 
   border: 2px solid ${color.accent};
   border-radius: 25rem;
 
-  font-weight: ${font.weight.semibold};
-
   padding: 0.3em 2em;
   margin: 0.5em 0;
 
-  width: fit-content;
+  width: 100%;
 
-  transition: ${transition.standard};
+  @media (${breakpoint.md}) {
+    width: fit-content;
+  }
+
+  transition: all ${transition.standard};
 
   &:hover,
   &:focus,
