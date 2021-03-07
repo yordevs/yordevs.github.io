@@ -1,6 +1,62 @@
 import React from "react";
 import Layout from "../components/Layout";
+import styled from "styled-components";
+import CommitteeCard from "../components/CommitteeCard";
 
-const TeamPage = () => <Layout title="Meet the Team"></Layout>;
+import AdamImage from "../images/AdamTeamPhoto.jpg";
+import ProjectLeaderCard from "../components/ProjectLeaderCard";
+import TextLink from "../components/TextLink";
+
+const RowHolder = styled.div`
+  width: 100%;
+  max-width: 90vw;
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+`;
+
+const TeamPage = () => {
+  return (
+    <Layout title="Meet the Team">
+      <h2>The Committee</h2>
+      <RowHolder>
+        <CommitteeCard
+          fullName="Adam Barr"
+          role="President"
+          pronouns="He/Him"
+          course="Computer Science"
+          picture={AdamImage}
+        />
+        <CommitteeCard
+          fullName="Sam Harrison"
+          role="Secratary"
+          pronouns="He/Him"
+          course="Computer Science"
+        />
+        <CommitteeCard
+          fullName="Sarah Wakelin"
+          role="Treasurer"
+          pronouns="She/Her"
+          course="Maths"
+        />
+      </RowHolder>
+      <h2>Project Leaders</h2>
+      <RowHolder>
+        <p>
+          We don&apos;t have any active projects right now, if you have a project for us to do
+          please <TextLink to="/contact">let us know</TextLink>
+        </p>
+        <ProjectLeaderCard
+          fullName="test"
+          project="test project"
+          pronouns="test pronouns"
+          course="test course"
+          projectDescription="this is a test description"
+        />
+      </RowHolder>
+    </Layout>
+  );
+};
 
 export default TeamPage;
