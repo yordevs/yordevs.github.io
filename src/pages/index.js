@@ -3,6 +3,7 @@ import { StaticImage } from "gatsby-plugin-image";
 
 import Layout from "../components/Layout";
 import Button from "../components/Button";
+import TextLink from "../components/TextLink";
 
 const IndexPage = () => (
   <Layout
@@ -22,6 +23,11 @@ const IndexPage = () => (
       a aliquam risus. Maecenas ut lorem in massa dignissim finibus. Aliquam aliquet eget arcu in
       convallis. Nam feugiat dui vel elementum euismod. Maecenas facilisis eleifend leo, in pulvinar
       orci fringilla vel. Suspendisse in libero ac ipsum condimentum pellentesque.
+    </p>
+    <h2>Text Link</h2>
+    <p>
+      Heres an example of a <TextLink to="/projects">Internal Text Link</TextLink> and an{" "}
+      <TextLink href="https://google.com">External Text Link</TextLink>
     </p>
     <h2>Buttons</h2>
     <p>
