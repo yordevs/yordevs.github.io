@@ -7,9 +7,9 @@ import TextLink from "../components/TextLink";
 import { StaticImage } from "gatsby-plugin-image";
 
 const paragraphOne =
-  "Founded in January 2021, York Community Web and App Development is a society dedicated to creating bespoke websites and apps for Charities, Community Groups, and Campaigns who otherwise wouldn't be able to afford them. Through the process of creating the websites and apps we hope to teach our members the techinical and soft skills required in the workplace";
+  "Founded in January 2021, York Community Web and App Development is a society dedicated to creating bespoke websites and apps for Charities, Community Groups, and Campaigns that otherwise wouldn't be able to afford them. Through the process of creating the websites and apps, we hope to teach our members the technical and soft skills required in the workplace";
 const paragraphTwo =
-  "We are made up of students who study a varitety of courses at the University of York, but who share the desire to help those trying to improve society, and improve their Web and App development skills. We aim to have no barrier to entry, as a result our members join vastly different skill sets, some will have never made a website, others will be well versed in multiple frameworks, we are always open to new memebers, experienced or beginners.";
+  "We are made up of students who study a variety of courses at the University of York, but who share the desire to help those trying to improve society and improve their Web and App development skills. We aim to have no barrier to entry, as a result, our members join vastly different skill sets, some will have never made a website, others will be well versed in multiple frameworks, we are always open to new members, experienced or beginners.";
 
 const HeaderDiv = styled.div`
   display: flex;
@@ -47,7 +47,7 @@ const SponsorLogoHolder = styled.div`
 
 const AboutPage = () => {
   var headerText =
-    "We make bespoke websites and apps for people who otherwise would not be able to afford them";
+    "We make bespoke websites and apps for people that otherwise would not be able to afford them";
   var i = 0;
   var speed = 40;
 
