@@ -4,6 +4,8 @@ import styled from "styled-components";
 import CommitteeCard from "../components/CommitteeCard";
 
 import AdamImage from "../images/AdamTeamPhoto.jpg";
+import SarahImage from "../images/SarahTeamPhoto.jpg";
+
 import ProjectLeaderCard from "../components/ProjectLeaderCard";
 import TextLink from "../components/TextLink";
 
@@ -40,6 +42,7 @@ const TeamPage = () => {
           role="Treasurer"
           pronouns="She/Her"
           course="Maths"
+          picture={SarahImage}
         />
       </RowHolder>
       <h2>Project Leaders</h2>
