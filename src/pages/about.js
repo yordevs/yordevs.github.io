@@ -4,11 +4,12 @@ import styled from "styled-components";
 
 import HeaderBackground from "../images/GeometricOrangeBackground.svg";
 import TextLink from "../components/TextLink";
+import { StaticImage } from "gatsby-plugin-image";
 
 const paragraphOne =
   "Founded in January 2021, York Community Web and App Development is a society dedicated to creating bespoke websites and apps for Charities, Community Groups, and Campaigns who otherwise wouldn't be able to afford them. Through the process of creating the websites and apps we hope to teach our members the techinical and soft skills required in the workplace";
 const paragraphTwo =
-  "We are made up of students who study a varitety of courses at the University of York, but who share the desire to help those trying to improve society, and improve their Web and App development skills. We aim to have no barrier to entry, so our members started out with vastly different skill sets, some had never made a website, some well versed in multiple frameworks, we are always open to new memebers, experienced or beginners.";
+  "We are made up of students who study a varitety of courses at the University of York, but who share the desire to help those trying to improve society, and improve their Web and App development skills. We aim to have no barrier to entry, as a result our members join vastly different skill sets, some will have never made a website, others will be well versed in multiple frameworks, we are always open to new memebers, experienced or beginners.";
 
 const HeaderDiv = styled.div`
   display: flex;
@@ -44,12 +45,6 @@ const SponsorLogoHolder = styled.div`
   margin-bottom: 10px;
 `;
 
-const SponsorLogo = styled.div`
-  height: 60px;
-  width: 60px;
-  background-color: blue;
-`;
-
 const AboutPage = () => {
   var headerText =
     "We make bespoke websites and apps for people who otherwise would not be able to afford them";
@@ -77,18 +72,19 @@ const AboutPage = () => {
       <HeaderDiv>
         <h2 id="HeaderText"></h2>
       </HeaderDiv>
-      <p>{paragraphOne}</p>
-      <p>{paragraphTwo}</p>
-      <div>
-        This is some text with a <TextLink href="https://www.google.com">link</TextLink>
-      </div>
+      <p style={{ marginTop: "2em" }}>{paragraphOne}</p>
+      <p style={{ marginTop: "1em", marginBottom: "2em" }}>
+        {paragraphTwo} <TextLink to="/get-involved">Find out how to get invoved</TextLink>
+      </p>
       <Sponsors>
         <h3 style={{ fontWeight: "normal" }}>Supported by</h3>
         <SponsorLogoHolder>
-          <SponsorLogo />
-          <SponsorLogo />
-          <SponsorLogo />
-          <SponsorLogo />
+          <StaticImage
+            src="../images/cgit-logo.svg"
+            height={60}
+            placeholder="dominantColor"
+            objectFit="contain"
+          />
         </SponsorLogoHolder>
       </Sponsors>
     </Layout>
