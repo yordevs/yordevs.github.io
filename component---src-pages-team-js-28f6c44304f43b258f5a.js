@@ -1,0 +1,2 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[12],{xkl6:function(e,t,n){"use strict";n.r(t);var a=n("q1tI"),i=n.n(a),o=n("7oih");t.default=function(){return i.a.createElement(o.a,{title:"Meet the Team"})}}}]);
+//# sourceMappingURL=component---src-pages-team-js-28f6c44304f43b258f5a.js.map
