@@ -10,6 +10,7 @@ import "@fontsource/ibm-plex-mono/600.css";
 import Navbar from "../components/Navbar";
 
 import GlobalStyle from "../theme/globalStyles";
+import Footer from "./Footer";
 
 const StyledSite = styled.div`
   display: flex;
@@ -53,7 +54,7 @@ const Layout = ({ title, description, children }) => (
       <h1>{title}</h1>
       {children}
     </StyledContent>
-    {/* <Footer /> */}
+    <Footer />
   </StyledSite>
 );
 
