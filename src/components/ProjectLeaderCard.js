@@ -39,7 +39,7 @@ const ProjectLeaderCard = ({
       <p>
         <i>{projectDescription}</i>
       </p>
-      <Button to={projectURL}>{project}</Button>
+      <Button to={projectURL}>Find Out More</Button>
     </Card>
   );
 };
