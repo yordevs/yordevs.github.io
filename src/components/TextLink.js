@@ -23,14 +23,27 @@ const StyledTextLink = styled(Link)`
   }
 `;
 
-const TextLink = ({ to, children }) => {
+const TextLink = ({ to, className, children }) => {
   const isInternal = /^\/(?!\/)/.test(to);
 
   if (isInternal) {
-    return <StyledTextLink to={to}>{children}</StyledTextLink>;
+    return (
+      <StyledTextLink to={to} className={className}>
+        {children}
+      </StyledTextLink>
+    );
   }
 
-  return <StyledTextLink href={to}>{children}</StyledTextLink>;
+  return (
+    <StyledTextLink
+      as="a"
+      href={to}
+      target="_blank"
+      rel="noopener noreferrer"
+      className={className}>
+      {children}
+    </StyledTextLink>
+  );
 };
 
 export default TextLink;
