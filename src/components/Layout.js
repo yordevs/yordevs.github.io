@@ -49,10 +49,7 @@ const Layout = ({ title, description, children }) => (
       <meta property="og:site_name" content="Yordevs" />
     </Helmet>
     <Navbar />
-    <StyledContent>
-      <h1>{title}</h1>
-      {children}
-    </StyledContent>
+    <StyledContent>{children}</StyledContent>
     {/* <Footer /> */}
   </StyledSite>
 );
