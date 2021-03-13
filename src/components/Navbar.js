@@ -116,7 +116,7 @@ const Navbar = () => {
   const toggle = () => setIsOpen(!isOpen);
 
   return (
-    <StyledNavbar>
+    <StyledNavbar id="navbar">
       <NavHeader toggle={toggle} isOpen={isOpen} />
       <Nav isOpen={isOpen} />
     </StyledNavbar>

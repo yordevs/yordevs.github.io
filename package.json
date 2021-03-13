@@ -25,7 +25,9 @@
     "react-helmet": "^6.1.0",
     "react-icons": "^4.2.0",
     "sass": "^1.32.6",
-    "styled-components": "^5.2.1"
+    "styled-components": "^5.2.1",
+    "three": "0.124.0",
+    "vanta": "^0.5.21"
   },
   "devDependencies": {
     "eslint": "^7.19.0",
