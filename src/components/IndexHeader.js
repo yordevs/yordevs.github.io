@@ -14,7 +14,6 @@ const StyledHeader = styled.div`
   margin: -1em 0;
   padding: 3em 0;
   overflow: hidden;
-  z-index: -2;
 `;
 
 const IndexHeader = ({ children }) => {
