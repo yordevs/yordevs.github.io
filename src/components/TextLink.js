@@ -7,7 +7,7 @@ import PropTypes from "prop-types";
 import config from "../theme/config";
 const { color, font } = config;
 
-const StyledTextLink = styled(({ as }) => as)`
+const StyledTextLink = styled(Link)`
   text-decoration: none;
   color: ${color.accent};
 
@@ -23,21 +23,19 @@ const StyledTextLink = styled(({ as }) => as)`
   }
 `;
 
-const TextLink = ({ to, href, children }) => (
-  <StyledTextLink
-    as={to ? Link : "a"}
-    to={to}
-    href={href}
-    target={href ? "_blank" : null}
-    rel={href ? "noopener" : null}>
-    {children}
-  </StyledTextLink>
-);
+const TextLink = ({ to, children }) => {
+  const isInternal = /^\/(?!\/)/.test(to);
+
+  if (isInternal) {
+    return <StyledTextLink to={to}>{children}</StyledTextLink>;
+  }
+
+  return <StyledTextLink href={to}>{children}</StyledTextLink>;
+};
 
 export default TextLink;
 
 TextLink.propTypes = {
   to: PropTypes.string,
-  href: PropTypes.string,
   children: PropTypes.node,
 };

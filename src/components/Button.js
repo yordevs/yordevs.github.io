@@ -9,7 +9,7 @@ const { color, font } = config;
 
 import { hexToRGBA } from "../theme/util";
 
-const StyledButton = styled(({ as }) => as)`
+const StyledButton = styled(Link)`
   text-decoration: none;
   display: inline-block;
   background-color: ${({ primary }) => (primary ? color.accent : color.background)};
@@ -36,17 +36,34 @@ const StyledButton = styled(({ as }) => as)`
   }
 `;
 
-const Button = ({ to, href, children, primary = false }) => (
-  <StyledButton as={to ? Link : "a"} to={to} href={href} primary={primary}>
-    {children}
-  </StyledButton>
-);
+const Button = ({ to, children, className, primary = false }) => {
+  const isInternal = /^\/(?!\/)/.test(to);
+
+  if (isInternal) {
+    return (
+      <StyledButton to={to} className={className} primary={primary}>
+        {children}
+      </StyledButton>
+    );
+  }
+
+  return (
+    <StyledButton
+      as="a"
+      href={to}
+      target="_blank"
+      rel="noopener noreferrer"
+      className={className}
+      primary={primary}>
+      {children}
+    </StyledButton>
+  );
+};
 
 export default Button;
 
 Button.propTypes = {
   to: PropTypes.string,
-  href: PropTypes.string,
   children: PropTypes.node,
   primary: PropTypes.bool,
 };
