@@ -11,14 +11,16 @@ import Navbar from "../components/Navbar";
 
 import GlobalStyle from "../theme/globalStyles";
 
+import config from "../theme/config";
+const { breakpoint } = config;
+
 const StyledSite = styled.div`
   display: flex;
   min-height: 100vh;
   flex-direction: column;
-  padding: 0 1.5em;
 `;
 
-const StyledContent = styled.div`
+const StyledContent = styled.main`
   flex: 1;
   width: 100%;
   max-width: 960px;
@@ -27,7 +29,11 @@ const StyledContent = styled.div`
   display: flex;
   flex-direction: column;
 
-  padding: 1em 0;
+  padding: 1em;
+
+  @media (${breakpoint.md}) {
+    padding: 1em 0;
+  }
 `;
 
 const Layout = ({ title, description, children }) => (
