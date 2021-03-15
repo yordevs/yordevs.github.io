@@ -12,7 +12,7 @@ const StyledHeader = styled.div`
   height: ${({ offset }) => `calc(100% - ${offset}px)`};
   left: 0;
   margin: -1em 0;
-  padding: 3em 0;
+  padding: 3em 1em;
   overflow: hidden;
 `;
 
