@@ -6,7 +6,7 @@ import Layout from "../components/Layout";
 import Button from "../components/Button";
 
 import config from "../theme/config";
-const { color, font } = config;
+const { color, font, breakpoint } = config;
 
 const blinkingAnimation = css`
   animation: blink-animation 1.5s steps(2, start) infinite;
@@ -35,11 +35,17 @@ const HeroTag = styled.h2`
 
 const HeroButtons = styled.div`
   display: flex;
-  /* width: 100%; */
+  flex-direction: column;
   justify-content: space-evenly;
+  width: 100%;
 
-  > * {
-    margin: 1em;
+  @media (${breakpoint.md}) {
+    flex-direction: row;
+    width: auto;
+
+    > * {
+      margin: 1em;
+    }
   }
 `;
 

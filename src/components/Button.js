@@ -5,7 +5,7 @@ import { Link } from "gatsby";
 import PropTypes from "prop-types";
 
 import config from "../theme/config";
-const { color, font } = config;
+const { color, font, breakpoint } = config;
 
 import { hexToRGBA } from "../theme/util";
 
@@ -14,6 +14,7 @@ const StyledButton = styled(Link)`
   display: inline-block;
   background-color: ${({ primary }) => (primary ? color.accent : color.background)};
   color: ${({ primary }) => (primary ? color.background : color.accent)};
+  text-align: center;
 
   border: 2px solid ${color.accent};
   border-radius: 25rem;
@@ -23,7 +24,7 @@ const StyledButton = styled(Link)`
   padding: 0.3em 2em;
   margin: 0.5em 0;
 
-  width: fit-content;
+  width: 100%;
 
   transition: all 0.15s ease-in-out;
 
@@ -33,6 +34,10 @@ const StyledButton = styled(Link)`
     background-color: ${({ primary }) =>
       primary ? color.background : hexToRGBA(color.accent, 0.3)};
     color: ${color.accent};
+  }
+
+  @media (${breakpoint.md}) {
+    width: fit-content;
   }
 `;
 
