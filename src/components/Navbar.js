@@ -7,7 +7,7 @@ import config from "../theme/config";
 const { color, font, breakpoint } = config;
 
 const StyledNavbar = styled.div`
-  padding-top: 2em;
+  padding: 1em;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -60,6 +60,10 @@ const StyledNavLink = styled(Link)`
   outline: none;
   z-index: 1;
 
+  &:last-child {
+    margin-bottom: 0;
+  }
+
   @media (${breakpoint.lg}) {
     padding: 0.5em 0.8em;
 
@@ -92,7 +96,7 @@ const StyledNavHeader = styled.div`
   justify-content: space-between;
   width: 100%;
 
-  margin-bottom: 1em;
+  /* margin-bottom: 1em; */
 
   @media (${breakpoint.lg}) {
     margin: 0;
