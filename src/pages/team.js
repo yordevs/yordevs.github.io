@@ -33,7 +33,7 @@ const TeamPage = () => {
         />
         <CommitteeCard
           fullName="Sam Harrison"
-          role="Secratary"
+          role="Secretary"
           pronouns="He/Him"
           course="Computer Science"
         />
@@ -52,11 +52,11 @@ const TeamPage = () => {
           please <TextLink to="/contact">let us know</TextLink>
         </p>
         <ProjectLeaderCard
-          fullName="test"
-          project="test project"
-          pronouns="test pronouns"
-          course="test course"
-          projectDescription="this is a test description"
+          fullName="Ben Silverman"
+          project="Yordevs Website"
+          pronouns="He/Him"
+          course="Computer Science"
+          projectDescription="Designing and development of the official Yordevs website."
         />
       </RowHolder>
     </Layout>

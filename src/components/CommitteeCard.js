@@ -9,7 +9,7 @@ const Card = styled.div`
   width: 250px;
   height: 350px;
   padding: 20px;
-  margin: 0px; 10px;
+  margin: 0px 10px;
 `;
 
 import blankTeamPhoto from "../images/BlankTeamPhoto.jpg";
