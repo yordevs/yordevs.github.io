@@ -10,13 +10,11 @@ import ProjectLeaderCard from "../components/ProjectLeaderCard";
 import TextLink from "../components/TextLink";
 
 const RowHolder = styled.div`
-  width: 100%;
-  max-width: 90vw;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  margin-bottom: 20px;
-  padding-bottom: 10px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-auto-rows: auto;
+  gap: 1rem;
+  column-gap: 1rem;
 `;
 
 const TeamPage = () => {
@@ -46,11 +44,12 @@ const TeamPage = () => {
         />
       </RowHolder>
       <h2>Project Leaders</h2>
+      <p>The people responsible for managing each of our projects.</p>
+      <p>
+        If you have an idea for a project we could do, please{" "}
+        <TextLink to="/contact">let us know!</TextLink>
+      </p>
       <RowHolder>
-        <p>
-          We don&apos;t have any active projects right now, if you have a project for us to do
-          please <TextLink to="/contact">let us know</TextLink>
-        </p>
         <ProjectLeaderCard
           fullName="Ben Silverman"
           project="Yordevs Website"

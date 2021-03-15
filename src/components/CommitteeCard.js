@@ -6,10 +6,13 @@ const Card = styled.div`
   display: flex;
   align-items: center;
   flex-direction: column;
-  width: 250px;
-  height: 350px;
   padding: 20px;
-  margin: 0px 10px;
+  margin: 0 0.5em;
+  margin-bottom: 1em;
+`;
+
+const Photo = styled.img`
+  margin-bottom: 0.5em;
 `;
 
 import blankTeamPhoto from "../images/BlankTeamPhoto.jpg";
@@ -17,7 +20,7 @@ import blankTeamPhoto from "../images/BlankTeamPhoto.jpg";
 const CommitteeCard = ({ role, fullName, pronouns, course, picture = false }) => {
   return (
     <Card>
-      <img src={picture ? picture : blankTeamPhoto} width="200px" height="200px" />
+      <Photo src={picture ? picture : blankTeamPhoto} width="200px" height="200px" />
       <h2>{fullName}</h2>
       <h3>{role}</h3>
       <p>{course}</p>

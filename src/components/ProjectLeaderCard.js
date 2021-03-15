@@ -6,15 +6,20 @@ const Card = styled.div`
   display: flex;
   align-items: center;
   flex-direction: column;
-  width: 250px;
   padding: 20px;
-  margin-left: 10px;
-  margin-right: 10px;
+  margin: 0 0.5em;
+  margin-bottom: 1em;
 `;
 
 const Photo = styled.img`
   object-fit: cover;
   object-position: center;
+  margin-bottom: 0.5em;
+`;
+
+const ProjectDescription = styled.p`
+  text-align: center;
+  font-style: italic;
 `;
 
 import blankTeamPhoto from "../images/BlankTeamPhoto.jpg";
@@ -36,9 +41,7 @@ const ProjectLeaderCard = ({
       <h3>{project}</h3>
       <p>{course}</p>
       <p>{pronouns}</p>
-      <p>
-        <i>{projectDescription}</i>
-      </p>
+      <ProjectDescription>{projectDescription}</ProjectDescription>
       <Button to={projectURL}>Find Out More</Button>
     </Card>
   );
