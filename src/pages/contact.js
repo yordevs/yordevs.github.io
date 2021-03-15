@@ -2,6 +2,7 @@ import React from "react";
 import ContactForm from "../components/ContactForm";
 
 import Layout from "../components/Layout";
+import TextLink from "../components/TextLink";
 
 const ContactPage = () => (
   <Layout title="Contact Us">
@@ -15,17 +16,8 @@ const ContactPage = () => (
     </p>
     <p>
       You can also contact us on{" "}
-      <a
-        href="https://www.messenger.com/t/102941108484310"
-        target="_blank"
-        rel="noopener noreferrer">
-        Facebook Messenger
-      </a>{" "}
-      or{" "}
-      <a href="https://twitter.com/yordevs" target="_blank" rel="noopener noreferrer">
-        Twitter
-      </a>{" "}
-      if you&apos;d prefer it!
+      <TextLink href="https://www.messenger.com/t/102941108484310">Facebook Messenger</TextLink> or{" "}
+      <TextLink href="https://twitter.com/yordevs">Twitter</TextLink> if you&apos;d prefer it!
     </p>
     <ContactForm />
   </Layout>
