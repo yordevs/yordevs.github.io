@@ -5,6 +5,7 @@ import CommitteeCard from "../components/CommitteeCard";
 
 import AdamImage from "../images/AdamTeamPhoto.jpg";
 import SarahImage from "../images/SarahTeamPhoto.jpg";
+import BenImage from "../images/BenTeamPhoto.jpg";
 
 import ProjectLeaderCard from "../components/ProjectLeaderCard";
 import TextLink from "../components/TextLink";
@@ -55,6 +56,7 @@ const TeamPage = () => {
           project="Yordevs Website"
           pronouns="He/Him"
           course="Computer Science"
+          picture={BenImage}
           projectDescription="Designing and development of the official Yordevs website."
         />
       </RowHolder>
