@@ -11,9 +11,10 @@ const StyledHeader = styled.div`
   width: 100%;
   height: ${({ offset }) => `calc(100% - ${offset}px)`};
   left: 0;
+  /* top: 0; */
   margin: -1em 0;
-  padding: 3em 1em;
   overflow: hidden;
+  z-index: 0;
 `;
 
 const IndexHeader = ({ children }) => {

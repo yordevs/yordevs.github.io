@@ -12,6 +12,10 @@ const StyledNavbar = styled.div`
   flex-direction: column;
   justify-content: space-between;
 
+  background-color: ${color.background};
+
+  z-index: 2;
+
   @media (${breakpoint.lg}) {
     width: 100%;
     flex-direction: row;

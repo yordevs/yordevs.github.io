@@ -19,10 +19,12 @@ const blinkingAnimation = css`
 `;
 
 const HeroTitle = styled.h1`
-  font-size: 4em;
+  color: ${color.text};
+  font-size: 3em;
 `;
 
 const HeroTag = styled.h2`
+  color: ${color.text};
   font-weight: ${font.weight.normal};
 
   ::after {
@@ -53,9 +55,22 @@ const Hero = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  z-index: 3;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%);
+
+  text-align: center;
+
+  width: 100%;
+
+  padding: 1em 1.5em;
+
+  @media (${breakpoint.md}) {
+    padding: 0;
+  }
 `;
 
 const Description = styled.p`
+  color: ${color.text};
   max-width: 500px;
   text-align: center;
 `;
@@ -67,7 +82,7 @@ const IndexPage = () => (
     <IndexHeader>
       <Hero>
         <HeroTitle>Yordevs</HeroTitle>
-        <HeroTag>The University of York&apos;s Web Development society.</HeroTag>
+        <HeroTag>The University of York&apos;s Web Development society</HeroTag>
         <Description>
           Click one of the buttons below to find out more about us, or get in touch if you&apos;re
           interested in working with us!
