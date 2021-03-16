@@ -1,5 +1,6 @@
 import React from "react";
 import styled, { css } from "styled-components";
+import Typical from "react-typical";
 
 import IndexHeader from "../components/IndexHeader";
 import Layout from "../components/Layout";
@@ -82,7 +83,18 @@ const IndexPage = () => (
     <IndexHeader>
       <Hero>
         <HeroTitle>Yordevs</HeroTitle>
-        <HeroTag>The University of York&apos;s Web Development society</HeroTag>
+        <Typical
+          steps={[
+            "The University of York's Web Development society",
+            1000,
+            "The University of York's App Development society",
+            1000,
+            "The University of York's Web and App Development society",
+            5000,
+          ]}
+          loop={Infinity}
+          wrapper={HeroTag}
+        />
         <Description>
           Click one of the buttons below to find out more about us, or get in touch if you&apos;re
           interested in working with us!
