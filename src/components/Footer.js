@@ -1,6 +1,9 @@
 import React from "react";
 import styled from "styled-components";
-import { StaticImage } from "gatsby-plugin-image";
+import { FaTwitter, FaInstagram, FaSlack, FaFacebookF } from "react-icons/fa";
+
+import config from "../theme/config";
+const { color } = config;
 
 const FooterHolder = styled.div`
   margin-top: 5px;
@@ -14,6 +17,46 @@ const SocialLogoHolder = styled.div`
   float: right;
 `;
 
+const StyledFacebook = styled(FaFacebookF)`
+  margin: 5px;
+  font-size: 2.3em;
+  color: ${color.text};
+
+  &:hover {
+    color: ${color.accent};
+  }
+`;
+
+const StyledTwitter = styled(FaTwitter)`
+  margin: 5px;
+  font-size: 2.3em;
+  color: ${color.text};
+
+  &:hover {
+    color: ${color.accent};
+  }
+`;
+
+const StyledInstagram = styled(FaInstagram)`
+  margin: 5px;
+  font-size: 2.3em;
+  color: ${color.text};
+
+  &:hover {
+    color: ${color.accent};
+  }
+`;
+
+const StyledSlack = styled(FaSlack)`
+  margin: 5px;
+  font-size: 2.3em;
+  color: ${color.text};
+
+  &:hover {
+    color: ${color.accent};
+  }
+`;
+
 const Footer = () => {
   return (
     <FooterHolder>
@@ -22,40 +65,16 @@ const Footer = () => {
       </p>
       <SocialLogoHolder>
         <a href="https://facebook.com/yordevs" target="_blank" rel="noreferrer">
-          <StaticImage
-            src="../Images/SocialMediaIcons/Facebook.png"
-            width={50}
-            style={{
-              margin: "5px",
-            }}
-          />
+          <StyledFacebook />
         </a>
         <a href="https://twitter.com/yordevs" target="_blank" rel="noreferrer">
-          <StaticImage
-            src="../Images/SocialMediaIcons/Twitter.png"
-            width={50}
-            style={{
-              margin: "5px",
-            }}
-          />
+          <StyledTwitter />
         </a>
         <a href="https://instagram.com/yordevs" target="_blank" rel="noreferrer">
-          <StaticImage
-            src="../Images/SocialMediaIcons/Insta.png"
-            width={50}
-            style={{
-              margin: "5px",
-            }}
-          />
+          <StyledInstagram />
         </a>
         <a href="https://yordevs.slack.com" target="_blank" rel="noreferrer">
-          <StaticImage
-            src="../Images/SocialMediaIcons/Slack.png"
-            width={50}
-            style={{
-              margin: "5px",
-            }}
-          />
+          <StyledSlack />
         </a>
       </SocialLogoHolder>
     </FooterHolder>
