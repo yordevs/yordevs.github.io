@@ -16,8 +16,12 @@ const ContactPage = () => (
     </p>
     <p>
       You can also contact us on{" "}
-      <TextLink href="https://www.messenger.com/t/102941108484310">Facebook Messenger</TextLink> or{" "}
-      <TextLink href="https://twitter.com/yordevs">Twitter</TextLink> if you&apos;d prefer it!
+      <TextLink href="https://www.messenger.com/t/102941108484310">Facebook</TextLink> and{" "}
+      <TextLink href="https://twitter.com/yordevs">Twitter</TextLink>, or{" "}
+      <TextLink href="mailto:yordevs@yusu.org" target="_blank">
+        email
+      </TextLink>{" "}
+      if you&apos;d prefer it!
     </p>
     <ContactForm />
   </Layout>
