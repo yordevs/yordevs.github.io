@@ -7,6 +7,7 @@ import config from "../theme/config";
 const { color, font, breakpoint } = config;
 
 const StyledNavbar = styled.div`
+  padding: 0 1.5em;
   padding-top: 2em;
   display: flex;
   flex-direction: column;
