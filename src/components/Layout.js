@@ -16,7 +16,6 @@ const StyledSite = styled.div`
   display: flex;
   min-height: 100vh;
   flex-direction: column;
-  padding: 0 1.5em;
 `;
 
 const StyledContent = styled.div`
@@ -27,8 +26,7 @@ const StyledContent = styled.div`
 
   display: flex;
   flex-direction: column;
-
-  padding: 1em 0;
+  padding: 1em 1.5em;
 `;
 
 const Layout = ({ title, description, children }) => (

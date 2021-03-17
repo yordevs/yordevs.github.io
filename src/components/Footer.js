@@ -2,82 +2,83 @@ import React from "react";
 import styled from "styled-components";
 import { FaTwitter, FaInstagram, FaSlack, FaFacebookF } from "react-icons/fa";
 
-import config from "../theme/config";
-const { color } = config;
+import SocialIcon from "../components/SocialIcon";
 
-const FooterHolder = styled.div`
-  margin-top: 5px;
+import config from "../theme/config";
+const { color, breakpoint } = config;
+
+const StyledFooter = styled.div`
+  margin-top: 1em;
+  padding: 2em 0;
+
   width: 100%;
-  min-height: 50px;
+
+  display: flex;
+  flex-direction: column;
+
+  background-color: ${color.text};
+  color: ${color.background};
+
+  @media (${breakpoint.md}) {
+    background-color: ${color.background};
+    color: ${color.text};
+
+    padding: 1em;
+
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
 `;
 
 const SocialLogoHolder = styled.div`
   display: flex;
-  justify-content: flex-end;
-  float: right;
-`;
+  justify-content: space-evenly;
+  align-items: center;
 
-const StyledFacebook = styled(FaFacebookF)`
-  margin: 5px;
-  font-size: 2.3em;
-  color: ${color.text};
+  width: 100%;
 
-  &:hover {
-    color: ${color.accent};
+  @media (${breakpoint.md}) {
+    justify-content: flex-end;
+    width: fit-content;
+
+    & > a {
+      margin-left: 1.5em;
+    }
   }
 `;
 
-const StyledTwitter = styled(FaTwitter)`
-  margin: 5px;
-  font-size: 2.3em;
-  color: ${color.text};
+const CopyrightInfo = styled.p`
+  margin-bottom: 1em;
 
-  &:hover {
-    color: ${color.accent};
+  text-align: center;
+
+  @media (${breakpoint.md}) {
+    margin: 0;
   }
 `;
 
-const StyledInstagram = styled(FaInstagram)`
-  margin: 5px;
-  font-size: 2.3em;
-  color: ${color.text};
+const FooterSocialIcon = styled(SocialIcon)`
+  color: ${color.background};
 
-  &:hover {
-    color: ${color.accent};
-  }
-`;
-
-const StyledSlack = styled(FaSlack)`
-  margin: 5px;
-  font-size: 2.3em;
-  color: ${color.text};
-
-  &:hover {
-    color: ${color.accent};
+  @media (${breakpoint.md}) {
+    color: ${color.text};
   }
 `;
 
 const Footer = () => {
   return (
-    <FooterHolder>
-      <p style={{ float: "left", "margin-top": "25px" }}>
+    <StyledFooter>
+      <CopyrightInfo>
         © {new Date().getFullYear()} York Community Web and App Development
-      </p>
+      </CopyrightInfo>
       <SocialLogoHolder>
-        <a href="https://facebook.com/yordevs" target="_blank" rel="noreferrer">
-          <StyledFacebook />
-        </a>
-        <a href="https://twitter.com/yordevs" target="_blank" rel="noreferrer">
-          <StyledTwitter />
-        </a>
-        <a href="https://instagram.com/yordevs" target="_blank" rel="noreferrer">
-          <StyledInstagram />
-        </a>
-        <a href="https://yordevs.slack.com" target="_blank" rel="noreferrer">
-          <StyledSlack />
-        </a>
+        <FooterSocialIcon href="https://facebook.com/yordevs" icon={<FaFacebookF />} />
+        <FooterSocialIcon href="https://twitter.com/yordevs" icon={<FaTwitter />} />
+        <FooterSocialIcon href="https://instagram.com/yordevs" icon={<FaInstagram />} />
+        <FooterSocialIcon href="https://yordevs.slack.com" icon={<FaSlack />} />
       </SocialLogoHolder>
-    </FooterHolder>
+    </StyledFooter>
   );
 };
 
