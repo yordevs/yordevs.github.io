@@ -9,9 +9,14 @@ const { color, font, breakpoint, transition } = config;
 const StyledNavbar = styled.div`
   padding: 0 1.5em;
   padding-top: 2em;
+
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+
+  background-color: ${color.background};
+
+  z-index: 2;
 
   @media (${breakpoint.lg}) {
     width: 100%;
@@ -61,6 +66,10 @@ const StyledNavLink = styled(Link)`
   outline: none;
   z-index: 1;
 
+  &:last-child {
+    margin-bottom: 0;
+  }
+
   @media (${breakpoint.lg}) {
     padding: 0.5em 0.8em;
 
@@ -92,7 +101,7 @@ const StyledNavHeader = styled.div`
   justify-content: space-between;
   width: 100%;
 
-  margin-bottom: 1em;
+  /* margin-bottom: 1em; */
 
   @media (${breakpoint.lg}) {
     margin: 0;
@@ -116,7 +125,7 @@ const Navbar = () => {
   const toggle = () => setIsOpen(!isOpen);
 
   return (
-    <StyledNavbar>
+    <StyledNavbar id="navbar">
       <NavHeader toggle={toggle} isOpen={isOpen} />
       <Nav isOpen={isOpen} />
     </StyledNavbar>

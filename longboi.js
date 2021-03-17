@@ -1,0 +1,33 @@
+export const longboi = `
+          .+so:     
+        .smmmNm:    
+      \`+hydmmmmd\`   
+    ./ssyshmmmmm/   
+   +ssys+:smmmmms   
+   .--\`\`   ommmms   
+           -mmmm:   
+           -hosd\`   
+           :dhyo    
+           +hhd:    
+           hhhd-    
+          +dhhd-    
+         :dhhhh+    
+        /hhhhhhh.   
+       +hhhhhhhhy   
+      :dhhhhhhhhdo  
+      hhhhhhhhhhhd/ 
+     -dyyyyyyyyyhhd.
+     /yyyyyyyyyyyyd:
+     +yyyyyyyyyyyyh:
+     +yyyyyyyyyyyyh:
+     yyyyyyyyyyyyyh.
+     hyyyyyyyyyyyyy 
+     /yyyyyyyyyyyy. 
+      ohosyysyhyy\`  
+      yy  \`..\`yo:   
+     -ss     -yy\`   
+   -+o+s:  :oo+oo   
+ .oo++++ss-/o+++++  
+ +/+o+o:.   .y+::+\` 
+    .+\`      \`     
+`;

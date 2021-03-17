@@ -5,11 +5,12 @@ import { Link } from "gatsby";
 import PropTypes from "prop-types";
 
 import config from "../theme/config";
+
 const { color, font, transition, breakpoint } = config;
 
 import { hexToRGBA } from "../theme/util";
 
-const StyledButton = styled(({ as }) => as)`
+const StyledButton = styled(Link)`
   display: inline-block;
 
   text-decoration: none;
@@ -18,6 +19,7 @@ const StyledButton = styled(({ as }) => as)`
 
   background-color: ${({ primary }) => (primary ? color.accent : color.background)};
   color: ${({ primary }) => (primary ? color.background : color.accent)};
+  text-align: center;
 
   border: 2px solid ${color.accent};
   border-radius: 25rem;
@@ -40,19 +42,40 @@ const StyledButton = styled(({ as }) => as)`
       primary ? color.background : hexToRGBA(color.accent, 0.3)};
     color: ${color.accent};
   }
+
+  @media (${breakpoint.md}) {
+    width: fit-content;
+  }
 `;
 
-const Button = ({ to, href, children, primary = false }) => (
-  <StyledButton as={to ? Link : "a"} to={to} href={href} primary={primary}>
-    {children}
-  </StyledButton>
-);
+const Button = ({ to, children, className, primary = false }) => {
+  const isInternal = /^\/(?!\/)/.test(to);
+
+  if (isInternal) {
+    return (
+      <StyledButton to={to} className={className} primary={primary}>
+        {children}
+      </StyledButton>
+    );
+  }
+
+  return (
+    <StyledButton
+      as="a"
+      href={to}
+      target="_blank"
+      rel="noopener noreferrer"
+      className={className}
+      primary={primary}>
+      {children}
+    </StyledButton>
+  );
+};
 
 export default Button;
 
 Button.propTypes = {
   to: PropTypes.string,
-  href: PropTypes.string,
   children: PropTypes.node,
   primary: PropTypes.bool,
 };
