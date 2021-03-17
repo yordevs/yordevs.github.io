@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styled, { css } from "styled-components";
 
 import IndexHeader from "../components/IndexHeader";
 import Layout from "../components/Layout";
 import Button from "../components/Button";
+
+import { longboi } from "../../longboi";
 
 import config from "../theme/config";
 const { color, font, breakpoint } = config;
@@ -75,27 +77,34 @@ const Description = styled.p`
   text-align: center;
 `;
 
-const IndexPage = () => (
-  <Layout
-    title="Home"
-    description="Welcome to Yordevs, the University of York's Web Development Society!">
-    <IndexHeader>
-      <Hero>
-        <HeroTitle>Yordevs</HeroTitle>
-        <HeroTag>The University of York&apos;s Web Development society</HeroTag>
-        <Description>
-          Click one of the buttons below to find out more about us, or get in touch if you&apos;re
-          interested in working with us!
-        </Description>
-        <HeroButtons>
-          <Button to="/about" primary>
-            About Us
-          </Button>
-          <Button to="/contact">Contact</Button>
-        </HeroButtons>
-      </Hero>
-    </IndexHeader>
-  </Layout>
-);
+const IndexPage = () => {
+  useEffect(() => {
+    console.log(longboi);
+    console.log("Hello from Longboi, and the Yordevs team!");
+  }, []);
+
+  return (
+    <Layout
+      title="Home"
+      description="Welcome to Yordevs, the University of York's Web Development Society!">
+      <IndexHeader>
+        <Hero>
+          <HeroTitle>Yordevs</HeroTitle>
+          <HeroTag>The University of York&apos;s Web Development society</HeroTag>
+          <Description>
+            Click one of the buttons below to find out more about us, or get in touch if you&apos;re
+            interested in working with us!
+          </Description>
+          <HeroButtons>
+            <Button to="/about" primary>
+              About Us
+            </Button>
+            <Button to="/contact">Contact</Button>
+          </HeroButtons>
+        </Hero>
+      </IndexHeader>
+    </Layout>
+  );
+};
 
 export default IndexPage;
