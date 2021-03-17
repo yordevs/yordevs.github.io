@@ -66,20 +66,18 @@ const FooterSocialIcon = styled(SocialIcon)`
   }
 `;
 
-const Footer = () => {
-  return (
-    <StyledFooter>
-      <CopyrightInfo>
-        © {new Date().getFullYear()} York Community Web and App Development
-      </CopyrightInfo>
-      <SocialLogoHolder>
-        <FooterSocialIcon href="https://facebook.com/yordevs" icon={<FaFacebookF />} />
-        <FooterSocialIcon href="https://twitter.com/yordevs" icon={<FaTwitter />} />
-        <FooterSocialIcon href="https://instagram.com/yordevs" icon={<FaInstagram />} />
-        <FooterSocialIcon href="https://yordevs.slack.com" icon={<FaSlack />} />
-      </SocialLogoHolder>
-    </StyledFooter>
-  );
-};
+const Footer = () => (
+  <StyledFooter>
+    <CopyrightInfo>
+      © {new Date().getFullYear()} York Community Web and App Development
+    </CopyrightInfo>
+    <SocialLogoHolder>
+      <FooterSocialIcon href="https://facebook.com/yordevs" icon={<FaFacebookF />} />
+      <FooterSocialIcon href="https://twitter.com/yordevs" icon={<FaTwitter />} />
+      <FooterSocialIcon href="https://instagram.com/yordevs" icon={<FaInstagram />} />
+      <FooterSocialIcon href="https://yordevs.slack.com" icon={<FaSlack />} />
+    </SocialLogoHolder>
+  </StyledFooter>
+);
 
 export default Footer;
