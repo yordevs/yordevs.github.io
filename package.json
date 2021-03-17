@@ -7,6 +7,7 @@
   "dependencies": {
     "@fontsource/ibm-plex-mono": "^4.2.1",
     "@fontsource/poppins": "^4.2.1",
+    "axios": "^0.21.1",
     "babel-plugin-styled-components": "^1.12.0",
     "gatsby": "^2.31.1",
     "gatsby-image": "^2.10.0",
@@ -23,6 +24,7 @@
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "react-helmet": "^6.1.0",
+    "react-hook-form": "^6.15.4",
     "react-icons": "^4.2.0",
     "sass": "^1.32.6",
     "styled-components": "^5.2.1",

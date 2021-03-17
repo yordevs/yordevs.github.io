@@ -10,6 +10,7 @@ import "@fontsource/ibm-plex-mono/600.css";
 import Navbar from "../components/Navbar";
 
 import GlobalStyle from "../theme/globalStyles";
+import Footer from "./Footer";
 
 import config from "../theme/config";
 const { breakpoint } = config;
@@ -34,6 +35,7 @@ const StyledContent = styled.main`
   @media (${breakpoint.md}) {
     padding: 1em 0;
   }
+
 `;
 
 const Layout = ({ title, description, children }) => (
@@ -56,7 +58,7 @@ const Layout = ({ title, description, children }) => (
     </Helmet>
     <Navbar />
     <StyledContent>{children}</StyledContent>
-    {/* <Footer /> */}
+    <Footer />
   </StyledSite>
 );
 
