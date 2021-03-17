@@ -3,6 +3,8 @@ const config = {
     text: "#000000",
     background: "#FFFFFF",
     accent: "#FF5715",
+    success: "#1E8800",
+    error: "#A4243B",
   },
   font: {
     size: { base: "16px" },
@@ -12,6 +14,9 @@ const config = {
     //sm: "0px" and higher
     md: "min-width: 540px",
     lg: "min-width: 1072px",
+  },
+  transition: {
+    standard: "0.15s ease-in-out",
   },
 };
 
