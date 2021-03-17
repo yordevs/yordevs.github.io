@@ -10,7 +10,7 @@ const { color, font, transition, breakpoint } = config;
 
 import { hexToRGBA } from "../theme/util";
 
-const StyledButton = styled(({ as }) => as)`
+const StyledButton = styled(Link)`
   display: inline-block;
 
   text-decoration: none;
