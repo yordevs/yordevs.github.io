@@ -10,21 +10,23 @@ import "@fontsource/ibm-plex-mono/600.css";
 import Navbar from "../components/Navbar";
 
 import GlobalStyle from "../theme/globalStyles";
+import Footer from "./Footer";
 
 const StyledSite = styled.div`
   display: flex;
   min-height: 100vh;
   flex-direction: column;
-  padding: 0 1.5em;
 `;
 
 const StyledContent = styled.div`
   flex: 1;
   width: 100%;
   max-width: 960px;
-
   margin: 0 auto;
-  padding: 1em 0;
+
+  display: flex;
+  flex-direction: column;
+  padding: 1em 1.5em;
 `;
 
 const Layout = ({ title, description, children }) => (
@@ -50,7 +52,7 @@ const Layout = ({ title, description, children }) => (
       <h1>{title}</h1>
       {children}
     </StyledContent>
-    {/* <Footer /> */}
+    <Footer />
   </StyledSite>
 );
 
