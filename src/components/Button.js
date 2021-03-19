@@ -8,8 +8,6 @@ import config from "../theme/config";
 
 const { color, font, transition, breakpoint } = config;
 
-import { hexToRGBA } from "../theme/util";
-
 const StyledButton = styled(Link)`
   display: inline-block;
 
@@ -38,9 +36,8 @@ const StyledButton = styled(Link)`
   &:hover,
   &:focus,
   &:active {
-    background-color: ${({ primary }) =>
-      primary ? color.background : hexToRGBA(color.accent, 0.3)};
-    color: ${color.accent};
+    background-color: ${({ primary }) => (primary ? color.background : color.accent)};
+    color: ${({ primary }) => (primary ? color.accent : color.background)};
   }
 
   @media (${breakpoint.md}) {
