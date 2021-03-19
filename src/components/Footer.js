@@ -9,7 +9,7 @@ const { color, breakpoint } = config;
 
 const StyledFooter = styled.div`
   margin-top: 1em;
-  padding: 2em 0;
+  padding: 2em 1em;
 
   width: 100%;
 
