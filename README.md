@@ -8,7 +8,7 @@ This is a quick (temporary) guide on how to begin developing for this site.
 git clone https://github.com/yordevs/yordevs.github.io
 ```
 
-2. [Install Yarn](https://classic.yarnpkg.com/en/docs/getting-started) and then install the dependencies.
+2. Make sure you have [Node installed](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm) and [install Yarn](https://classic.yarnpkg.com/en/docs/getting-started), then install the dependencies.
 
 ```sh
 yarn install
