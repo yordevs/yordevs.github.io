@@ -19,6 +19,8 @@ const StyledFooter = styled.div`
   background-color: ${color.text};
   color: ${color.background};
 
+  z-index: 1;
+
   @media (${breakpoint.md}) {
     background-color: ${color.background};
     color: ${color.text};
