@@ -32,10 +32,9 @@ const StyledContent = styled.main`
 
   padding: 1em;
 
-  @media (${breakpoint.md}) {
+  @media (${breakpoint.lg}) {
     padding: 1em 0;
   }
-
 `;
 
 const Layout = ({ title, description, children }) => (
