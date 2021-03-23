@@ -75,6 +75,7 @@ const StyledNavLink = styled(Link)`
 
     &:last-child {
       margin-right: 0;
+      margin-bottom: auto;
     }
 
     &::after {
