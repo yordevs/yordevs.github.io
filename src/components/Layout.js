@@ -37,10 +37,10 @@ const StyledContent = styled.main`
   }
 `;
 
-const Layout = ({ children }) => (
+const Layout = ({ title, description, children }) => (
   <StyledSite>
     <GlobalStyle />
-    <SEO />
+    <SEO title={title} description={description} />
     <Navbar />
     <StyledContent>{children}</StyledContent>
     <Footer />
@@ -50,5 +50,7 @@ const Layout = ({ children }) => (
 export default Layout;
 
 Layout.propTypes = {
+  title: PropTypes.string,
+  description: PropTypes.string,
   children: PropTypes.node,
 };
