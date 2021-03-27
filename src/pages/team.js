@@ -6,6 +6,7 @@ import CommitteeCard from "../components/CommitteeCard";
 import AdamImage from "../images/AdamTeamPhoto.jpg";
 import SarahImage from "../images/SarahTeamPhoto.jpg";
 import BenImage from "../images/BenTeamPhoto.jpg";
+import SamImage from "../images/SamTeamPhoto.jpg";
 
 import ProjectLeaderCard from "../components/ProjectLeaderCard";
 import TextLink from "../components/TextLink";
@@ -35,6 +36,7 @@ const TeamPage = () => {
           role="Secretary"
           pronouns="He/Him"
           course="Computer Science"
+          picture={SamImage}
         />
         <CommitteeCard
           fullName="Sarah Wakelin"
