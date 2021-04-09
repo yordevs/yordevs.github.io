@@ -24,9 +24,24 @@ const ProjectPreview = styled(Img)`
 import Button from "./Button";
 
 const ProjectCard = ({ project }) => {
+  const displayPreview = () => {
+    try {
+      return <ProjectPreview fixed={project.frontmatter.preview.childImageSharp.fixed} />;
+    } catch {
+      // THIS IS AN ERROR, PLEASE MAKE SURE ALL PROJECTS HAVE WORKING PREVIEWS
+      return (
+        <h2 style={{ color: "red" }}>
+          <b>
+            <i>PROJECT PREVIEW DOES NOT EXIST</i>
+          </b>
+        </h2>
+      );
+    }
+  };
+
   return (
     <Card>
-      <ProjectPreview src={project.frontmatter.preview} />
+      {displayPreview()}
       <h2>{project.frontmatter.title}</h2>
       <h3>{project.frontmatter.client}</h3>
       <ProjectDescription>{project.frontmatter.description}</ProjectDescription>

@@ -39,7 +39,7 @@ export default ProjectsPage;
 
 export const pageQuery = graphql`
   query {
-    allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {
+    allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }, filter: {}) {
       edges {
         node {
           id
@@ -50,7 +50,13 @@ export const pageQuery = graphql`
             title
             client
             description
-            preview
+            preview {
+              childImageSharp {
+                fixed(width: 250, height: 130) {
+                  ...GatsbyImageSharpFixed
+                }
+              }
+            }
           }
         }
       }
