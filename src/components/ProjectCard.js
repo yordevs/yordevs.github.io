@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import Img from "gatsby-image";
 
 const Card = styled.div`
   display: flex;
@@ -16,8 +17,7 @@ const ProjectDescription = styled.p`
   font-style: italic;
 `;
 
-const ProjectPreview = styled.img`
-  width: 300px;
+const ProjectPreview = styled(Img)`
   border: 5px solid #555;
 `;
 
