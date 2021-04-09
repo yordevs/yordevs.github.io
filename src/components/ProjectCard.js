@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import PropTypes from "prop-types";
 
 const Card = styled.div`
   display: flex;
@@ -24,31 +23,16 @@ const ProjectPreview = styled.img`
 
 import Button from "./Button";
 
-const ProjectCard = ({
-  projectName,
-  client,
-  projectDescription,
-  blogURL = "/projects",
-  preview = false,
-}) => {
+const ProjectCard = ({ project }) => {
   return (
     <Card>
-      <ProjectPreview src={preview} />
-      <h2>{projectName}</h2>
-      <h3>{client}</h3>
-      <ProjectDescription>{projectDescription}</ProjectDescription>
-      <Button to={blogURL}>Find Out More</Button>
+      <ProjectPreview src={project.frontmatter.preview} />
+      <h2>{project.frontmatter.title}</h2>
+      <h3>{project.frontmatter.client}</h3>
+      <ProjectDescription>{project.frontmatter.description}</ProjectDescription>
+      <Button to={project.frontmatter.slug}>Find Out More</Button>
     </Card>
   );
 };
 
 export default ProjectCard;
-
-ProjectCard.propTypes = {
-  projectName: PropTypes.string,
-  projectDescription: PropTypes.string,
-  client: PropTypes.string,
-  blogURL: PropTypes.string,
-  picture: PropTypes.any,
-  preview: PropTypes.string,
-};

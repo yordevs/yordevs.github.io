@@ -1,8 +1,9 @@
 import React from "react";
+import { graphql } from "gatsby";
+
 import Layout from "../components/Layout";
 import styled from "styled-components";
 import TextLink from "../components/TextLink";
-
 import ProjectCard from "../components/ProjectCard";
 
 const ProjectHolder = styled.div`
@@ -13,10 +14,15 @@ const ProjectHolder = styled.div`
   column-gap: 1rem;
 `;
 
-import yordevsPreview from "../images/Projects/Yordevs/Yordevs_Main.png";
-import googlePreview from "../images/Projects/Google/Google_Main.png";
+const ProjectsPage = ({
+  data: {
+    allMarkdownRemark: { edges },
+  },
+}) => {
+  const Projects = edges
+    .filter((edge) => !!edge.node.frontmatter.date)
+    .map((edge) => <ProjectCard key={edge.node.id} project={edge.node} />);
 
-const ProjectsPage = () => {
   return (
     <Layout title="Our Work">
       <h1>Our Work</h1>
@@ -24,45 +30,30 @@ const ProjectsPage = () => {
         Here are some examples of work we&apos;ve completed, if you like them and want us to do
         something similar for you, <TextLink to="/contact">Contact Us</TextLink>
       </p>
-      <ProjectHolder>
-        <ProjectCard
-          projectName="Yordevs Site"
-          client="York Community Web and App Development"
-          projectDescription="Our first ever project was to make this website, it had to be eye catching and informative so other people trusted us to make their websites"
-          preview={yordevsPreview}
-          blogURL="/blog"
-        />
-        <ProjectCard
-          projectName="Google Search"
-          client="Google"
-          projectDescription="That's right, we made google, this definetly isn't just a place holder"
-          preview={googlePreview}
-          blogURL="/blog"
-        />
-        <ProjectCard
-          projectName="Google Search"
-          client="Google"
-          projectDescription="That's right, we made google, this definetly isn't just a place holder"
-          preview={googlePreview}
-          blogURL="/blog"
-        />
-        <ProjectCard
-          projectName="Google Search"
-          client="Google"
-          projectDescription="That's right, we made google, this definetly isn't just a place holder"
-          preview={googlePreview}
-          blogURL="/blog"
-        />
-        <ProjectCard
-          projectName="Google Search"
-          client="Google"
-          projectDescription="That's right, we made google, this definetly isn't just a place holder"
-          preview={googlePreview}
-          blogURL="/blog"
-        />
-      </ProjectHolder>
+      <ProjectHolder>{Projects}</ProjectHolder>
     </Layout>
   );
 };
 
 export default ProjectsPage;
+
+export const pageQuery = graphql`
+  query {
+    allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {
+      edges {
+        node {
+          id
+          excerpt(pruneLength: 250)
+          frontmatter {
+            date(formatString: "MMMM DD, YYYY")
+            slug
+            title
+            client
+            description
+            preview
+          }
+        }
+      }
+    }
+  }
+`;
