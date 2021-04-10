@@ -1,6 +1,5 @@
 import React from "react";
 import PropTypes from "prop-types";
-import Helmet from "react-helmet";
 import styled from "styled-components";
 import "@fontsource/poppins/400.css";
 import "@fontsource/poppins/600.css";
@@ -13,6 +12,7 @@ import GlobalStyle from "../theme/globalStyles";
 import Footer from "./Footer";
 
 import config from "../theme/config";
+import SEO from "./SEO";
 const { breakpoint } = config;
 
 const StyledSite = styled.div`
@@ -32,30 +32,15 @@ const StyledContent = styled.main`
 
   padding: 1em;
 
-  @media (${breakpoint.md}) {
+  @media (${breakpoint.lg}) {
     padding: 1em 0;
   }
-
 `;
 
 const Layout = ({ title, description, children }) => (
   <StyledSite>
     <GlobalStyle />
-    <Helmet>
-      <title>Yordevs // {title}</title>
-      {/* Add SEO, og:graph and any other metadata stuff in here */}
-
-      <meta charset="utf-8" />
-      <meta name="description" content={description} />
-      <meta name="keywords" content="Yordevs, York, web, development, programming, website" />
-      <meta name="author" content="Yordevs Team" />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-      <meta property="og:title" content={`Yordevs » ${title}`} />
-      <meta property="og:description" content={description} />
-      <meta property="og:locale" content="en_GB" />
-      <meta property="og:site_name" content="Yordevs" />
-    </Helmet>
+    <SEO title={title} description={description} />
     <Navbar />
     <StyledContent>{children}</StyledContent>
     <Footer />
