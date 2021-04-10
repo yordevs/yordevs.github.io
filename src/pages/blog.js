@@ -13,7 +13,12 @@ const BlogPage = ({
     .filter((edge) => !!edge.node.frontmatter.date)
     .map((edge) => <PostLink key={edge.node.id} post={edge.node} />);
 
-  return <Layout title="Blog">{Posts}</Layout>;
+  return (
+    <Layout title="Blog">
+      <h1>Blog</h1>
+      {Posts}
+    </Layout>
+  );
 };
 
 export default BlogPage;
@@ -24,11 +29,12 @@ export const pageQuery = graphql`
       edges {
         node {
           id
-          excerpt(pruneLength: 250)
+          excerpt(pruneLength: 200)
           frontmatter {
             date(formatString: "MMMM DD, YYYY")
             slug
             title
+            author
           }
         }
       }

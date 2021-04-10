@@ -1,25 +1,40 @@
 import React from "react";
+import PropTypes from "prop-types";
 import { graphql } from "gatsby";
-// import styled from "styled-components";
+import styled from "styled-components";
 import Layout from "../components/Layout";
+import TextLink from "../components/TextLink";
 
-const Template = ({ data }) => {
+const Title = styled.h1`
+  margin-bottom: 0;
+`;
+
+const Details = styled.p`
+  font-style: italic;
+  margin-bottom: 1em;
+`;
+
+const PostTemplate = ({ data }) => {
   const { markdownRemark } = data; // data.markdownRemark holds your post data
-  const { frontmatter, html } = markdownRemark;
+  const {
+    frontmatter: { title, date, author },
+    html,
+  } = markdownRemark;
   return (
-    <Layout title={frontmatter.title}>
-      <div className="blog-post-container">
-        <div className="blog-post">
-          <h1>{frontmatter.title}</h1>
-          <h2>{frontmatter.date}</h2>
-          <div className="blog-post-content" dangerouslySetInnerHTML={{ __html: html }} />
-        </div>
-      </div>
+    <Layout title={title}>
+      <article className="blog-post">
+        <TextLink to="/blog">{"< Back"}</TextLink>
+        <Title>{title}</Title>
+        <Details>
+          {author} on {date}
+        </Details>
+        <div dangerouslySetInnerHTML={{ __html: html }} />
+      </article>
     </Layout>
   );
 };
 
-export default Template;
+export default PostTemplate;
 
 export const pageQuery = graphql`
   query($slug: String!) {
@@ -29,7 +44,14 @@ export const pageQuery = graphql`
         date(formatString: "MMMM DD, YYYY")
         slug
         title
+        author
       }
     }
   }
 `;
+
+PostTemplate.propTypes = {
+  author: PropTypes.string.isRequired,
+  date: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+};

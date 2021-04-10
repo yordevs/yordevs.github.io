@@ -9,6 +9,10 @@ const config = {
   font: {
     size: { base: "16px" },
     weight: { normal: "400", semibold: "600", bold: "700" },
+    family: {
+      sans: "Poppins, Arial, Helvetica, sans-serif",
+      mono: "IBM Plex Mono, Courier, monospace",
+    },
   },
   breakpoint: {
     //sm: "0px" and higher
