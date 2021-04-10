@@ -50,6 +50,8 @@ export const pageQuery = graphql`
             title
             client
             description
+            lead
+            developers
             preview {
               childImageSharp {
                 fixed(width: 250, height: 130) {
