@@ -2,9 +2,13 @@
 module.exports = {
   siteMetadata: {
     title: "Yordevs Website",
+    titleTemplate: "Yordevs // %s",
     description:
       "The official website for Yordevs, the University of York's Web Development society!",
     author: "Yordevs",
+    url: "https://yordevs.com",
+    image: "/images/defaultImage.png",
+    twitterUsername: "@yordevs",
   },
   plugins: [
     "gatsby-plugin-react-helmet",
