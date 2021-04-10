@@ -23,7 +23,7 @@ const Template = ({ data }) => {
           <Client>Client: {frontmatter.client}</Client>
           <Lead>Project Lead: {frontmatter.lead}</Lead>
           <Developers>
-            Developers: <i>{frontmatter.developers.toString()}</i>
+            Developers: <i>{frontmatter.developers.join(", ")}</i>
           </Developers>
           <Button to={frontmatter.link}>Visit Project</Button>
           <br></br>
