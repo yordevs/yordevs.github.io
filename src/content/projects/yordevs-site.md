@@ -6,7 +6,7 @@ preview: "../../images/Projects/Yordevs/Yordevs_Main.png"
 client: "York Community Web and App Development"
 description: "Our first ever project was to make this website, it had to be eye catching and informative so other people trusted us to make their websites"
 lead: "Ben Silverman"
-developers: ["Adam Barr", "Sam Harrisson"]
+developers: ["Adam Barr", "Sam Harrison"]
 link: "https://yordevs.com"
 ---
 
