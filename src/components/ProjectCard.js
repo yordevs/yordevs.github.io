@@ -21,27 +21,25 @@ const ProjectPreview = styled(Img)`
   border: 5px solid #555;
 `;
 
+const NoImage = styled.div`
+  width: 250px;
+  height: 130px;
+  border: 5px solid #555;
+  background-color: #aaa;
+  padding-top: 30px;
+  font-size: 40px;
+`;
+
 import Button from "./Button";
 
 const ProjectCard = ({ project }) => {
-  const displayPreview = () => {
-    try {
-      return <ProjectPreview fixed={project.frontmatter.preview.childImageSharp.fixed} />;
-    } catch {
-      // THIS IS AN ERROR, PLEASE MAKE SURE ALL PROJECTS HAVE WORKING PREVIEWS
-      return (
-        <h2 style={{ color: "red" }}>
-          <b>
-            <i>PROJECT PREVIEW DOES NOT EXIST</i>
-          </b>
-        </h2>
-      );
-    }
-  };
-
   return (
     <Card>
-      {displayPreview()}
+      {project.frontmatter.preview ? (
+        <ProjectPreview fixed={project.frontmatter.preview.childImageSharp.fixed} />
+      ) : (
+        <NoImage>?</NoImage>
+      )}
       <h2>{project.frontmatter.title}</h2>
       <h3>{project.frontmatter.client}</h3>
       <ProjectDescription>{project.frontmatter.description}</ProjectDescription>
