@@ -32,18 +32,18 @@ const NoImage = styled.div`
 
 import Button from "./Button";
 
-const ProjectCard = ({ project }) => {
+const ProjectCard = ({
+  project: {
+    frontmatter: { title, client, description, preview, slug },
+  },
+}) => {
   return (
     <Card>
-      {project.frontmatter.preview ? (
-        <ProjectPreview fixed={project.frontmatter.preview.childImageSharp.fixed} />
-      ) : (
-        <NoImage>?</NoImage>
-      )}
-      <h2>{project.frontmatter.title}</h2>
-      <h3>{project.frontmatter.client}</h3>
-      <ProjectDescription>{project.frontmatter.description}</ProjectDescription>
-      <Button to={project.frontmatter.slug}>Find Out More</Button>
+      {preview ? <ProjectPreview fixed={preview.childImageSharp.fixed} /> : <NoImage>?</NoImage>}
+      <h2>{title}</h2>
+      <h3>{client}</h3>
+      <ProjectDescription>{description}</ProjectDescription>
+      <Button to={slug}>Find Out More</Button>
     </Card>
   );
 };

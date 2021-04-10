@@ -14,18 +14,21 @@ const Developers = styled.h3`
 
 const Template = ({ data }) => {
   const { markdownRemark } = data; // data.markdownRemark holds your post data
-  const { frontmatter, html } = markdownRemark;
+  const {
+    frontmatter: { title, client, lead, developers, link },
+    html,
+  } = markdownRemark;
   return (
-    <Layout title={frontmatter.title}>
+    <Layout title={title}>
       <div>
         <div>
-          <Title>Project: {frontmatter.title}</Title>
-          <Client>Client: {frontmatter.client}</Client>
-          <Lead>Project Lead: {frontmatter.lead}</Lead>
+          <Title>Project: {title}</Title>
+          <Client>Client: {client}</Client>
+          <Lead>Project Lead: {lead}</Lead>
           <Developers>
-            Developers: <i>{frontmatter.developers.join(", ")}</i>
+            Developers: <i>{developers.join(", ")}</i>
           </Developers>
-          <Button to={frontmatter.link}>Visit Project</Button>
+          <Button to={link}>Visit Project</Button>
           <br></br>
           <div dangerouslySetInnerHTML={{ __html: html }} />
         </div>
