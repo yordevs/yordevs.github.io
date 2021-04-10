@@ -30,7 +30,12 @@ module.exports = {
     "gatsby-plugin-sharp",
     "gatsby-plugin-styled-components",
     "gatsby-plugin-image",
-    "gatsby-image",
     "gatsby-transformer-remark",
+    {
+      resolve: "gatsby-plugin-manifest",
+      options: {
+        icon: `${__dirname}/src/images/favicon.png`,
+      },
+    },
   ],
 };
