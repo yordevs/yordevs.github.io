@@ -14,12 +14,14 @@ const Details = styled.p`
   margin-bottom: 1em;
 `;
 
-const PostTemplate = ({ data }) => {
-  const { markdownRemark } = data; // data.markdownRemark holds your post data
-  const {
-    frontmatter: { title, date, author },
-    html,
-  } = markdownRemark;
+const PostTemplate = ({
+  data: {
+    markdownRemark: {
+      frontmatter: { title, date, author },
+      html,
+    },
+  },
+}) => {
   return (
     <Layout title={title}>
       <article className="blog-post">
@@ -51,7 +53,5 @@ export const pageQuery = graphql`
 `;
 
 PostTemplate.propTypes = {
-  author: PropTypes.string.isRequired,
-  date: PropTypes.string.isRequired,
-  title: PropTypes.string.isRequired,
+  data: PropTypes.object.isRequired,
 };

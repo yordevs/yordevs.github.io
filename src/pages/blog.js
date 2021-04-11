@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import { graphql } from "gatsby";
 
 import PostLink from "../components/PostLink";
@@ -44,3 +45,7 @@ export const pageQuery = graphql`
     }
   }
 `;
+
+BlogPage.propTypes = {
+  data: PropTypes.object,
+};
