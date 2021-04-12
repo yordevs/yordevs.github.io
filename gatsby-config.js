@@ -15,6 +15,13 @@ module.exports = {
     {
       resolve: "gatsby-source-filesystem",
       options: {
+        name: "posts",
+        path: `${__dirname}/src/content/posts`,
+      },
+    },
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
         name: "projects",
         path: `${__dirname}/src/content/projects`,
       },
@@ -30,7 +37,23 @@ module.exports = {
     "gatsby-plugin-sharp",
     "gatsby-plugin-styled-components",
     "gatsby-plugin-image",
-    "gatsby-transformer-remark",
+    {
+      resolve: "gatsby-transformer-remark",
+      options: {
+        plugins: [
+          {
+            resolve: "gatsby-remark-prismjs",
+            options: {
+              classPrefix: "language-",
+              noInlineHighlight: true,
+              aliases: {
+                js: "javascript",
+              },
+            },
+          },
+        ],
+      },
+    },
     {
       resolve: "gatsby-plugin-manifest",
       options: {

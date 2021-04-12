@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import { graphql } from "gatsby";
 
 import styled from "styled-components";
@@ -6,18 +7,23 @@ import Layout from "../components/Layout";
 import Button from "../components/Button";
 
 const Title = styled.h1``;
+
 const Client = styled.h2``;
+
 const Lead = styled.h3``;
+
 const Developers = styled.h3`
   font-weight: normal;
 `;
 
-const Template = ({ data }) => {
-  const { markdownRemark } = data; // data.markdownRemark holds your post data
-  const {
-    frontmatter: { title, client, lead, developers, link },
-    html,
-  } = markdownRemark;
+const ProjectTemplate = ({
+  data: {
+    markdownRemark: {
+      frontmatter: { title, client, lead, developers, link },
+      html,
+    },
+  },
+}) => {
   return (
     <Layout title={title}>
       <div>
@@ -37,7 +43,7 @@ const Template = ({ data }) => {
   );
 };
 
-export default Template;
+export default ProjectTemplate;
 
 export const pageQuery = graphql`
   query($slug: String!) {
@@ -56,3 +62,7 @@ export const pageQuery = graphql`
     }
   }
 `;
+
+ProjectTemplate.propTypes = {
+  data: PropTypes.object.isRequired,
+};

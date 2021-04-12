@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import { graphql } from "gatsby";
 
 import Layout from "../components/Layout";
@@ -39,7 +40,10 @@ export default ProjectsPage;
 
 export const pageQuery = graphql`
   query {
-    allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }, filter: {}) {
+    allMarkdownRemark(
+      filter: { fileAbsolutePath: { regex: "/projects/" } }
+      sort: { order: DESC, fields: [frontmatter___date] }
+    ) {
       edges {
         node {
           id
@@ -65,3 +69,7 @@ export const pageQuery = graphql`
     }
   }
 `;
+
+ProjectsPage.propTypes = {
+  data: PropTypes.object.isRequired,
+};
