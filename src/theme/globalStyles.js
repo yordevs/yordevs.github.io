@@ -52,7 +52,11 @@ const GlobalStyle = createGlobalStyle`
     background: ${color.accent};
   }
 
-  code {
+  /* ^^^SLIGHTLY HACKY HACK ALERT^^^
+    This only styles single-line <code> instead of anything inside a <pre> because <pre> has its
+    own styling rules for child <code> blocks.
+  */
+  :not(pre) > code {
     color: ${color.accent};
     font-weight: ${font.weight.semibold};
     font-family: "IBM Plex Mono", Courier, monospace;
@@ -72,6 +76,17 @@ const GlobalStyle = createGlobalStyle`
     &:hover {
       color: ${color.text};
     }
+  }
+
+  hr {
+    border: none;
+    border-top: 1px solid ${color.accent};
+    margin: 1em 0;
+  }
+
+  ul, ol {
+    margin-bottom: 1em;
+    padding-left: 1em;
   }
 `;
 
