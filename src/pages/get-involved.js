@@ -1,10 +1,16 @@
 import React from "react";
 import styled from "styled-components";
+import { FaReact, FaGithub } from "react-icons/fa";
+import { GrGatsbyjs } from "react-icons/gr";
 
 import Layout from "../components/Layout";
 import TextLink from "../components/TextLink";
 import Button from "../components/Button";
 import ContactForm from "../components/ContactForm";
+import SocialIcon from "../components/SocialIcon";
+
+import config from "../theme/config";
+const { color } = config;
 
 const HeaderHolder = styled.div``;
 
@@ -18,7 +24,20 @@ const FrameworkHolder = styled.div`
 `;
 
 const ListHolder = styled.div`
-  margin-left: 2em;
+  display: flex;
+  justify-content: space-between;
+`;
+
+const ItemHolder = styled.div`
+  display: grid;
+  justify-content: center;
+  gap: 1em;
+`;
+
+const TechIcon = styled(SocialIcon)`
+  margin: auto;
+  font-size: 3em;
+  color: ${color.text};
 `;
 
 const ButtonHolder = styled.div`
@@ -54,12 +73,22 @@ const InvolvedPage = () => {
           you, they will become familiar over time. We are currently using the following frameworks:
         </p>
         <ListHolder>
-          <ul>
-            <li>ReactJS</li>
-            <li>Gatsby</li>
-            <li>React Native</li>
-            <li>Github Pages</li>
-          </ul>
+          <ItemHolder>
+            <TechIcon icon={<FaReact />} />
+            <p>ReactJS</p>
+          </ItemHolder>
+          <ItemHolder>
+            <TechIcon icon={<GrGatsbyjs />} />
+            <p>Gatsby</p>
+          </ItemHolder>
+          <ItemHolder>
+            <TechIcon icon={<FaReact />} />
+            <p>React Native</p>
+          </ItemHolder>
+          <ItemHolder>
+            <TechIcon icon={<FaGithub />} />
+            <p>Github Pages</p>
+          </ItemHolder>
         </ListHolder>
       </FrameworkHolder>
       <ActionHolder>
