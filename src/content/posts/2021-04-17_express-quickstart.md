@@ -43,7 +43,7 @@ node index.js
 
 You can test it working by visiting `localhost:3000` in your web browser, and should see something like this:
 
-![[Pasted image 20210417122116.png]]
+![](https://i.imgur.com/wcSGknH.png)
 
 # A Deeper Explanation
 
