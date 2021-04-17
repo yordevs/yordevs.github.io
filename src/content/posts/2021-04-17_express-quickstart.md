@@ -10,7 +10,7 @@ In this post we're going to cover how to create your own local web server using 
 
 # Setting up our project
 
-If you haven't already, set up a new [[Quickstart a Node project|Node project]].
+If you haven't already, set up a new Node project.
 
 From there we just need to install the `express` package with the following command:
 
@@ -24,9 +24,7 @@ This will download everything that we need to get a basic web server up and runn
 
 If you're just looking for some code to copy and paste then the following snippet will be enough.
 
-**index.js**
-
-```js
+```js:title=index.js
 const express = require("express");
 const app = express();
 
@@ -51,9 +49,7 @@ You can test it working by visiting `localhost:3000` in your web browser, and sh
 
 If you fancy going into a little more detail, in this section we'll split up the code above into a few parts and explain what they each do. As a quick reminder, here's the snippet again (but with comments too!):
 
-**index.js**
-
-```js
+```js:title=index.js
 // 1. Import and setup
 const express = require("express");
 const app = express();
@@ -114,7 +110,7 @@ app.get("/ping", (request, response) => {
 });
 ```
 
-(Try this out in your code, if you want!)
+> Try this out in your code, if you want!
 
 The final part is a [callback](https://www.javascripttutorial.net/javascript-callback/) which takes the `request` and `response` as parameters, allowing you to process the request to the server (e.g. [parsing parameters](https://masteringjs.io/tutorials/express/params) included in the URL) and your response before you send it back.
 
