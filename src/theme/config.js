@@ -1,6 +1,7 @@
 const config = {
   color: {
-    text: "#000000",
+    text: "#202020",
+    heading: "#000000",
     background: "#FFFFFF",
     accent: "#FF5715",
     success: "#1E8800",

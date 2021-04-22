@@ -37,10 +37,21 @@ module.exports = {
     "gatsby-plugin-sharp",
     "gatsby-plugin-styled-components",
     "gatsby-plugin-image",
+    "gatsby-plugin-catch-links",
     {
       resolve: "gatsby-transformer-remark",
       options: {
         plugins: [
+          {
+            resolve: "gatsby-remark-external-links",
+            options: {
+              target: "_blank",
+              rel: "nofollow noopener noreferrer",
+            },
+          },
+          {
+            resolve: "gatsby-remark-code-titles",
+          }, // IMPORTANT: this must be ahead of other plugins that use code blocks
           {
             resolve: "gatsby-remark-prismjs",
             options: {
