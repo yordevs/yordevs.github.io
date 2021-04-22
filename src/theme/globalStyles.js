@@ -1,5 +1,7 @@
 import { createGlobalStyle } from "styled-components";
 
+import PrismStyles from "./PrismStyles";
+
 import config from "./config";
 const { color, font, transition } = config;
 
@@ -37,13 +39,14 @@ const GlobalStyle = createGlobalStyle`
   h3 {font-size:1.2rem}
 
   h1, h2, h3 {
+    color: ${color.heading};
     margin-bottom: 0.5rem;
     font-weight: ${font.weight.bold};
   }
 
   p {
     margin-bottom: 0.8rem;
-    line-height: 1.3;
+    line-height: 1.4;
     text-align: left;
   }
 
@@ -52,19 +55,7 @@ const GlobalStyle = createGlobalStyle`
     background: ${color.accent};
   }
 
-  /* ^^^SLIGHTLY HACKY HACK ALERT^^^
-    This only styles single-line <code> instead of anything inside a <pre> because <pre> has its
-    own styling rules for child <code> blocks.
-  */
-  :not(pre) > code {
-    color: ${color.accent};
-    font-weight: ${font.weight.semibold};
-    font-family: "IBM Plex Mono", Courier, monospace;
-    background: ${hexToRGBA(color.accent, 0.15)};
-    padding: 0.1em 0.3em;
-    border-radius: 5px;
-  }
-
+  
   a {
     color: ${color.accent};
     font-weight: ${font.weight.semibold};
@@ -84,10 +75,37 @@ const GlobalStyle = createGlobalStyle`
     margin: 1em 0;
   }
 
-  ul, ol {
+  ul,
+  ol {
     margin-bottom: 1em;
     padding-left: 1em;
   }
+
+  :not(pre) > code {
+    color: ${color.accent};
+    font-weight: ${font.weight.semibold};
+    font-family: "IBM Plex Mono", Courier, monospace;
+    background: ${hexToRGBA(color.accent, 0.15)};
+    padding: 0.1em 0.3em;
+    border-radius: 5px;
+  }
+
+  blockquote {
+    background-color: ${hexToRGBA(color.accent, 0.15)};
+    padding: 1em;
+    border-left: 3px solid ${color.accent};
+    margin: 1em 0;
+
+    p {
+      color: ${color.accent};
+    }
+
+    p:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  ${PrismStyles}
 `;
 
 export default GlobalStyle;
