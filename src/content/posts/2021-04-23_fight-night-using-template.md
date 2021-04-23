@@ -1,9 +1,9 @@
 ---
 slug: "/blog/Fight-Night-Using-Template"
-date: "2021-04-24"
+date: "2021-04-23"
 title: "Using the template - CSS Fight Night"
 author: "Adam Barr"
-tags: [fightnight, github, vscode]
+tags: [fightnight, github, vscode, CSS, HTML]
 ---
 
 In this article we will be working through and example of a challenge that may appear on our CSS Fight Night, going through the steps I recommend to complete the challenge, we will be replicating the following image:
