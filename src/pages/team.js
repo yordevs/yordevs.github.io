@@ -3,12 +3,9 @@ import Layout from "../components/Layout";
 import styled from "styled-components";
 import CommitteeCard from "../components/CommitteeCard";
 
-import AdamImage from "../images/AdamTeamPhoto.jpg";
-import SarahImage from "../images/SarahTeamPhoto.jpg";
-import BenImage from "../images/BenTeamPhoto.jpg";
-
 import ProjectLeaderCard from "../components/ProjectLeaderCard";
 import TextLink from "../components/TextLink";
+import { StaticImage } from "gatsby-plugin-image";
 
 const RowHolder = styled.div`
   display: grid;
@@ -28,7 +25,15 @@ const TeamPage = () => {
           role="President"
           pronouns="He/Him"
           course="Computer Science"
-          picture={AdamImage}
+          picture={
+            <StaticImage
+              src="../images/AdamTeamPhoto.jpg"
+              width={200}
+              height={200}
+              placeholder="blurred"
+              style={{ marginBottom: "0.5em" }}
+            />
+          }
         />
         <CommitteeCard
           fullName="Sam Harrison"
@@ -41,7 +46,15 @@ const TeamPage = () => {
           role="Treasurer"
           pronouns="She/Her"
           course="Maths"
-          picture={SarahImage}
+          picture={
+            <StaticImage
+              src="../images/SarahTeamPhoto.jpg"
+              width={200}
+              height={200}
+              placeholder="blurred"
+              style={{ marginBottom: "0.5em" }}
+            />
+          }
         />
       </RowHolder>
       <h2>Project Leaders</h2>
@@ -56,7 +69,15 @@ const TeamPage = () => {
           project="Yordevs Website"
           pronouns="He/Him"
           course="Computer Science"
-          picture={BenImage}
+          picture={
+            <StaticImage
+              src="../images/BenTeamPhoto.jpg"
+              width={200}
+              height={200}
+              placeholder="blurred"
+              style={{ marginBottom: "0.5em" }}
+            />
+          }
           projectDescription="Designing and development of the official Yordevs website."
         />
       </RowHolder>
