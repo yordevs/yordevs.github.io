@@ -140,7 +140,6 @@ const Nav = ({ isOpen }) => {
       <StyledNavLink to="/about">About Us</StyledNavLink>
       <StyledNavLink to="/blog">Blog</StyledNavLink>
       <StyledNavLink to="/projects">Our Work</StyledNavLink>
-      <StyledNavLink to="/team">Meet the team</StyledNavLink>
       <StyledNavLink to="/get-involved">Get Involved</StyledNavLink>
       <StyledNavLink to="/contact">Contact Us</StyledNavLink>
     </StyledNav>
