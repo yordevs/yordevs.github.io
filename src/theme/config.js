@@ -8,7 +8,7 @@ const config = {
     error: "#A4243B",
   },
   font: {
-    size: { base: "16px" },
+    size: { sm: "14px", base: "16px", md: "18px", lg: "24px", xlg: "48px" },
     weight: { normal: "400", semibold: "600", bold: "700" },
     family: {
       sans: "Poppins, Arial, Helvetica, sans-serif",

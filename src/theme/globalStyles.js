@@ -105,6 +105,10 @@ const GlobalStyle = createGlobalStyle`
     }
   }
 
+  section {
+    margin-bottom: 1em;
+  }
+
   ${PrismStyles}
 `;
 
