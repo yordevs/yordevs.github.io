@@ -8,25 +8,36 @@ import CommitteeCard from "../components/CommitteeCard";
 import ProjectLeaderCard from "../components/ProjectLeaderCard";
 
 import config from "../theme/config";
-const { font } = config;
+const { color, font } = config;
 
 const Tagline = styled.h2`
   font-weight: ${font.weight.normal};
 `;
 
 const Sponsors = styled.div`
-  width: 100%;
-  min-height: 50px;
-  background-color: rgb(220, 220, 220);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  z-index: 1;
+  position: relative;
+
+  h2 {
+    color: ${color.accent};
+    text-transform: uppercase;
+    font-weight: ${font.weight.semibold};
+    font-size: ${font.size.md};
+  }
 `;
 
 const SponsorLogoHolder = styled.div`
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-around;
-  align-items: center;
-  width: 100%;
-  height: 100px;
-  margin-bottom: 10px;
+
+  div {
+    margin: 1em;
+  }
 `;
 
 const RowHolder = styled.div`
@@ -130,13 +141,14 @@ const AboutPage = () => (
         projectDescription="Designing and development of the official Yordevs website."
       />
     </RowHolder>
+    <hr style={{ borderTop: `1px solid ${color.heading}`, marginBottom: "2em" }} />
     <Sponsors>
-      <h2 style={{ fontWeight: "normal" }}>Proudly supported by</h2>
+      <h2>Proudly supported by</h2>
       <SponsorLogoHolder>
         <StaticImage
           src="../images/cgit-logo.svg"
           height={60}
-          placeholder="dominantColor"
+          placeholder="traceSVG"
           objectFit="contain"
         />
       </SponsorLogoHolder>
