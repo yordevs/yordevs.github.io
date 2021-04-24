@@ -18,20 +18,18 @@ The `<div>` tag is one of the most common tags in web design, div is short for d
 
 CSS:
 
-```
+```css
 .Square {
-	width: 50px;
-	height: 50px;
-	background-color: red;
+  width: 50px;
+  height: 50px;
+  background-color: red;
 }
 ```
 
 HTML:
 
-```
-<div class=”Square”>
-	Square div
-</div>
+```html
+<div class="”Square”">Square div</div>
 ```
 
 # Circles
@@ -40,21 +38,19 @@ Circles are simply div elements with a border-radius property of 50% and equal w
 
 CSS:
 
-```
+```css
 .Circle {
-	width: 50px;
-	height: 50px;
-	border-radius: 50%;
-	background-color: red;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: red;
 }
 ```
 
 HTML:
 
-```
-<div class=”Circle”>
-	Circle div
-</div>
+```html
+<div class="”Circle”">Circle div</div>
 ```
 
 # Triangles
@@ -74,7 +70,7 @@ The best way to understand triangles is simply to have a play around with them, 
 
 CSS:
 
-```
+```css
 .Triangle {
   width: 0;
   height: 0;
@@ -86,10 +82,8 @@ CSS:
 
 HTML:
 
-```
-<div class=”Triangle”>
-	Triangle div
-</div>
+```html
+<div class="”Triangle”">Triangle div</div>
 ```
 
 ---

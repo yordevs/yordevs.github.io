@@ -20,7 +20,7 @@ Grab the git link to pull the template code by going to our repository on github
 
 <img src="https://i.imgur.com/bd4CWdL.png" alt="drawing" width="400"/>
 
-Alternatively, you can copy the link below
+Alternatively, you can copy the link below:
 
 ```
 https://github.com/yordevs/CSS-Fight-Night-Template.git
