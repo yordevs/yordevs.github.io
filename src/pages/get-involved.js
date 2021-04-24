@@ -9,14 +9,12 @@ import Button from "../components/Button";
 import ContactForm from "../components/ContactForm";
 import SocialIcon from "../components/SocialIcon";
 
-import config from "../theme/config";
-const { color } = config;
-
 const HeaderHolder = styled.div``;
 
 const ActionHolder = styled.div`
   display: grid;
-  grid-template-columns: 1fr 1fr;
+
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
 `;
 
 const FrameworkHolder = styled.div`
@@ -24,8 +22,10 @@ const FrameworkHolder = styled.div`
 `;
 
 const ListHolder = styled.div`
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+
+  margin-top: 2em;
 `;
 
 const ItemHolder = styled.div`
@@ -37,7 +37,6 @@ const ItemHolder = styled.div`
 const TechIcon = styled(SocialIcon)`
   margin: auto;
   font-size: 3em;
-  color: ${color.text};
 `;
 
 const ButtonHolder = styled.div`
@@ -52,26 +51,25 @@ const InvolvedPage = () => {
     <Layout title="Get Involved">
       <HeaderHolder>
         <h1>Get Involved</h1>
-        <p style={{ textAlign: "center" }}>
-          We&apos;re always open to new members, no matter how much experience they have, if
-          you&apos;re interested in joining you can <TextLink to="/contact">contact us</TextLink>,
-          or join our <TextLink to="https://yordevs.slack.com">slack</TextLink> and introduce
-          yourself.
+        <p>
+          We&apos;re always looking for new members, no matter how much experience you have. if
+          you&apos;re interested in joining please <TextLink to="/contact">contact us</TextLink>, or
+          join our <TextLink to="https://yordevs.slack.com">Slack</TextLink> and introduce yourself!
         </p>
-
-        <p style={{ textAlign: "center" }}>
+        <p>
           You only have to buy membership if you want to participate in one of our projects, or get
           discounted/free entry to one of our events. You can buy membership{" "}
-          <TextLink to={"https://yusu.org/shop/product/3296-yordevs-2021"}>here</TextLink>.
+          <TextLink to="https://yusu.org/shop/product/3296-yordevs-2021">here</TextLink>.
         </p>
       </HeaderHolder>
       <FrameworkHolder>
         <h3>Technologies we use</h3>
         <p>
-          If you have a bit of experience, you probably want to know what frameworks we use, if you
-          aren&apos;t as experienced, don&apos;t be put off if some of these words of foreign to
-          you, they will become familiar over time. We are currently using the following frameworks:
+          If you have a bit of experience, you probably want to know what frameworks we use. If you{" "}
+          <i>aren&apos;t</i> as experienced, don&apos;t be put off if some of these words sound
+          unknown to you; they&apos;ll become more familiar over time.
         </p>
+        <p> We&apos;re currently using the following frameworks:</p>
         <ListHolder>
           <ItemHolder>
             <TechIcon icon={<FaReact />} />
@@ -93,7 +91,7 @@ const InvolvedPage = () => {
       </FrameworkHolder>
       <ActionHolder>
         <div>
-          <h3>Contact Form</h3>
+          <h3>Contact Us</h3>
           <ContactForm />
         </div>
         <ButtonHolder>

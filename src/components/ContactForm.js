@@ -121,7 +121,7 @@ const ContactForm = () => {
           name="message"
           id="message"
           ref={register}
-          style={{ resize: "vertical" }}
+          style={{ resize: "vertical", maxWidth: "100%" }}
         />
         <br />
         <FormSubmit type="submit">Send</FormSubmit>
