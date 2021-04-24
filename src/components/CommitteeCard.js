@@ -20,7 +20,7 @@ import blankTeamPhoto from "../images/BlankTeamPhoto.jpg";
 const CommitteeCard = ({ role, fullName, pronouns, course, picture = false }) => {
   return (
     <Card>
-      <Photo src={picture ? picture : blankTeamPhoto} width="200px" height="200px" />
+      {picture ? picture : <Photo src={blankTeamPhoto} width="200px" height="200px" />}
       <h2>{fullName}</h2>
       <h3>{role}</h3>
       <p>{course}</p>
