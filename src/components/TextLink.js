@@ -11,9 +11,11 @@ const StyledTextLink = styled(Link)`
   text-decoration: none;
   color: ${color.accent};
 
-  transition: all 0.15s ease-in-out;
+  transition: all 0.15s ease;
 
   font-weight: ${font.weight.semibold};
+
+  border-radius: 2px;
 
   &:hover,
   &:focus,
