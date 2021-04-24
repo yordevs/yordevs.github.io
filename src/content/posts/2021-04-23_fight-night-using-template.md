@@ -61,6 +61,7 @@ We now have to put these classes inside our CSS file so we can say what the divs
 
 The CSS code with the new classes will look like this.
 
+```
 /_--CHALLENGE 1 STYLING _/
 /_ Please put all the styling for challenge 1 here _/
 
@@ -72,6 +73,7 @@ The CSS code with the new classes will look like this.
 
 .Example-Square-Bottom-Right {
 }
+```
 
 # 5. Create the squares
 
@@ -113,8 +115,10 @@ This will create an image that looks like so:
 # 6. Position the squares
 
 The final step will be to position the bottom right square, at the moment it is directly below the top left square. The easiest way to do this is to:
-Make the position of the div “absolute”, meaning it can be positioned wherever you want without being affected by other divs.
-Move it to the right, I did this by setting the amount of space to the right of the div to 0px,
+
+1. Make the position of the div “absolute”, meaning it can be positioned wherever you want without being affected by other divs.
+2. Move it to the right, I did this by setting the amount of space to the right of the div to 0px,
+
 It is also good practice to make sure the div stays on the bottom of the container, I did this by setting the amount of space between the bottom of my div and the bottom of the container it’s in to 0px.
 
 Translated into css is, these steps looks like so:
@@ -146,7 +150,7 @@ If you have successfully followed along with the steps you should have recreated
 
 ---
 
-You should now be ready to check out our next article on basic shaped [here](/blog/fight-night-shapes).
+You should now be ready to check out our next article on basic shaped [here](/blog/Fight-Night-Shapes).
 
 I have created some demo challenges and added them to a folder “Warm Up Challenges”, on the github repo, if you have properly pulled the repo they should also be on your machine.
 
