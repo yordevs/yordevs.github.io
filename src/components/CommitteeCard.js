@@ -14,6 +14,7 @@ const Card = styled.div`
 
 const Photo = styled.img`
   margin-bottom: 0.5em;
+  border-radius: 5px;
 `;
 
 const Name = styled.h3`
@@ -35,7 +36,7 @@ import blankTeamPhoto from "../images/BlankTeamPhoto.jpg";
 const CommitteeCard = ({ role, fullName, pronouns, course, picture = false }) => {
   return (
     <Card>
-      {picture ? picture : <Photo src={blankTeamPhoto} width="200px" height="200px" />}
+      {picture || <Photo src={blankTeamPhoto} width="200px" height="200px" />}
       <Name>{fullName}</Name>
       <Role>{role}</Role>
       <p>{course}</p>

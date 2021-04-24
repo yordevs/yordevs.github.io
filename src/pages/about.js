@@ -91,7 +91,7 @@ const AboutPage = () => (
             width={200}
             height={200}
             placeholder="blurred"
-            style={{ marginBottom: "0.5em" }}
+            style={{ marginBottom: "0.5em", borderRadius: "5px" }}
           />
         }
       />
@@ -112,7 +112,7 @@ const AboutPage = () => (
             width={200}
             height={200}
             placeholder="blurred"
-            style={{ marginBottom: "0.5em" }}
+            style={{ marginBottom: "0.5em", borderRadius: "5px" }}
           />
         }
       />
@@ -127,7 +127,6 @@ const AboutPage = () => (
       <ProjectLeaderCard
         fullName="Ben Silverman"
         project="Yordevs Website"
-        pronouns="He/Him"
         course="Computer Science"
         picture={
           <StaticImage
@@ -135,7 +134,7 @@ const AboutPage = () => (
             width={200}
             height={200}
             placeholder="blurred"
-            style={{ marginBottom: "0.5em" }}
+            style={{ marginBottom: "0.5em", borderRadius: "5px" }}
           />
         }
         projectDescription="Designing and development of the official Yordevs website."
