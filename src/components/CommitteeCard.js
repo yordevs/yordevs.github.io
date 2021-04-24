@@ -2,17 +2,32 @@ import React from "react";
 import styled from "styled-components";
 import PropTypes from "prop-types";
 
+import config from "../theme/config";
+const { color, font } = config;
+
 const Card = styled.div`
   display: flex;
   align-items: center;
   flex-direction: column;
-  padding: 20px;
-  margin: 0 0.5em;
-  margin-bottom: 1em;
+  margin: 1em 0;
 `;
 
 const Photo = styled.img`
   margin-bottom: 0.5em;
+`;
+
+const Name = styled.h3`
+  font-size: ${font.size.lg};
+  margin-bottom: 0em;
+`;
+
+const Role = styled.h4`
+  color: ${color.accent};
+  font-weight: ${font.weight.semibold};
+  text-transform: uppercase;
+  font-size: ${font.size.base};
+
+  margin-bottom: 1em;
 `;
 
 import blankTeamPhoto from "../images/BlankTeamPhoto.jpg";
@@ -21,10 +36,10 @@ const CommitteeCard = ({ role, fullName, pronouns, course, picture = false }) =>
   return (
     <Card>
       {picture ? picture : <Photo src={blankTeamPhoto} width="200px" height="200px" />}
-      <h2>{fullName}</h2>
-      <h3>{role}</h3>
+      <Name>{fullName}</Name>
+      <Role>{role}</Role>
       <p>{course}</p>
-      <p>{pronouns}</p>
+      {pronouns && <p>{pronouns}</p>}
     </Card>
   );
 };

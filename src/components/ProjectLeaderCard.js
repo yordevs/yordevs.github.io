@@ -40,7 +40,7 @@ const ProjectLeaderCard = ({
       <h2>{fullName}</h2>
       <h3>{project}</h3>
       <p>{course}</p>
-      <p>{pronouns}</p>
+      {pronouns && <p>{pronouns}</p>}
       <ProjectDescription>{projectDescription}</ProjectDescription>
       <Button to={projectURL}>Find Out More</Button>
     </Card>
