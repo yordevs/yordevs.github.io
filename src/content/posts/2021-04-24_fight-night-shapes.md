@@ -86,6 +86,14 @@ HTML:
 <div class="”Triangle”">Triangle div</div>
 ```
 
+# Quick Debugging
+
+There are a few common mistakes people make when developing in pure html, here's a checklist of things help you figure out why something might not be working
+
+- Have you saved your file? Make sure it's saved before trying to view it in the browser, in VSCode you can use ctrl-s on windows, or cmd-s on mac.
+- Have you refreshed the browser tab? You have to refresh the browser tab every time you save a change to view it.
+- Have you specified a unit? Make sure on any size-related css properties you have a unit specified, this may be `px`, `em`, `%`, `vh`, or `vm`
+
 ---
 
 You should now be more than ready to take on our CSS Fight Night, remember we have some example challenges in the GitHub repository (the article on how to get them is [here](/blog/Fight-Night-Downloading-Template)).
