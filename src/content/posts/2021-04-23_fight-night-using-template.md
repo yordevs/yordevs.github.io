@@ -146,6 +146,14 @@ Translated into css is, these steps looks like so:
 
 If you have successfully followed along with the steps you should have recreated the image, if you have any questions or problems feel free to message us, either using our [Slack](https://yordevs.slack.com), or directly on [Facebook](https://www.facebook.com/yordevs), [Instagram](https://instagram.com/yordevs), or by [email](mailto:yordevs@yusu.org)
 
+# Quick Debugging
+
+There are a few common mistakes people make when developing in pure html, here's a checklist of things help you figure out why something might not be working
+
+- Have you saved your file? Make sure it's saved before trying to view it in the browser, in VSCode you can use ctrl-s on windows, or cmd-s on mac.
+- Have you refreshed the browser tab? You have to refresh the browser tab every time you save a change to view it.
+- Have you specified a unit? Make sure on any size-related css properties you have a unit specified, this may be `px`, `em`, `%`, `vh`, or `vm`
+
 ---
 
 You should now be ready to check out our next article on basic shaped [here](/blog/Fight-Night-Shapes).
