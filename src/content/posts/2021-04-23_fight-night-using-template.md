@@ -10,7 +10,7 @@ In this article we will be working through and example of a challenge that may a
 
 <img src="https://i.imgur.com/5fyFjPn.png" alt="drawing" width="400"/>
 
-This article assumes you have already downloaded the fight night template, for instruction on how to do this follow our tutorial blog [here](/blog/Fight-Night-Downloading-Template)
+This article assumes you have already downloaded the fight night template, for instruction on how to do this follow our tutorial blog [here](/blog/Fight-Night-Downloading-Template).
 
 # 1. Where to put the code
 
@@ -18,11 +18,10 @@ If you look at the HTML template, you will see that there are lots of what we ca
 
 You should put your HTML Code inside the div with the relevant id tag for the challenge, for example the code for challenge 1 will go inbetween the following div tags:
 
-```
+```html
 <div class="Challenge-Holder" id="Challenge-1">
-	<!-- CODE GOES HERE -->
+  <!-- CODE GOES HERE -->
 </div>
-
 ```
 
 The CSS should go inside the index.css file, whilst it doesn’t matter where exactly in the file it goes, it is useful to keep our code looking clean and organised, for this reason we have split up the CSS file into sections using comments. I recommend keeping the relevant code within these pre laid out sections.
@@ -33,7 +32,7 @@ The image contains 4 squares, we can replicate these using divs. We could create
 
 The challenge container, containing the divs will look like so:
 
-```
+```html
 <div class="Challenge-Holder" id="Challenge-1">
   <div></div>
   <div></div>
@@ -46,7 +45,7 @@ To style the divs, we must first add a class to them, the browser will find this
 
 We can add classes to our divs like so:
 
-```
+```html
 <div class="Challenge-Holder" id="Challenge-1">
   <div class="Example-Square-Top-Left"></div>
   <div class="Example-Square-Bottom-Right"></div>
@@ -61,8 +60,9 @@ We now have to put these classes inside our CSS file so we can say what the divs
 
 The CSS code with the new classes will look like this.
 
-/_--CHALLENGE 1 STYLING _/
-/_ Please put all the styling for challenge 1 here _/
+```css
+/*--CHALLENGE 1 STYLING */
+/* Please put all the styling for challenge 1 here */
 
 #Challenge-1 {
 }
@@ -72,6 +72,7 @@ The CSS code with the new classes will look like this.
 
 .Example-Square-Bottom-Right {
 }
+```
 
 # 5. Create the squares
 
@@ -85,25 +86,24 @@ We also know that to recreate the image, the background of the container must be
 
 Translated in to CSS, these attributes look like:
 
-```
+```css
 /*--CHALLENGE 1 STYLING */
 /* Please put all the styling for challenge 1 here */
 #Challenge-1 {
-background-color: pink;
+  background-color: pink;
 }
 
 .Example-Square-Top-Left {
- width: 50%;
- height: 50%;
- background-color: brown;
+  width: 50%;
+  height: 50%;
+  background-color: brown;
 }
 
 .Example-Square-Bottom-Right {
- width: 50%;
- height: 50%;
- background-color: brown;
+  width: 50%;
+  height: 50%;
+  background-color: brown;
 }
-
 ```
 
 This will create an image that looks like so:
@@ -113,41 +113,51 @@ This will create an image that looks like so:
 # 6. Position the squares
 
 The final step will be to position the bottom right square, at the moment it is directly below the top left square. The easiest way to do this is to:
-Make the position of the div “absolute”, meaning it can be positioned wherever you want without being affected by other divs.
-Move it to the right, I did this by setting the amount of space to the right of the div to 0px,
-It is also good practice to make sure the div stays on the bottom of the container, I did this by setting the amount of space between the bottom of my div and the bottom of the container it’s in to 0px.
+
+1. Make the position of the div `absolute`, meaning it can be positioned wherever you want without being affected by other divs.
+2. Move it to the right, I did this by setting the amount of space to the right of the div to `0px`,
+
+It is also good practice to make sure the div stays on the bottom of the container, I did this by setting the amount of space between the bottom of my div and the bottom of the container it’s in to `0px`.
 
 Translated into css is, these steps looks like so:
 
-```
+```css
 /*--CHALLENGE 1 STYLING */
 /* Please put all the styling for challenge 1 here */
 #Challenge-1 {
- background-color: pink;
+  background-color: pink;
 }
 
 .Example-Square-Top-Left {
- width: 50%;
- height: 50%;
- background-color: brown;
+  width: 50%;
+  height: 50%;
+  background-color: brown;
 }
 
 .Example-Square-Bottom-Right {
- position: absolute;
- width: 50%;
- height: 50%;
- background-color: brown;
- right: 0px;
- bottom: 0px;
+  position: absolute;
+  width: 50%;
+  height: 50%;
+  background-color: brown;
+  right: 0px;
+  bottom: 0px;
 }
 ```
 
-If you have successfully followed along with the steps you should have recreated the image, if you have any questions or problems feel free to message us, either using our [slack](https://yordevs.slack.com), or directly on [facebook](https://www.facebook.com/yordevs), [instagram](https://instagram.com/yordevs), or by [email](mailto:yordevs@yusu.org)
+If you have successfully followed along with the steps you should have recreated the image, if you have any questions or problems feel free to message us, either using our [Slack](https://yordevs.slack.com), or directly on [Facebook](https://www.facebook.com/yordevs), [Instagram](https://instagram.com/yordevs), or by [email](mailto:yordevs@yusu.org)
+
+# Quick Debugging
+
+There are a few common mistakes people make when developing in pure html, here's a checklist of things help you figure out why something might not be working
+
+- Have you saved your file? Make sure it's saved before trying to view it in the browser, in VSCode you can use ctrl-s on windows, or cmd-s on mac.
+- Have you refreshed the browser tab? You have to refresh the browser tab every time you save a change to view it.
+- Have you specified a unit? Make sure on any size-related css properties you have a unit specified, this may be `px`, `em`, `%`, `vh`, or `vm`
 
 ---
 
-You should now be ready to check out our next article on basic shaped [here](/blog/fight-night-shapes).
+You should now be ready to check out our next article on basic shaped [here](/blog/Fight-Night-Shapes).
 
-I have created some demo challenges and added them to a folder “Warm Up Challenges”, on the github repo, if you have properly pulled the repo they should also be on your machine.
+I have created some demo challenges and added them to a folder “Warm Up Challenges”, on the Github repo, if you have properly pulled the repo they should also be on your machine.
 
-If you want to get some more practice in before the big night, have a go at these and you should be more than ready to take on our beginner challenges.
+If you want to get some more practice in before the big night, have a go at these and you should be more than ready to take on our beginner challenges!

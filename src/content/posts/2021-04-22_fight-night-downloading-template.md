@@ -20,7 +20,7 @@ Grab the git link to pull the template code by going to our repository on github
 
 <img src="https://i.imgur.com/bd4CWdL.png" alt="drawing" width="400"/>
 
-Alternatively, you can copy the link below
+Alternatively, you can copy the link below:
 
 ```
 https://github.com/yordevs/CSS-Fight-Night-Template.git
@@ -42,9 +42,17 @@ Here’s the link if you need it again: `https://github.com/yordevs/CSS-Fight-Ni
 
 # 5. Open the html file in your browser
 
-There are many ways to view your HTML file, the simplest is to navigate to your file in your file explorer and double clicking it to open it in your browser
+There are many ways to view your HTML file, the simplest is to navigate to your file in your file explorer (in vscode you can just right click the index.html and select "Reveal in Explorer/Finder"). Once you can see the file in you file explorer, double click it to open it in your browser.
 
 <img src="https://i.imgur.com/yJooJfG.png" alt="drawing" width="400"/>
+
+# Quick Debugging
+
+There are a few common mistakes people make when developing in pure html, here's a checklist of things help you figure out why something might not be working
+
+- Have you saved your file? Make sure it's saved before trying to view it in the browser, in VSCode you can use ctrl-s on windows, or cmd-s on mac.
+- Have you refreshed the browser tab? You have to refresh the browser tab every time you save a change to view it.
+- Have you specified a unit? Make sure on any size-related css properties you have a unit specified, this may be `px`, `em`, `%`, `vh`, or `vm`
 
 ---
 

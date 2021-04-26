@@ -10,7 +10,7 @@ const StyledIcon = styled.a`
   display: flex;
   align-items: center;
 
-  transition: all 0.1s ease-in-out;
+  transition: all 0.1s ease;
 
   &:hover {
     color: ${color.accent};
