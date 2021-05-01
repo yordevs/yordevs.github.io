@@ -72,29 +72,6 @@ const AboutPage = () => (
     </section>
     <Committee />
     <ProjectLeaders />
-    {/* <h2>Project Leaders</h2>
-    <p>The people responsible for managing each of our projects.</p>
-    <p>
-      If you have an idea for a project we could do, please{" "}
-      <TextLink to="/contact">let us know!</TextLink>
-    </p>
-    <RowHolder>
-      <ProjectLeaderCard
-        fullName="Ben Silverman"
-        project="Yordevs Website"
-        course="Computer Science"
-        picture={
-          <StaticImage
-            src="../images/BenTeamPhoto.jpg"
-            width={200}
-            height={200}
-            placeholder="blurred"
-            style={{ marginBottom: "0.5em", borderRadius: "5px" }}
-          />
-        }
-        projectDescription="Designing and development of the official Yordevs website."
-      />
-    </RowHolder> */}
     <hr style={{ borderTop: `1px solid ${color.heading}`, marginBottom: "2em" }} />
     <Sponsors>
       <h2>Proudly supported by</h2>
