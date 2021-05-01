@@ -79,45 +79,6 @@ const AboutPage = () => (
       </p>
     </section>
     <Committee />
-    {/* <h2>Meet the Team</h2>
-    <RowHolder>
-      <CommitteeCard
-        fullName="Adam Barr"
-        role="President"
-        pronouns="He/Him"
-        course="Computer Science"
-        picture={
-          <StaticImage
-            src="../images/AdamTeamPhoto.jpg"
-            width={200}
-            height={200}
-            placeholder="blurred"
-            style={{ marginBottom: "0.5em", borderRadius: "5px" }}
-          />
-        }
-      />
-      <CommitteeCard
-        fullName="Sam Harrison"
-        role="Secretary"
-        pronouns="He/Him"
-        course="Computer Science"
-      />
-      <CommitteeCard
-        fullName="Sarah Wakelin"
-        role="Treasurer"
-        pronouns="She/Her"
-        course="Maths"
-        picture={
-          <StaticImage
-            src="../images/SarahTeamPhoto.jpg"
-            width={200}
-            height={200}
-            placeholder="blurred"
-            style={{ marginBottom: "0.5em", borderRadius: "5px" }}
-          />
-        }
-      />
-    </RowHolder> */}
     <h2>Project Leaders</h2>
     <p>The people responsible for managing each of our projects.</p>
     <p>

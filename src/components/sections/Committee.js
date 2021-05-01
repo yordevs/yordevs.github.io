@@ -24,6 +24,18 @@ export const Committee = () => {
             role
             course
             pronouns
+            picture {
+              childImageSharp {
+                gatsbyImageData(
+                  height: 200
+                  width: 200
+                  quality: 100
+                  layout: CONSTRAINED
+                  placeholder: BLURRED
+                  formats: [AUTO, WEBP, AVIF]
+                )
+              }
+            }
           }
         }
       }
