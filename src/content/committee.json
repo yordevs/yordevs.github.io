@@ -1,0 +1,23 @@
+[
+  {
+    "name": "Adam Barr",
+    "role": "President",
+    "course": "Computer Science",
+    "pronouns": "he/him",
+    "picture": "../images/AdamTeamPhoto.jpg"
+  },
+  {
+    "name": "Sam Harrison",
+    "role": "Secretary",
+    "course": "Computer Science",
+    "pronouns": "he/him",
+    "picture": "../images/BlankTeamPhoto.jpg"
+  },
+  {
+    "name": "Sarah Wakelin",
+    "role": "Treasurer",
+    "course": "Maths",
+    "pronouns": "she/her",
+    "picture": "../images/SarahTeamPhoto.jpg"
+  }
+]

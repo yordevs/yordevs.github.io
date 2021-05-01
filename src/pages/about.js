@@ -4,10 +4,10 @@ import styled from "styled-components";
 import { StaticImage } from "gatsby-plugin-image";
 
 import TextLink from "../components/TextLink";
-import CommitteeCard from "../components/CommitteeCard";
 import ProjectLeaderCard from "../components/ProjectLeaderCard";
 
 import config from "../theme/config";
+import { Committee } from "../components/sections/Committee";
 const { color, font } = config;
 
 const Tagline = styled.h2`
@@ -78,7 +78,8 @@ const AboutPage = () => (
         <TextLink to="/get-involved">Find out how to get involved!</TextLink>
       </p>
     </section>
-    <h2>Meet the Team</h2>
+    <Committee />
+    {/* <h2>Meet the Team</h2>
     <RowHolder>
       <CommitteeCard
         fullName="Adam Barr"
@@ -116,7 +117,7 @@ const AboutPage = () => (
           />
         }
       />
-    </RowHolder>
+    </RowHolder> */}
     <h2>Project Leaders</h2>
     <p>The people responsible for managing each of our projects.</p>
     <p>
