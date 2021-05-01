@@ -4,10 +4,10 @@ import styled from "styled-components";
 import { StaticImage } from "gatsby-plugin-image";
 
 import TextLink from "../components/TextLink";
-import ProjectLeaderCard from "../components/ProjectLeaderCard";
+import Committee from "../components/sections/Committee";
+import ProjectLeaders from "../components/sections/ProjectLeaders";
 
 import config from "../theme/config";
-import { Committee } from "../components/sections/Committee";
 const { color, font } = config;
 
 const Tagline = styled.h2`
@@ -38,14 +38,6 @@ const SponsorLogoHolder = styled.div`
   div {
     margin: 1em;
   }
-`;
-
-const RowHolder = styled.div`
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  grid-auto-rows: auto;
-  gap: 1rem;
-  column-gap: 1rem;
 `;
 
 const AboutPage = () => (
@@ -79,7 +71,8 @@ const AboutPage = () => (
       </p>
     </section>
     <Committee />
-    <h2>Project Leaders</h2>
+    <ProjectLeaders />
+    {/* <h2>Project Leaders</h2>
     <p>The people responsible for managing each of our projects.</p>
     <p>
       If you have an idea for a project we could do, please{" "}
@@ -101,7 +94,7 @@ const AboutPage = () => (
         }
         projectDescription="Designing and development of the official Yordevs website."
       />
-    </RowHolder>
+    </RowHolder> */}
     <hr style={{ borderTop: `1px solid ${color.heading}`, marginBottom: "2em" }} />
     <Sponsors>
       <h2>Proudly supported by</h2>

@@ -3,7 +3,8 @@ import { graphql, useStaticQuery } from "gatsby";
 import { getImage } from "gatsby-plugin-image";
 import styled from "styled-components";
 
-import CommitteeCard from "../CommitteeCard";
+import TextLink from "../TextLink";
+import ProjectLeaderCard from "../ProjectLeaderCard";
 
 const Row = styled.div`
   display: grid;
@@ -13,17 +14,19 @@ const Row = styled.div`
   column-gap: 1rem;
 `;
 
-const Committee = () => {
+const ProjectLeaders = () => {
   const data = useStaticQuery(graphql`
     query {
-      allCommitteeJson {
+      allProjectLeadersJson {
         edges {
           node {
             id
             name
-            role
             course
             pronouns
+            project
+            projectDescription
+            projectURL
             picture {
               childImageSharp {
                 gatsbyImageData(
@@ -42,20 +45,27 @@ const Committee = () => {
     }
   `);
 
-  const members = data.allCommitteeJson.edges;
+  const projectLeaders = data.allProjectLeadersJson.edges;
 
   return (
     <section>
-      <h2>Meet the Team</h2>
+      <h2>Project Leaders</h2>
+      <p>The people responsible for managing each of our projects.</p>
+      <p>
+        If you have an idea for a project we could do, please{" "}
+        <TextLink to="/contact">let us know!</TextLink>
+      </p>
       <Row>
-        {members &&
-          members.map(({ node }, i) => (
-            <CommitteeCard
+        {projectLeaders &&
+          projectLeaders.map(({ node }, i) => (
+            <ProjectLeaderCard
               fullName={node.name}
-              role={node.role}
+              project={node.project}
               course={node.course}
               pronouns={node.pronouns}
               picture={getImage(node.picture)}
+              projectDescription={node.projectDescription}
+              projectURL={node.projectURL}
               key={i}
             />
           ))}
@@ -64,4 +74,4 @@ const Committee = () => {
   );
 };
 
-export default Committee;
+export default ProjectLeaders;
