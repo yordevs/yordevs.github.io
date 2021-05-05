@@ -32,6 +32,7 @@ const GlobalStyle = createGlobalStyle`
     font-family: "Poppins", Arial, Helvetica, sans-serif;
     font-weight: ${font.weight.normal};
     color: ${color.text};
+    overflow-y: scroll;
   }
 
   h1 {font-size:2rem}
