@@ -54,7 +54,8 @@ const InvolvedPage = () => {
         <p>
           We&apos;re always looking for new members, no matter how much experience you have. if
           you&apos;re interested in joining please <TextLink to="/contact">contact us</TextLink>, or
-          join our <TextLink to="https://yordevs.slack.com">Slack</TextLink> and introduce yourself!
+          join our <TextLink to="https://discord.gg/j8fbqEP2TD">Discord</TextLink> and introduce
+          yourself!
         </p>
         <p>
           You only have to buy membership if you want to participate in one of our projects, or get
@@ -95,7 +96,7 @@ const InvolvedPage = () => {
           <ContactForm />
         </div>
         <ButtonHolder>
-          <Button to="https://yordevs.slack.com">Join our Slack</Button>
+          <Button to="https://discord.gg/j8fbqEP2TD">Join our Discord</Button>
           <Button to="https://yusu.org/shop/product/3296-yordevs-2021">Buy membership</Button>
         </ButtonHolder>
       </ActionHolder>
