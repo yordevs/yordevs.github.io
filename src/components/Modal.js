@@ -1,5 +1,5 @@
 import React from "react";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import { BiX } from "react-icons/bi";
 
 import TextLink from "./TextLink";
@@ -7,22 +7,36 @@ import TextLink from "./TextLink";
 import config from "../theme/config";
 const { color } = config;
 
+const slideIn = keyframes`
+  from { 
+    transform: translateX(-150%);
+  } to { 
+    transform: translateX(0);
+  }
+`;
+
 const Body = styled.div`
   position: fixed;
-  top: 50%;
+  top: 25%;
   left: 0;
-  transform: translateY(-50%);
 
-  width: 250px;
+  width: 300px;
 
   z-index: 3;
 
   padding: 2em;
 
   background-color: white;
-  border-radius: 10px;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
 
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+
+  @media (prefers-reduced-motion: no-preference) {
+    animation-name: ${slideIn};
+    animation-fill-mode: backwards;
+    animation-duration: 300ms;
+  }
 `;
 
 const CloseButton = styled.button`
@@ -47,10 +61,16 @@ const Modal = ({ closePortal }) => {
       <CloseButton onClick={closePortal}>
         <BiX size={28} />
       </CloseButton>
-      <h1>Hello, I&apos;m a modal!</h1>
+      <h1>Hello!</h1>
+      <p>Have you heard about our Logo Competition?</p>
       <p>
-        And here&apos;s a bunch of content I contain. Why don&apos;t you checkout our{" "}
-        <TextLink>Competition site</TextLink> while you&apos;re here?
+        We&apos;re giving away a <b>£100 Amazon voucher</b> to whoever designs the best logo for our
+        society!
+      </p>
+      <p>
+        ✨ Head over to the{" "}
+        <TextLink to="https://competition.yordevs.com/#/">competition site</TextLink> for more
+        information ✨
       </p>
     </Body>
   );

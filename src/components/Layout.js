@@ -49,11 +49,12 @@ const Layout = ({ title, description, children }) => {
     // Can be used to run code after a set period of time.
     // Works even if you load up home page and then switch to a different page, which is nice.
     const modalTimer = setTimeout(() => {
-      console.log("This timer was completed after 3 seconds.");
       openPortal(NULL_EVENT);
-    }, 1000);
+    }, 10000);
 
-    return clearTimeout(modalTimer);
+    return () => {
+      clearTimeout(modalTimer);
+    };
   }, []);
 
   return (
