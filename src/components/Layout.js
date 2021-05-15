@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
 import usePortal from "react-useportal";
+import createPersistedState from "use-persisted-state";
 
 import "@fontsource/poppins/400.css";
 import "@fontsource/poppins/600.css";
@@ -42,15 +43,28 @@ const StyledContent = styled.main`
 // Workaround for triggering the modal through a useEffect, instead of some kind of event.
 const NULL_EVENT = { currentTarget: { contains: () => false } };
 
+const useModalState = createPersistedState("modalClosed");
+
 const Layout = ({ title, description, children }) => {
-  const { openPortal, closePortal, isOpen, Portal } = usePortal({ closeOnOutsideClick: false });
+  const [modalWasClosed, setModalWasClosed] = useModalState(false);
+
+  const { openPortal, closePortal, isOpen, Portal } = usePortal({
+    closeOnOutsideClick: false,
+    onClose() {
+      setModalWasClosed(true);
+    },
+  });
 
   useEffect(() => {
-    // Can be used to run code after a set period of time.
-    // Works even if you load up home page and then switch to a different page, which is nice.
-    const modalTimer = setTimeout(() => {
-      openPortal(NULL_EVENT);
-    }, 10000);
+    let modalTimer;
+
+    if (!modalWasClosed) {
+      // Can be used to run code after a set period of time.
+      // Works even if you load up home page and then switch to a different page, which is nice.
+      modalTimer = setTimeout(() => {
+        openPortal(NULL_EVENT);
+      }, 1000);
+    }
 
     return () => {
       clearTimeout(modalTimer);
