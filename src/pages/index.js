@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useMemo } from "react";
 import styled, { css } from "styled-components";
 import Typical from "react-typical";
 
@@ -92,14 +92,17 @@ const IndexPage = () => {
         <Hero>
           <HeroTitle>Yordevs</HeroTitle>
           <Typical
-            steps={[
-              "The University of York's Web Development society",
-              1000,
-              "The University of York's App Development society",
-              1000,
-              "The University of York's Web and App Development society",
-              5000,
-            ]}
+            steps={useMemo(
+              () => [
+                "The University of York's Web Development society",
+                1000,
+                "The University of York's App Development society",
+                1000,
+                "The University of York's Web and App Development society",
+                5000,
+              ],
+              [],
+            )}
             loop={Infinity}
             wrapper={HeroTag}
           />
