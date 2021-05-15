@@ -5,7 +5,7 @@ import { BiX } from "react-icons/bi";
 import TextLink from "./TextLink";
 
 import config from "../theme/config";
-const { color } = config;
+const { color, breakpoint } = config;
 
 const slideIn = keyframes`
   from { 
@@ -21,21 +21,25 @@ const Body = styled.div`
   left: 0;
 
   width: 300px;
-
-  z-index: 3;
-
   padding: 2em;
-
   background-color: white;
   border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;
-
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 
+  /* Slide-in animation will only play for people who haven't turned on reduced motion. For people
+  who have expressed a negative preference, it'll just appear instantly. */
   @media (prefers-reduced-motion: no-preference) {
     animation-name: ${slideIn};
     animation-fill-mode: backwards;
     animation-duration: 300ms;
+  }
+
+  /* Only display on large breakpoint, as it takes up too much space otherwise. */
+  display: none;
+
+  @media (${breakpoint.lg}) {
+    display: block;
   }
 `;
 
