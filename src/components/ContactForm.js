@@ -8,6 +8,8 @@ const { color, font, breakpoint, transition } = config;
 
 const StyledForm = styled.form`
   margin-top: 1em;
+  display: flex;
+  flex-direction: column;
 `;
 
 const FormInput = styled.input`
@@ -79,6 +81,13 @@ const EmailFail = styled(EmailStatus)`
   color: ${color.error};
 `;
 
+const Label = styled.label`
+  color: ${color.text};
+  font-weight: ${font.weight.semibold};
+  text-transform: uppercase;
+  margin-bottom: 0.5em;
+`;
+
 const ContactForm = () => {
   const { register, handleSubmit } = useForm();
   const [sendSuccess, setSendSuccess] = useState(null);
@@ -109,15 +118,24 @@ const ContactForm = () => {
         action="https://formspree.io/f/xleoyqbn"
         method="POST"
         onSubmit={handleSubmit(onSubmit)}>
-        <FormInput type="text" name="name" id="name" placeholder="Name" ref={register} />
+        <Label htmlFor="name">Name</Label>
+        <FormInput type="text" name="name" id="name" placeholder="Joe Bloggs" ref={register} />
         <br />
-        <FormInput type="email" name="replyto" id="replyto" placeholder="Email" ref={register} />
+        <Label htmlFor="replyto">Email</Label>
+        <FormInput
+          type="email"
+          name="replyto"
+          id="replyto"
+          placeholder="email@york.ac.uk"
+          ref={register}
+        />
         <br />
+        <Label htmlFor="message">Message</Label>
         <FormInput
           as="textarea"
           cols="30"
           rows="5"
-          placeholder="Message"
+          placeholder="Your message here..."
           name="message"
           id="message"
           ref={register}
