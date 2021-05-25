@@ -1,6 +1,11 @@
 import React from "react";
 import styled from "styled-components";
 import PropTypes from "prop-types";
+import { GatsbyImage } from "gatsby-plugin-image";
+
+import Button from "./Button";
+
+import blankTeamPhoto from "../images/BlankTeamPhoto.jpg";
 
 import config from "../theme/config";
 const { color, font } = config;
@@ -37,9 +42,6 @@ const ProjectDescription = styled.p`
   font-style: italic;
 `;
 
-import blankTeamPhoto from "../images/BlankTeamPhoto.jpg";
-import Button from "./Button";
-
 const ProjectLeaderCard = ({
   fullName,
   project,
@@ -51,7 +53,20 @@ const ProjectLeaderCard = ({
 }) => {
   return (
     <Card>
-      {picture || <Photo src={blankTeamPhoto} width="200px" height="200px" />}
+      {(
+        <GatsbyImage
+          image={picture}
+          alt={`Profile image of ${fullName}`}
+          style={{ marginBottom: "0.5em", borderRadius: "5px" }}
+        />
+      ) || (
+        <Photo
+          src={blankTeamPhoto}
+          width="200px"
+          height="200px"
+          style={{ marginBottom: "0.5em", borderRadius: "5px" }}
+        />
+      )}
       <Name>{fullName}</Name>
       <Project>{project}</Project>
       <p>{course}</p>

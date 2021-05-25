@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { GatsbyImage } from "gatsby-plugin-image";
 import PropTypes from "prop-types";
 
 import config from "../theme/config";
@@ -36,7 +37,20 @@ import blankTeamPhoto from "../images/BlankTeamPhoto.jpg";
 const CommitteeCard = ({ role, fullName, pronouns, course, picture = false }) => {
   return (
     <Card>
-      {picture || <Photo src={blankTeamPhoto} width="200px" height="200px" />}
+      {(
+        <GatsbyImage
+          image={picture}
+          alt={`Committee member ${fullName}`}
+          style={{ marginBottom: "0.5em", borderRadius: "5px" }}
+        />
+      ) || (
+        <Photo
+          src={blankTeamPhoto}
+          width="200px"
+          height="200px"
+          style={{ marginBottom: "0.5em", borderRadius: "5px" }}
+        />
+      )}
       <Name>{fullName}</Name>
       <Role>{role}</Role>
       <p>{course}</p>
