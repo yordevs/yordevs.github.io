@@ -1,6 +1,9 @@
 import React from "react";
 import styled from "styled-components";
-import Img from "gatsby-image";
+import { GatsbyImage, getImage } from "gatsby-plugin-image";
+
+import config from "../theme/config";
+const { color } = config;
 
 const Card = styled.div`
   display: flex;
@@ -15,10 +18,6 @@ const Card = styled.div`
 const ProjectDescription = styled.p`
   text-align: center;
   font-style: italic;
-`;
-
-const ProjectPreview = styled(Img)`
-  border: 5px solid #555;
 `;
 
 const NoImage = styled.div`
@@ -39,7 +38,18 @@ const ProjectCard = ({
 }) => {
   return (
     <Card>
-      {preview ? <ProjectPreview fixed={preview.childImageSharp.fixed} /> : <NoImage>?</NoImage>}
+      {preview ? (
+        <GatsbyImage
+          image={getImage(preview)}
+          style={{
+            border: `3px solid ${color.accent}`,
+            borderRadius: "5px",
+            marginBottom: "1em",
+          }}
+        />
+      ) : (
+        <NoImage>?</NoImage>
+      )}
       <h2>{title}</h2>
       <h3>{client}</h3>
       <ProjectDescription>{description}</ProjectDescription>

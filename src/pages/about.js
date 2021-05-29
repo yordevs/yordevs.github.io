@@ -4,8 +4,8 @@ import styled from "styled-components";
 import { StaticImage } from "gatsby-plugin-image";
 
 import TextLink from "../components/TextLink";
-import CommitteeCard from "../components/CommitteeCard";
-import ProjectLeaderCard from "../components/ProjectLeaderCard";
+import Committee from "../components/sections/Committee";
+import ProjectLeaders from "../components/sections/ProjectLeaders";
 
 import config from "../theme/config";
 const { color, font } = config;
@@ -40,14 +40,6 @@ const SponsorLogoHolder = styled.div`
   }
 `;
 
-const RowHolder = styled.div`
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  grid-auto-rows: auto;
-  gap: 1rem;
-  column-gap: 1rem;
-`;
-
 const AboutPage = () => (
   <Layout title="About Us" description="About the York Community Web and App Development Society">
     <header>
@@ -78,68 +70,8 @@ const AboutPage = () => (
         <TextLink to="/get-involved">Find out how to get involved!</TextLink>
       </p>
     </section>
-    <h2>Meet the Team</h2>
-    <RowHolder>
-      <CommitteeCard
-        fullName="Adam Barr"
-        role="President"
-        pronouns="He/Him"
-        course="Computer Science"
-        picture={
-          <StaticImage
-            src="../images/AdamTeamPhoto.jpg"
-            width={200}
-            height={200}
-            placeholder="blurred"
-            style={{ marginBottom: "0.5em", borderRadius: "5px" }}
-          />
-        }
-      />
-      <CommitteeCard
-        fullName="Sam Harrison"
-        role="Secretary"
-        pronouns="He/Him"
-        course="Computer Science"
-      />
-      <CommitteeCard
-        fullName="Sarah Wakelin"
-        role="Treasurer"
-        pronouns="She/Her"
-        course="Maths"
-        picture={
-          <StaticImage
-            src="../images/SarahTeamPhoto.jpg"
-            width={200}
-            height={200}
-            placeholder="blurred"
-            style={{ marginBottom: "0.5em", borderRadius: "5px" }}
-          />
-        }
-      />
-    </RowHolder>
-    <h2>Project Leaders</h2>
-    <p>The people responsible for managing each of our projects.</p>
-    <p>
-      If you have an idea for a project we could do, please{" "}
-      <TextLink to="/contact">let us know!</TextLink>
-    </p>
-    <RowHolder>
-      <ProjectLeaderCard
-        fullName="Ben Silverman"
-        project="Yordevs Website"
-        course="Computer Science"
-        picture={
-          <StaticImage
-            src="../images/BenTeamPhoto.jpg"
-            width={200}
-            height={200}
-            placeholder="blurred"
-            style={{ marginBottom: "0.5em", borderRadius: "5px" }}
-          />
-        }
-        projectDescription="Designing and development of the official Yordevs website."
-      />
-    </RowHolder>
+    <Committee />
+    <ProjectLeaders />
     <hr style={{ borderTop: `1px solid ${color.heading}`, marginBottom: "2em" }} />
     <Sponsors>
       <h2>Proudly supported by</h2>
