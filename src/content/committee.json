@@ -4,6 +4,7 @@
     "role": "President",
     "course": "Computer Science",
     "pronouns": "he/him",
+    "academicYear": "Third Year",
     "picture": "../images/AdamTeamPhoto.jpg"
   },
   {
@@ -11,6 +12,7 @@
     "role": "Secretary",
     "course": "Computer Science",
     "pronouns": "he/him",
+    "academicYear": "Third Year",
     "picture": "../images/SamTeamPhoto.jpg"
   },
   {
@@ -18,6 +20,7 @@
     "role": "Treasurer",
     "course": "Maths",
     "pronouns": "she/her",
+    "academicYear": "Third Year",
     "picture": "../images/SarahTeamPhoto.jpg"
   }
 ]
