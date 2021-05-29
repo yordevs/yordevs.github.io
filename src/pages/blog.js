@@ -7,7 +7,7 @@ import Layout from "../components/Layout";
 
 const BlogPage = ({
   data: {
-    allMarkdownRemark: { edges },
+    allMdx: { edges },
   },
 }) => {
   const Posts = edges
@@ -26,7 +26,7 @@ export default BlogPage;
 
 export const pageQuery = graphql`
   query {
-    allMarkdownRemark(
+    allMdx(
       filter: { fileAbsolutePath: { regex: "/posts/" } }
       sort: { order: DESC, fields: [frontmatter___date] }
     ) {

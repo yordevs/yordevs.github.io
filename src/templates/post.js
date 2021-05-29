@@ -2,6 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import { graphql } from "gatsby";
 import styled from "styled-components";
+import { MDXRenderer } from "gatsby-plugin-mdx";
 
 import Layout from "../components/Layout";
 import TextLink from "../components/TextLink";
@@ -26,9 +27,9 @@ const PostHeader = styled.header`
 
 const PostTemplate = ({
   data: {
-    markdownRemark: {
+    mdx: {
       frontmatter: { title, date, author },
-      html,
+      body,
     },
   },
 }) => {
@@ -42,7 +43,7 @@ const PostTemplate = ({
             {author} on {date}
           </Details>
         </PostHeader>
-        <div dangerouslySetInnerHTML={{ __html: html }} />
+        <MDXRenderer>{body}</MDXRenderer>
       </article>
     </Layout>
   );
@@ -51,9 +52,9 @@ const PostTemplate = ({
 export default PostTemplate;
 
 export const pageQuery = graphql`
-  query($slug: String!) {
-    markdownRemark(frontmatter: { slug: { eq: $slug } }) {
-      html
+  query ($slug: String!) {
+    mdx(frontmatter: { slug: { eq: $slug } }) {
+      body
       frontmatter {
         date(formatString: "MMMM DD, YYYY")
         slug

@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { graphql } from "gatsby";
+import { MDXRenderer } from "gatsby-plugin-mdx";
 
 import styled from "styled-components";
 import Layout from "../components/Layout";
@@ -18,9 +19,9 @@ const Developers = styled.h3`
 
 const ProjectTemplate = ({
   data: {
-    markdownRemark: {
+    mdx: {
       frontmatter: { title, client, lead, developers, link },
-      html,
+      body,
     },
   },
 }) => {
@@ -36,7 +37,7 @@ const ProjectTemplate = ({
           </Developers>
           <Button to={link}>Visit Project</Button>
           <br></br>
-          <div dangerouslySetInnerHTML={{ __html: html }} />
+          <MDXRenderer>{body}</MDXRenderer>
         </div>
       </div>
     </Layout>
@@ -46,9 +47,9 @@ const ProjectTemplate = ({
 export default ProjectTemplate;
 
 export const pageQuery = graphql`
-  query($slug: String!) {
-    markdownRemark(frontmatter: { slug: { eq: $slug } }) {
-      html
+  query ($slug: String!) {
+    mdx(frontmatter: { slug: { eq: $slug } }) {
+      body
       frontmatter {
         date(formatString: "MMMM DD, YYYY")
         slug

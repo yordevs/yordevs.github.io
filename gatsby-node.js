@@ -7,7 +7,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 
   const result = await graphql(`
     {
-      posts: allMarkdownRemark(
+      posts: allMdx(
         filter: { fileAbsolutePath: { regex: "/posts/" } }
         sort: { order: DESC, fields: [frontmatter___date] }
         limit: 1000
@@ -20,7 +20,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
           }
         }
       }
-      projects: allMarkdownRemark(
+      projects: allMdx(
         filter: { fileAbsolutePath: { regex: "/projects/" } }
         sort: { order: DESC, fields: [frontmatter___date] }
         limit: 1000
