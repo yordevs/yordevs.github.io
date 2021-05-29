@@ -62,8 +62,6 @@ const Layout = ({ title, description, children }) => {
 
     const closedOneHourAgo = modalClosed + ONE_HOUR <= new Date().getTime();
 
-    console.log(closedOneHourAgo);
-
     if (closedOneHourAgo) {
       // Can be used to run code after a set period of time.
       // Works even if you load up home page and then switch to a different page, which is nice.
