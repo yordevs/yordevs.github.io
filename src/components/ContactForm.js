@@ -119,7 +119,7 @@ const ContactForm = () => {
         method="POST"
         onSubmit={handleSubmit(onSubmit)}>
         <Label htmlFor="name">Name</Label>
-        <FormInput type="text" name="name" id="name" placeholder="Joe Bloggs" ref={register} />
+        <FormInput type="text" name="name" id="name" placeholder="Name" {...register("name", { required: true })}/>
         <br />
         <Label htmlFor="replyto">Email</Label>
         <FormInput
@@ -127,7 +127,7 @@ const ContactForm = () => {
           name="replyto"
           id="replyto"
           placeholder="email@york.ac.uk"
-          ref={register}
+          {...register("email", { required: true })}
         />
         <br />
         <Label htmlFor="message">Message</Label>
@@ -138,7 +138,7 @@ const ContactForm = () => {
           placeholder="Your message here..."
           name="message"
           id="message"
-          ref={register}
+          {...register("textarea", { required: true })}
           style={{ resize: "vertical", maxWidth: "100%" }}
         />
         <br />
