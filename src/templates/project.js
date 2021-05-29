@@ -1,11 +1,17 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { graphql } from "gatsby";
-import { MDXRenderer } from "gatsby-plugin-mdx";
-
 import styled from "styled-components";
+import { MDXRenderer } from "gatsby-plugin-mdx";
+import { MDXProvider } from "@mdx-js/react";
+
 import Layout from "../components/Layout";
 import Button from "../components/Button";
+import TextLink from "../components/TextLink";
+
+const shortcodes = {
+  a: ({ href, children }) => <TextLink to={href}>{children}</TextLink>,
+};
 
 const Title = styled.h1``;
 
@@ -27,19 +33,17 @@ const ProjectTemplate = ({
 }) => {
   return (
     <Layout title={title}>
-      <div>
-        <div>
-          <Title>Project: {title}</Title>
-          <Client>Client: {client}</Client>
-          <Lead>Project Lead: {lead}</Lead>
-          <Developers>
-            Developers: <i>{developers.join(", ")}</i>
-          </Developers>
-          <Button to={link}>Visit Project</Button>
-          <br></br>
-          <MDXRenderer>{body}</MDXRenderer>
-        </div>
-      </div>
+      <MDXProvider components={shortcodes}>
+        <Title>Project: {title}</Title>
+        <Client>Client: {client}</Client>
+        <Lead>Project Lead: {lead}</Lead>
+        <Developers>
+          Developers: <i>{developers.join(", ")}</i>
+        </Developers>
+        <Button to={link}>Visit Project</Button>
+        <br></br>
+        <MDXRenderer>{body}</MDXRenderer>
+      </MDXProvider>
     </Layout>
   );
 };
