@@ -50,6 +50,7 @@ const ProjectLeaderCard = ({
   projectDescription,
   projectURL = "/projects",
   picture = false,
+  academicYear,
 }) => {
   return (
     <Card>
@@ -70,6 +71,7 @@ const ProjectLeaderCard = ({
       <Name>{fullName}</Name>
       <Project>{project}</Project>
       <p>{course}</p>
+      <p>{academicYear}</p>
       {pronouns && <p>{pronouns}</p>}
       <ProjectDescription>{projectDescription}</ProjectDescription>
       <Button to={projectURL}>Find Out More</Button>

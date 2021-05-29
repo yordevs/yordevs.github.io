@@ -34,7 +34,7 @@ const Role = styled.h4`
 
 import blankTeamPhoto from "../images/BlankTeamPhoto.jpg";
 
-const CommitteeCard = ({ role, fullName, pronouns, course, picture = false }) => {
+const CommitteeCard = ({ role, fullName, pronouns, course, picture = false, academicYear }) => {
   return (
     <Card>
       {(
@@ -54,6 +54,7 @@ const CommitteeCard = ({ role, fullName, pronouns, course, picture = false }) =>
       <Name>{fullName}</Name>
       <Role>{role}</Role>
       <p>{course}</p>
+      <p>{academicYear}</p>
       {pronouns && <p>{pronouns}</p>}
     </Card>
   );

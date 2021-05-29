@@ -27,6 +27,7 @@ const ProjectLeaders = () => {
             project
             projectDescription
             projectURL
+            academicYear
             picture {
               childImageSharp {
                 gatsbyImageData(
@@ -63,6 +64,7 @@ const ProjectLeaders = () => {
               project={node.project}
               course={node.course}
               pronouns={node.pronouns}
+              academicYear={node.academicYear}
               picture={getImage(node.picture)}
               projectDescription={node.projectDescription}
               projectURL={node.projectURL}

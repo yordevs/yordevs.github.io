@@ -24,6 +24,7 @@ const Committee = () => {
             role
             course
             pronouns
+            academicYear
             picture {
               childImageSharp {
                 gatsbyImageData(
@@ -55,6 +56,7 @@ const Committee = () => {
               role={node.role}
               course={node.course}
               pronouns={node.pronouns}
+              academicYear={node.academicYear}
               picture={getImage(node.picture)}
               key={i}
             />
