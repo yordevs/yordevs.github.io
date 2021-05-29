@@ -1,18 +1,21 @@
-import React from "react";
+import React, { useEffect } from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
+import usePortal from "react-useportal";
+import createPersistedState from "use-persisted-state";
+
 import "@fontsource/poppins/400.css";
 import "@fontsource/poppins/600.css";
 import "@fontsource/poppins/700.css";
 import "@fontsource/ibm-plex-mono/600.css";
 
 import Navbar from "../components/Navbar";
+import Modal from "../components/Modal";
+import Footer from "./Footer";
+import SEO from "./SEO";
 
 import GlobalStyle from "../theme/globalStyles";
-import Footer from "./Footer";
-
 import config from "../theme/config";
-import SEO from "./SEO";
 const { breakpoint } = config;
 
 const StyledSite = styled.div`
@@ -37,15 +40,52 @@ const StyledContent = styled.main`
   }
 `;
 
-const Layout = ({ title, description, children }) => (
-  <StyledSite>
-    <GlobalStyle />
-    <SEO title={title} description={description} />
-    <Navbar />
-    <StyledContent>{children}</StyledContent>
-    <Footer />
-  </StyledSite>
-);
+// Workaround for triggering the modal through a useEffect, instead of some kind of event.
+const NULL_EVENT = { currentTarget: { contains: () => false } };
+
+const useModalState = createPersistedState("modalClosed");
+
+const Layout = ({ title, description, children }) => {
+  const [modalWasClosed, setModalWasClosed] = useModalState(false);
+
+  const { openPortal, closePortal, isOpen, Portal } = usePortal({
+    closeOnOutsideClick: false,
+    onClose() {
+      setModalWasClosed(true);
+    },
+  });
+
+  useEffect(() => {
+    let modalTimer;
+
+    if (!modalWasClosed) {
+      // Can be used to run code after a set period of time.
+      // Works even if you load up home page and then switch to a different page, which is nice.
+      modalTimer = setTimeout(() => {
+        openPortal(NULL_EVENT);
+      }, 1000);
+    }
+
+    return () => {
+      clearTimeout(modalTimer);
+    };
+  }, []);
+
+  return (
+    <StyledSite>
+      <GlobalStyle />
+      <SEO title={title} description={description} />
+      <Navbar />
+      {isOpen && (
+        <Portal>
+          <Modal closePortal={closePortal} />
+        </Portal>
+      )}
+      <StyledContent>{children}</StyledContent>
+      <Footer />
+    </StyledSite>
+  );
+};
 
 export default Layout;
 
