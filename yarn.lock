@@ -5921,15 +5921,6 @@ gatsby-graphiql-explorer@^1.5.0:
   dependencies:
     "@babel/runtime" "^7.12.5"
 
-gatsby-image@^3.5.0:
-  version "3.5.0"
-  resolved "https://registry.yarnpkg.com/gatsby-image/-/gatsby-image-3.5.0.tgz#fe76d1d5638bdbe1255c2226a1b00539887af798"
-  integrity sha512-pr3P8+UiyL3nThVlqjlGbrDzaLx/aERjHoD4iVxrEsdoMmmb8fh+MT8/OkYe48NVJUiifNY1EmVUHP9RRCB6nw==
-  dependencies:
-    "@babel/runtime" "^7.12.5"
-    object-fit-images "^3.2.4"
-    prop-types "^15.7.2"
-
 gatsby-legacy-polyfills@^1.5.0:
   version "1.5.0"
   resolved "https://registry.yarnpkg.com/gatsby-legacy-polyfills/-/gatsby-legacy-polyfills-1.5.0.tgz#b65dc1d6f37b1cbf38a9f9c03dbab8adec0d3eeb"
@@ -9622,11 +9613,6 @@ object-copy@^0.1.0:
     copy-descriptor "^0.1.0"
     define-property "^0.2.5"
     kind-of "^3.0.3"
-
-object-fit-images@^3.2.4:
-  version "3.2.4"
-  resolved "https://registry.yarnpkg.com/object-fit-images/-/object-fit-images-3.2.4.tgz#6c299d38fdf207746e5d2d46c2877f6f25d15b52"
-  integrity sha512-G+7LzpYfTfqUyrZlfrou/PLLLAPNC52FTy5y1CBywX+1/FkxIloOyQXBmZ3Zxa2AWO+lMF0JTuvqbr7G5e5CWg==
 
 object-inspect@^1.9.0:
   version "1.10.3"

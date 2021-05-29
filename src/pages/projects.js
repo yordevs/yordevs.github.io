@@ -58,9 +58,14 @@ export const pageQuery = graphql`
             developers
             preview {
               childImageSharp {
-                fixed(width: 250, height: 130) {
-                  ...GatsbyImageSharpFixed
-                }
+                gatsbyImageData(
+                  height: 130
+                  width: 250
+                  quality: 100
+                  layout: CONSTRAINED
+                  placeholder: BLURRED
+                  formats: [AUTO, WEBP, AVIF]
+                )
               }
             }
           }
