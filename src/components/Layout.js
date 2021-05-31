@@ -40,25 +40,29 @@ const StyledContent = styled.main`
   }
 `;
 
+const ONE_HOUR = 1 * 60 * 60 * 1000;
+
 // Workaround for triggering the modal through a useEffect, instead of some kind of event.
 const NULL_EVENT = { currentTarget: { contains: () => false } };
 
 const useModalState = createPersistedState("modalClosed");
 
 const Layout = ({ title, description, children }) => {
-  const [modalWasClosed, setModalWasClosed] = useModalState(false);
+  const [modalClosed, setModalClosed] = useModalState("");
 
   const { openPortal, closePortal, isOpen, Portal } = usePortal({
     closeOnOutsideClick: false,
     onClose() {
-      setModalWasClosed(true);
+      setModalClosed(new Date().getTime());
     },
   });
 
   useEffect(() => {
     let modalTimer;
 
-    if (!modalWasClosed) {
+    const closedOneHourAgo = modalClosed + ONE_HOUR <= new Date().getTime();
+
+    if (closedOneHourAgo) {
       // Can be used to run code after a set period of time.
       // Works even if you load up home page and then switch to a different page, which is nice.
       modalTimer = setTimeout(() => {
