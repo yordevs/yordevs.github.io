@@ -2,12 +2,18 @@ import React from "react";
 import PropTypes from "prop-types";
 import { graphql } from "gatsby";
 import styled from "styled-components";
+import { MDXRenderer } from "gatsby-plugin-mdx";
+import { MDXProvider } from "@mdx-js/react";
 
 import Layout from "../components/Layout";
 import TextLink from "../components/TextLink";
 
 import config from "../theme/config";
 const { color, font } = config;
+
+const shortcodes = {
+  a: ({ href, children }) => <TextLink to={href}>{children}</TextLink>,
+};
 
 const Title = styled.h1`
   font-size: 3em;
@@ -26,24 +32,26 @@ const PostHeader = styled.header`
 
 const PostTemplate = ({
   data: {
-    markdownRemark: {
+    mdx: {
       frontmatter: { title, date, author },
-      html,
+      body,
     },
   },
 }) => {
   return (
     <Layout title={title}>
-      <article className="blog-post">
-        <TextLink to="/blog">{"< Back"}</TextLink>
-        <PostHeader>
-          <Title>{title}</Title>
-          <Details>
-            {author} on {date}
-          </Details>
-        </PostHeader>
-        <div dangerouslySetInnerHTML={{ __html: html }} />
-      </article>
+      <TextLink to="/blog">{"< Back"}</TextLink>
+      <MDXProvider components={shortcodes}>
+        <article className="blog-post">
+          <PostHeader>
+            <Title>{title}</Title>
+            <Details>
+              {author} on {date}
+            </Details>
+          </PostHeader>
+          <MDXRenderer>{body}</MDXRenderer>
+        </article>
+      </MDXProvider>
     </Layout>
   );
 };
@@ -51,9 +59,9 @@ const PostTemplate = ({
 export default PostTemplate;
 
 export const pageQuery = graphql`
-  query($slug: String!) {
-    markdownRemark(frontmatter: { slug: { eq: $slug } }) {
-      html
+  query ($slug: String!) {
+    mdx(frontmatter: { slug: { eq: $slug } }) {
+      body
       frontmatter {
         date(formatString: "MMMM DD, YYYY")
         slug

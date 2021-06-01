@@ -54,9 +54,10 @@ module.exports = {
     "gatsby-plugin-image",
     "gatsby-plugin-catch-links",
     {
-      resolve: "gatsby-transformer-remark",
+      resolve: "gatsby-plugin-mdx",
       options: {
-        plugins: [
+        extensions: [".md", ".mdx"],
+        gatsbyRemarkPlugins: [
           {
             resolve: "gatsby-remark-external-links",
             options: {

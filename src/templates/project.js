@@ -1,10 +1,17 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { graphql } from "gatsby";
-
 import styled from "styled-components";
+import { MDXRenderer } from "gatsby-plugin-mdx";
+import { MDXProvider } from "@mdx-js/react";
+
 import Layout from "../components/Layout";
 import Button from "../components/Button";
+import TextLink from "../components/TextLink";
+
+const shortcodes = {
+  a: ({ href, children }) => <TextLink to={href}>{children}</TextLink>,
+};
 
 const Title = styled.h1``;
 
@@ -18,27 +25,25 @@ const Developers = styled.h3`
 
 const ProjectTemplate = ({
   data: {
-    markdownRemark: {
+    mdx: {
       frontmatter: { title, client, lead, developers, link },
-      html,
+      body,
     },
   },
 }) => {
   return (
     <Layout title={title}>
-      <div>
-        <div>
-          <Title>Project: {title}</Title>
-          <Client>Client: {client}</Client>
-          <Lead>Project Lead: {lead}</Lead>
-          <Developers>
-            Developers: <i>{developers.join(", ")}</i>
-          </Developers>
-          <Button to={link}>Visit Project</Button>
-          <br></br>
-          <div dangerouslySetInnerHTML={{ __html: html }} />
-        </div>
-      </div>
+      <MDXProvider components={shortcodes}>
+        <Title>Project: {title}</Title>
+        <Client>Client: {client}</Client>
+        <Lead>Project Lead: {lead}</Lead>
+        <Developers>
+          Developers: <i>{developers.join(", ")}</i>
+        </Developers>
+        <Button to={link}>Visit Project</Button>
+        <br></br>
+        <MDXRenderer>{body}</MDXRenderer>
+      </MDXProvider>
     </Layout>
   );
 };
@@ -46,9 +51,9 @@ const ProjectTemplate = ({
 export default ProjectTemplate;
 
 export const pageQuery = graphql`
-  query($slug: String!) {
-    markdownRemark(frontmatter: { slug: { eq: $slug } }) {
-      html
+  query ($slug: String!) {
+    mdx(frontmatter: { slug: { eq: $slug } }) {
+      body
       frontmatter {
         date(formatString: "MMMM DD, YYYY")
         slug

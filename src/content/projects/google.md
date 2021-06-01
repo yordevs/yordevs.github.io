@@ -12,5 +12,4 @@ link: "https://google.com"
 
 ---
 
-\
 We did not make google

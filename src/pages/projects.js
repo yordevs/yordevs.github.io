@@ -17,7 +17,7 @@ const ProjectHolder = styled.div`
 
 const ProjectsPage = ({
   data: {
-    allMarkdownRemark: { edges },
+    allMdx: { edges },
   },
 }) => {
   const Projects = edges
@@ -40,7 +40,7 @@ export default ProjectsPage;
 
 export const pageQuery = graphql`
   query {
-    allMarkdownRemark(
+    allMdx(
       filter: { fileAbsolutePath: { regex: "/projects/" } }
       sort: { order: DESC, fields: [frontmatter___date] }
     ) {
