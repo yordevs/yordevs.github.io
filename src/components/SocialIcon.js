@@ -14,6 +14,7 @@ const StyledIcon = styled.a`
 
   &:hover {
     color: ${color.accent};
+    cursor: pointer;
   }
 `;
 
