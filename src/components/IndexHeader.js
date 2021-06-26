@@ -7,7 +7,7 @@ import config from "../theme/config";
 const { color } = config;
 
 const StyledHeader = styled.div`
-  position: absolute;
+  position: relative;
   width: 100%;
   height: ${({ offset }) => `calc(100% - ${offset}px)`};
   left: 0;
