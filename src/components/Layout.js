@@ -60,7 +60,7 @@ const Layout = ({ title, description, children }) => {
   useEffect(() => {
     let modalTimer;
 
-    const closedOneHourAgo = modalClosed + ONE_HOUR <= new Date().getTime();
+    const closedOneHourAgo = modalClosed + ONE_HOUR <= new Date().getTime() && false;
 
     if (closedOneHourAgo) {
       // Can be used to run code after a set period of time.
