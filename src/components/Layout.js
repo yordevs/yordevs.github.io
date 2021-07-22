@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
 import usePortal from "react-useportal";
@@ -42,6 +42,8 @@ const StyledContent = styled.main`
 
 const ONE_HOUR = 1 * 60 * 60 * 1000;
 
+const KONAMI_CODE = ["ArrowUp", "ArrowUp", "ArrowDown", "ArrowDown", "ArrowLeft", "ArrowRight", "ArrowLeft", "ArrowRight", "KeyB", "KeyA"]
+
 // Workaround for triggering the modal through a useEffect, instead of some kind of event.
 const NULL_EVENT = { currentTarget: { contains: () => false } };
 
@@ -49,6 +51,7 @@ const useModalState = createPersistedState("modalClosed");
 
 const Layout = ({ title, description, children }) => {
   const [modalClosed, setModalClosed] = useModalState("");
+  const [pressOrder, setPressOrder] = useState([])
 
   const { openPortal, closePortal, isOpen, Portal } = usePortal({
     closeOnOutsideClick: false,
@@ -56,6 +59,28 @@ const Layout = ({ title, description, children }) => {
       setModalClosed(new Date().getTime());
     },
   });
+
+  const keyDown = (e) => {
+    // why is setPressOrder([...pressOrder, e.code]) not working
+    let tmp = pressOrder
+    if (pressOrder.length < 9) {
+      tmp.push(e.code)
+    } else if (tmp.length === 9) {
+      tmp.push(e.code);
+      if (JSON.stringify(KONAMI_CODE) === JSON.stringify(tmp)) {
+        alert("JAVASCRIPT GAME JAME 👀  \n @devsoc are you down")
+      }
+    } else {
+      tmp.shift()
+      tmp.push(e.code)
+      if (JSON.stringify(KONAMI_CODE) === JSON.stringify(tmp)) {
+        alert("JAVASCRIPT GAME JAME 👀  \n @devsoc are you down")
+      }
+    }
+    
+    setPressOrder(tmp)
+  };
+
 
   useEffect(() => {
     let modalTimer;
@@ -70,13 +95,16 @@ const Layout = ({ title, description, children }) => {
       }, 1000);
     }
 
+    document.addEventListener('keydown', keyDown)
+
     return () => {
       clearTimeout(modalTimer);
+      document.removeEventListener("keydown", keyDown);
     };
   }, []);
 
   return (
-    <StyledSite>
+    <StyledSite id="styled-site">
       <GlobalStyle />
       <SEO title={title} description={description} />
       <Navbar />
