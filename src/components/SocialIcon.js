@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import VisuallyHidden from "./VisuallyHidden";
 
 import config from "../theme/config";
 const { color } = config;
@@ -18,10 +19,11 @@ const StyledIcon = styled.a`
   }
 `;
 
-const SocialIcon = ({ href, icon, className }) => {
+const SocialIcon = ({ href, icon, iconName, className }) => {
   return (
     <StyledIcon href={href} className={className} target="_blank" rel="noreferrer">
       {icon}
+      <VisuallyHidden>{iconName}</VisuallyHidden>
     </StyledIcon>
   );
 };

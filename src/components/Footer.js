@@ -1,7 +1,8 @@
 import React from "react";
 import styled from "styled-components";
-import { FaTwitter, FaInstagram, FaDiscord, FaFacebookF, FaGithub} from "react-icons/fa";
+import { FaTwitter, FaInstagram, FaDiscord, FaFacebookF, FaGithub } from "react-icons/fa";
 
+import VisuallyHidden from "./VisuallyHidden";
 import SocialIcon from "../components/SocialIcon";
 
 import config from "../theme/config";
@@ -74,11 +75,32 @@ const Footer = () => (
       © {new Date().getFullYear()} York Community Web and App Development
     </CopyrightInfo>
     <SocialLogoHolder>
-      <FooterSocialIcon href="https://github.com/yordevs" icon={<FaGithub />} />
-      <FooterSocialIcon href="https://facebook.com/yordevs" icon={<FaFacebookF />} />
-      <FooterSocialIcon href="https://twitter.com/yordevs" icon={<FaTwitter />} />
-      <FooterSocialIcon href="https://instagram.com/yordevs" icon={<FaInstagram />} />
-      <FooterSocialIcon href="https://discord.gg/j8fbqEP2TD" icon={<FaDiscord />} />
+      <FooterSocialIcon
+        href="https://github.com/yordevs"
+        icon={<FaGithub />}
+        iconName="Link to Yordevs Github"
+      />
+
+      <FooterSocialIcon
+        href="https://facebook.com/yordevs"
+        icon={<FaFacebookF />}
+        iconName="Link to Yordevs Facebook"
+      />
+      <FooterSocialIcon
+        href="https://twitter.com/yordevs"
+        icon={<FaTwitter />}
+        iconName="Link to Yordevs Twitter"
+      />
+      <FooterSocialIcon
+        href="https://instagram.com/yordevs"
+        icon={<FaInstagram />}
+        iconName="Link to Yordevs Instagram"
+      />
+      <FooterSocialIcon
+        href="https://discord.gg/j8fbqEP2TD"
+        icon={<FaDiscord />}
+        iconName="Link to Yordevs Discord"
+      />
     </SocialLogoHolder>
   </StyledFooter>
 );
