@@ -97,7 +97,7 @@ const InvolvedPage = () => {
         </div>
         <ButtonHolder>
           <Button to="https://discord.gg/j8fbqEP2TD">Join our Discord</Button>
-          <Button to="https://yusu.org/shop/product/3296-yordevs-2021">Buy membership</Button>
+          <Button to="https://yusu.org/shop/product/4193-york-community-web-and-app-development-2122">Buy membership</Button>
         </ButtonHolder>
       </ActionHolder>
     </Layout>
