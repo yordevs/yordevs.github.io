@@ -57,7 +57,7 @@ const AboutPage = () => (
         members the technical and soft skills required in the workplace.
       </p>
       <p>
-        We are made up of students who study a variety of courses at the University of York, but who
+        We are made up of students who study a variety of courses at the University of York, who
         share the desire to help those trying to improve society and improve their Web and App
         development skills.
       </p>
