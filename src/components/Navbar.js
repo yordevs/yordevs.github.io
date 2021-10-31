@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link } from "gatsby";
 import styled from "styled-components";
 import { FiMenu, FiX } from "react-icons/fi";
+import { StaticImage } from "gatsby-plugin-image";
 
 import config from "../theme/config";
 const { color, font, breakpoint, transition } = config;
@@ -50,10 +51,8 @@ const StyledNavBrand = styled(Link)`
   &:hover {
     color: ${color.accent};
   }
-
   &::before {
-    content: "// ";
-    color: ${color.accent};
+    content: " ";
   }
 `;
 
@@ -154,6 +153,12 @@ const MenuToggle = ({ toggle, isOpen }) => (
 
 const NavHeader = ({ toggle, isOpen }) => (
   <StyledNavHeader>
+    <StaticImage
+      src="../images/YorDevLogo.svg"
+      height={18}
+      placeholder="traceSVG"
+      objectFit="contain"
+    />
     <StyledNavBrand to="/">Yordevs</StyledNavBrand>
     <MenuToggle toggle={toggle} isOpen={isOpen} />
   </StyledNavHeader>
