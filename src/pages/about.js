@@ -8,6 +8,7 @@ import Committee from "../components/sections/Committee";
 import ProjectLeaders from "../components/sections/ProjectLeaders";
 
 import config from "../theme/config";
+import PreviousCommittee from "../components/sections/PreviousCommittee";
 const { color, font } = config;
 
 const Tagline = styled.h2`
@@ -71,6 +72,7 @@ const AboutPage = () => (
       </p>
     </section>
     <Committee />
+    <PreviousCommittee />
     <ProjectLeaders />
     <hr style={{ borderTop: `1px solid ${color.heading}`, marginBottom: "2em" }} />
     <Sponsors>

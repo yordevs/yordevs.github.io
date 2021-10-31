@@ -44,6 +44,13 @@ module.exports = {
     {
       resolve: "gatsby-source-filesystem",
       options: {
+        name: "PreviousCommittee",
+        path: `${__dirname}/src/content/`,
+      },
+    },
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
         name: "projectLeaders",
         path: `${__dirname}/src/content/`,
       },
