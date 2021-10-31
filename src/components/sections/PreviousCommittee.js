@@ -4,7 +4,8 @@ import { getImage } from "gatsby-plugin-image";
 import styled from "styled-components";
 
 import CommitteeCard from "../CommitteeCard";
-import Button from "../Button";
+import config from "../../theme/config";
+const { color, font } = config;
 
 const Row = styled.div`
   display: grid;
@@ -12,6 +13,25 @@ const Row = styled.div`
   grid-auto-rows: auto;
   gap: 1rem;
   column-gap: 1rem;
+`;
+
+const ToggleVisiblility = styled.a`
+  text-decoration: none;
+  color: ${color.accent};
+
+  transition: all 0.15s ease;
+
+  font-weight: ${font.weight.semibold};
+
+  border-radius: 2px;
+
+  &:hover,
+  &:focus,
+  &:active {
+    background: ${color.accent};
+    color: ${color.background};
+    cursor: pointer;
+  }
 `;
 
 const PreviousCommittee = () => {
@@ -52,7 +72,7 @@ const PreviousCommittee = () => {
 
   return (
     <section>
-      <a onClick={toggle}>Previous Committees</a>
+      <ToggleVisiblility onClick={toggle}>Previous Committees</ToggleVisiblility>
       {visabilityState ? (
         members.map(({ node }, i) => (
           <>
