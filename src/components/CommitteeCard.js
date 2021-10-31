@@ -21,6 +21,7 @@ const Photo = styled.img`
 const Name = styled.h3`
   font-size: ${font.size.lg};
   margin-bottom: 0em;
+  text-align: center;
 `;
 
 const Role = styled.h4`

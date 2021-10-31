@@ -22,5 +22,13 @@
     "pronouns": "he/him",
     "academicYear": "Fourth Year",
     "picture": "../images/BlankTeamPhoto.jpg"
+  },
+  {
+    "name": "Khalidaabir Rizwanullah",
+    "role": "Press and Publicity",
+    "course": "Computer Science",
+    "pronouns": "",
+    "academicYear": "Fourth Year",
+    "picture": "../images/BlankTeamPhoto.jpg"
   }
 ]
