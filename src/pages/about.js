@@ -31,7 +31,7 @@ const Sponsors = styled.div`
   }
 `;
 
-const SponsorLogoHolder = styled.div`
+const SponsorLogoHolder = styled.a`
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
@@ -77,7 +77,7 @@ const AboutPage = () => (
     <hr style={{ borderTop: `1px solid ${color.heading}`, marginBottom: "2em" }} />
     <Sponsors>
       <h2>Proudly supported by</h2>
-      <SponsorLogoHolder>
+      <SponsorLogoHolder href="https://www.castlegateit.co.uk/">
         <StaticImage
           src="../images/cgit-logo.svg"
           height={60}

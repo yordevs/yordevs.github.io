@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import { graphql, useStaticQuery } from "gatsby";
 import { getImage } from "gatsby-plugin-image";
 import styled from "styled-components";
 
 import CommitteeCard from "../CommitteeCard";
+import Button from "../Button";
 
 const Row = styled.div`
   display: grid;
@@ -14,6 +15,8 @@ const Row = styled.div`
 `;
 
 const PreviousCommittee = () => {
+  const [visabilityState, setVisabilityState] = useState();
+  const toggle = () => setVisabilityState(!visabilityState);
   const data = useStaticQuery(graphql`
     query {
       allPreviousCommitteeJson {
@@ -49,26 +52,29 @@ const PreviousCommittee = () => {
 
   return (
     <section>
-      <h2>Previous Committees</h2>
-
-      {members.map(({ node }, i) => (
-        <>
-          <h2>{node.year}</h2>
-          <Row>
-            {node.members.map(({ name, role, course, pronouns, academicYear, picture }, i) => (
-              <CommitteeCard
-                fullName={name}
-                role={role}
-                course={course}
-                pronouns={pronouns}
-                academicYear={academicYear}
-                picture={getImage(picture)}
-                key={i}
-              />
-            ))}
-          </Row>
-        </>
-      ))}
+      <a onClick={toggle}>Previous Committees</a>
+      {visabilityState ? (
+        members.map(({ node }, i) => (
+          <>
+            <h2>{node.year}</h2>
+            <Row>
+              {node.members.map(({ name, role, course, pronouns, academicYear, picture }, i) => (
+                <CommitteeCard
+                  fullName={name}
+                  role={role}
+                  course={course}
+                  pronouns={pronouns}
+                  academicYear={academicYear}
+                  picture={getImage(picture)}
+                  key={i}
+                />
+              ))}
+            </Row>
+          </>
+        ))
+      ) : (
+        <></>
+      )}
     </section>
   );
 };
