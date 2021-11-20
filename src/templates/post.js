@@ -30,6 +30,11 @@ const PostHeader = styled.header`
   margin-bottom: 3em;
 `;
 
+const BackLink = styled(TextLink)`
+  width: fit-content;
+  padding-inline: 4px;
+`;
+
 const PostTemplate = ({
   data: {
     mdx: {
@@ -40,7 +45,7 @@ const PostTemplate = ({
 }) => {
   return (
     <Layout title={title}>
-      <TextLink to="/blog">{"< Back"}</TextLink>
+      <BackLink to="/blog">{"< Back"}</BackLink>
       <MDXProvider components={shortcodes}>
         <article className="blog-post">
           <PostHeader>
