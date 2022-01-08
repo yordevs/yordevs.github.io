@@ -41,7 +41,7 @@ const SponsorLogoHolder = styled.div`
 `;
 
 const AboutPage = () => (
-  <Layout title="About Us" description="About the York Community Web and App Development Society">
+  <Layout title="About Us" description="About the York Web and App Development Society">
     <header>
       <h1>About Us</h1>
       <Tagline>
