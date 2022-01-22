@@ -78,7 +78,7 @@ const FooterSocialIcon = styled(SocialIcon)`
 const Footer = () => (
   <StyledFooter>
     <CopyrightInfo>
-      © {new Date().getFullYear()} York Community Web and App Development
+      © {new Date().getFullYear()} York Web and App Development
     </CopyrightInfo>
     <SocialLogoHolder>
       <FooterSocialIcon
