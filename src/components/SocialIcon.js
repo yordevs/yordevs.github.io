@@ -18,10 +18,20 @@ const StyledIcon = styled.a`
   }
 `;
 
-const SocialIcon = ({ href, icon, className }) => {
+const VisuallyHidden = styled.div`
+  display: inline-block;
+  position: absolute;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  height: 1em;
+  width: 1em;
+`;
+
+const SocialIcon = ({ href, icon, iconName, className }) => {
   return (
     <StyledIcon href={href} className={className} target="_blank" rel="noreferrer">
       {icon}
+      <VisuallyHidden>{iconName ? iconName : "Unknown Social Media Icon"}</VisuallyHidden>
     </StyledIcon>
   );
 };
