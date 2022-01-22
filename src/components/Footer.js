@@ -2,7 +2,6 @@ import React from "react";
 import styled from "styled-components";
 import { FaTwitter, FaInstagram, FaDiscord, FaFacebookF, FaGithub } from "react-icons/fa";
 
-import VisuallyHidden from "./VisuallyHidden";
 import SocialIcon from "../components/SocialIcon";
 
 import config from "../theme/config";

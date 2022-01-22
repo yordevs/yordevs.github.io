@@ -9,8 +9,6 @@ import Button from "../components/Button";
 import ContactForm from "../components/ContactForm";
 import SocialIcon from "../components/SocialIcon";
 
-import VisuallyHidden from "../components/VisuallyHidden";
-
 const HeaderHolder = styled.div``;
 
 const ActionHolder = styled.div`
@@ -111,7 +109,9 @@ const InvolvedPage = () => {
         </div>
         <ButtonHolder>
           <Button to="https://discord.gg/j8fbqEP2TD">Join our Discord</Button>
-          <Button to="https://yusu.org/shop/product/4193-york-community-web-and-app-development-2122">Buy membership</Button>
+          <Button to="https://yusu.org/shop/product/4193-york-community-web-and-app-development-2122">
+            Buy membership
+          </Button>
         </ButtonHolder>
       </ActionHolder>
     </Layout>
