@@ -5,8 +5,18 @@
     "project": "Yordevs Website",
     "projectDescription": "Designing and development of the official Yordevs website.",
     "projectURL": "/projects/yordevs-site",
-    "academicYear": "Third Year",
+    "academicYear": "Fourth Year",
     "picture": "../images/BenTeamPhoto.jpg",
+    "pronouns": ""
+  },
+  {
+    "name": "Adam Barr",
+    "course": "Computer Science",
+    "project": "Lemon Press Website",
+    "projectDescription": "Designing and development of the official Lemon Press website.",
+    "projectURL": "/projects/lemonpress",
+    "academicYear": "Fourth Year",
+    "picture": "../images/AdamTeamPhoto.jpg",
     "pronouns": ""
   }
 ]

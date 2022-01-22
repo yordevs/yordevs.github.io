@@ -44,6 +44,13 @@ module.exports = {
     {
       resolve: "gatsby-source-filesystem",
       options: {
+        name: "PreviousCommittee",
+        path: `${__dirname}/src/content/`,
+      },
+    },
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
         name: "projectLeaders",
         path: `${__dirname}/src/content/`,
       },
@@ -84,7 +91,7 @@ module.exports = {
     {
       resolve: "gatsby-plugin-manifest",
       options: {
-        icon: `${__dirname}/src/images/favicon.png`,
+        icon: `${__dirname}/src/images/favicon.svg`,
       },
     },
   ],

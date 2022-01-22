@@ -1,6 +1,13 @@
 import React from "react";
 import styled from "styled-components";
-import { FaTwitter, FaInstagram, FaDiscord, FaFacebookF, FaGithub } from "react-icons/fa";
+import {
+  FaTwitter,
+  FaInstagram,
+  FaDiscord,
+  FaFacebookF,
+  FaGithub,
+  FaLinkedin,
+} from "react-icons/fa";
 
 import SocialIcon from "../components/SocialIcon";
 
@@ -79,7 +86,6 @@ const Footer = () => (
         icon={<FaGithub />}
         iconName="Link to Yordevs Github"
       />
-
       <FooterSocialIcon
         href="https://facebook.com/yordevs"
         icon={<FaFacebookF />}
@@ -99,6 +105,10 @@ const Footer = () => (
         href="https://discord.gg/j8fbqEP2TD"
         icon={<FaDiscord />}
         iconName="Link to Yordevs Discord"
+      />
+      <FooterSocialIcon
+        href="https://www.linkedin.com/company/yordevs"
+        icon={<FaLinkedin iconName="Link to Yordevs LinkedIn" />}
       />
     </SocialLogoHolder>
   </StyledFooter>

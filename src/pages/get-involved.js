@@ -60,7 +60,10 @@ const InvolvedPage = () => {
         <p>
           You only have to buy membership if you want to participate in one of our projects, or get
           discounted/free entry to one of our events. You can buy membership{" "}
-          <TextLink to="https://yusu.org/shop/product/3296-yordevs-2021">here</TextLink>.
+          <TextLink to="https://yusu.org/shop/product/4193-york-community-web-and-app-development-2122">
+            here
+          </TextLink>
+          .
         </p>
       </HeaderHolder>
       <FrameworkHolder>

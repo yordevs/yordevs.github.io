@@ -3,7 +3,7 @@ const config = {
     text: "#202020",
     heading: "#000000",
     background: "#FFFFFF",
-    accent: "#FF5715",
+    accent: "#AA211A",
     success: "#1E8800",
     error: "#A4243B",
   },

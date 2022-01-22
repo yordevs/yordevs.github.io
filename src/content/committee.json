@@ -4,23 +4,31 @@
     "role": "President",
     "course": "Computer Science",
     "pronouns": "he/him",
-    "academicYear": "Third Year",
+    "academicYear": "Fourth Year",
     "picture": "../images/AdamTeamPhoto.jpg"
   },
   {
-    "name": "Sam Harrison",
+    "name": "Ben Silverman",
     "role": "Secretary",
     "course": "Computer Science",
     "pronouns": "he/him",
-    "academicYear": "Third Year",
-    "picture": "../images/SamTeamPhoto.jpg"
+    "academicYear": "Fourth Year",
+    "picture": "../images/BenTeamPhoto.jpg"
   },
   {
-    "name": "Sarah Wakelin",
+    "name": "Harry Wickham",
     "role": "Treasurer",
-    "course": "Maths",
-    "pronouns": "she/her",
-    "academicYear": "Third Year",
-    "picture": "../images/SarahTeamPhoto.jpg"
+    "course": "Electronic Engineering",
+    "pronouns": "he/him",
+    "academicYear": "Fourth Year",
+    "picture": "../images/BlankTeamPhoto.jpg"
+  },
+  {
+    "name": "Khalidaabir Rizwanullah",
+    "role": "Press and Publicity",
+    "course": "Computer Science",
+    "pronouns": "",
+    "academicYear": "Fourth Year",
+    "picture": "../images/BlankTeamPhoto.jpg"
   }
 ]

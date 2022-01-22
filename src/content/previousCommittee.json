@@ -1,0 +1,33 @@
+[
+    {
+        "year":"2020-2021",
+        "members": [
+            {
+                
+                "name": "Adam Barr",
+                "role": "President",
+                "course": "Computer Science",
+                "pronouns": "he/him",
+                "academicYear": "Third Year",
+                "picture": "../images/AdamTeamPhoto.jpg"
+            },
+            {
+                "name": "Sam Harrison",
+                "role": "Secretary",
+                "course": "Computer Science",
+                "pronouns": "he/him",
+                "academicYear": "Third Year",
+                "picture": "../images/SamTeamPhoto.jpg"
+            },
+            {
+                "name": "Sarah Wakelin",
+                "role": "Treasurer",
+                "course": "Maths",
+                "pronouns": "she/her",
+                "academicYear": "Third Year",
+                "picture": "../images/SarahTeamPhoto.jpg"
+            }
+        ]
+    }
+]
+  

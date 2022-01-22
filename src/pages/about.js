@@ -8,6 +8,7 @@ import Committee from "../components/sections/Committee";
 import ProjectLeaders from "../components/sections/ProjectLeaders";
 
 import config from "../theme/config";
+import PreviousCommittee from "../components/sections/PreviousCommittee";
 const { color, font } = config;
 
 const Tagline = styled.h2`
@@ -30,7 +31,7 @@ const Sponsors = styled.div`
   }
 `;
 
-const SponsorLogoHolder = styled.div`
+const SponsorLogoHolder = styled.a`
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
@@ -57,7 +58,7 @@ const AboutPage = () => (
         members the technical and soft skills required in the workplace.
       </p>
       <p>
-        We are made up of students who study a variety of courses at the University of York, but who
+        We are made up of students who study a variety of courses at the University of York, who
         share the desire to help those trying to improve society and improve their Web and App
         development skills.
       </p>
@@ -71,11 +72,12 @@ const AboutPage = () => (
       </p>
     </section>
     <Committee />
+    <PreviousCommittee />
     <ProjectLeaders />
     <hr style={{ borderTop: `1px solid ${color.heading}`, marginBottom: "2em" }} />
     <Sponsors>
       <h2>Proudly supported by</h2>
-      <SponsorLogoHolder>
+      <SponsorLogoHolder href="https://www.castlegateit.co.uk/">
         <StaticImage
           src="../images/cgit-logo.svg"
           height={60}
