@@ -76,19 +76,31 @@ const InvolvedPage = () => {
         <p> We&apos;re currently using the following frameworks:</p>
         <ListHolder>
           <ItemHolder>
-            <TechIcon icon={<FaReact />} href={"https://reactjs.org/"} />
+            <TechIcon icon={<FaReact />} href={"https://reactjs.org/"} iconName="Link to ReactJS" />
             <p>ReactJS</p>
           </ItemHolder>
           <ItemHolder>
-            <TechIcon icon={<GrGatsbyjs />} href={"https://www.gatsbyjs.com/"} />
+            <TechIcon
+              icon={<GrGatsbyjs />}
+              href={"https://www.gatsbyjs.com/"}
+              iconName="Link to Gatsby"
+            />
             <p>Gatsby</p>
           </ItemHolder>
           <ItemHolder>
-            <TechIcon icon={<FaReact />} href={"https://reactnative.dev/"} />
+            <TechIcon
+              icon={<FaReact />}
+              href={"https://reactnative.dev/"}
+              iconName="Link to React Native"
+            />
             <p>React Native</p>
           </ItemHolder>
           <ItemHolder>
-            <TechIcon icon={<FaGithub />} href={"https://pages.github.com/"} />
+            <TechIcon
+              icon={<FaGithub />}
+              href={"https://pages.github.com/"}
+              iconName="Link to Github Pages"
+            />
             <p>Github Pages</p>
           </ItemHolder>
         </ListHolder>
