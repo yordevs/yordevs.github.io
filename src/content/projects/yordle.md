@@ -7,7 +7,7 @@ client: "Yordevs"
 description: "After the rise in popularity of 'Wordle', we created a clone of the game where every answer was in some way related to York"
 lead: "Adam Barr"
 developers: ["Ben Silverman", "Harry Wickham"]
-link: "https://yordle.yordevs.com"
+link: "https://yordle.co.uk"
 ---
 
 ---
