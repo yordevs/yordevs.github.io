@@ -171,3 +171,14 @@ We can change the url to any other value and the page will update accordingly. F
 
 ![Dynamic page 2](https://yordevs.com/images/nextjs-tutorial-1/dynamic-page-2.png)
 
+# Deploying to Vercel
+
+Now that we have a basic NextJS website, we can deploy it to Vercel. Vercel is a cloud platform for static sites and Serverless Functions. It is developed by the creators of NextJS and is the easiest way to deploy NextJS websites.
+
+To deploy our website to Vercel, we need to create a Vercel account. We can do this by going to [https://vercel.com/signup](https://vercel.com/signup). Once we have created an account, we can link it to our GitHub account. We can do this by going to [https://vercel.com/import](https://vercel.com/import) and clicking on the GitHub button.
+
+Next, we need to select the repository that contains our website. Once we have selected the repository, we can click on the "Deploy" button (everything else should be setup already).
+
+Vercel will now create a new project and deploy our website. Once the deployment is complete, we can click on the "Visit" button to view our website.
+
+Congratulations! We have now deployed our first NextJS website to Vercel.
