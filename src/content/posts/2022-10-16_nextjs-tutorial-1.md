@@ -9,7 +9,9 @@ This is the first post in a series of tutorials on how to build a website using 
 
 ---
 
-# Installing NodeJS
+# Tutorial 1: Setting up a basic NextJS project
+
+## Installing NodeJS
 
 First, we need to install NodeJS. This is a JavaScript runtime environment that allows us to run JavaScript code outside of a browser. We can download it from [here](https://nodejs.org/en/download/). Once it's installed, we can check that it's working by opening a terminal and running the following command:
 
@@ -19,7 +21,7 @@ node -v
 
 This should print out the version of NodeJS that we have installed. If it doesn't, then we'll need to troubleshoot the installation.
 
-# Initiating a NextJS project
+## Initiating a NextJS project
 
 Next, we need to create a new NextJS project. We can do this by running the following command in a terminal (Make sure you are in the directory you want to create the project in):
 
@@ -38,9 +40,9 @@ This will start a development server on `localhost:3000`. If we navigate to this
 
 ![NextJS Default Page](https://yordevs.com/images/nextjs-tutorial-1/nextjs-default-page.png)
 
-# Understanding JSX and React
+## Understanding JSX and React
 
-NextJS uses a syntax called JSX to write HTML in JavaScript. This is a bit confusing at first, but it's actually quite simple. JSX is just a way of writing HTML in JavaScript. For example, the following code is valid JSX:
+NextJS uses a syntax called JSX to write HTML in JavaScript. This is a bit confusing at first, but it's actually quite simple. For example, the following code is valid JSX:
 
 ```jsx
 <div>
@@ -50,21 +52,33 @@ NextJS uses a syntax called JSX to write HTML in JavaScript. This is a bit confu
 </div>
 ```
 
-If we want to use a variable in our JSX, we can just wrap it in curly braces. We can also use JavaScript expressions in our JSX. For example, we can use a `ternary operator`:
+If we want to use a variable in our JSX, we can just wrap it in curly braces. We can also use JavaScript expressions/functions in our JSX. For example, we can use a `ternary operator`:
 
 ```jsx
 <div>
     <h1>Hello, world!</h1>
     <p>This is some text.</p>
-    {(variable1!==null)?(<p>{variable1}</p>):null}}
+    {(variable1!==null)?(<p>{variable1}</p>):null}
 </div>
 ```
 
+Or a slightly neater way of doing the same thing:
+
+```jsx
+<div>
+    <h1>Hello, world!</h1>
+    <p>This is some text.</p>
+    {variable1 && <p>{variable1}</p>}
+</div>
+```
+
+Here if `variable1` is `null`, then the second part of the expression will be `false` and nothing will be rendered. If `variable1` is not `null`, then the second part of the expression will be `true` and the `<p>` tag will be rendered.
+
 This will render the a heading and two paragraphs. The first paragraph will contain the text "This is some text", the second will contain the value of the `variable1` variable but only if it's not `null`.
 
-# What is needed to create a basic page
+## What is needed to create a basic page
 
-As can be seen from the `index.js` page there is a function that is being exported and therefore being displayed at the `/` route. The function must return some kind of JSX. The `<div></div>`, `<h1></h1>` and `<p></p>` tags are all HTML but also JSX. 
+As can be seen from the `index.js` page there is a function that is being exported and therefore being displayed at the `/` route. The function must return some kind of JSX. The `<div></div>`, `<h1></h1>` and `<p></p>` tags are all HTML but also JSX.
 
 To display the most basic text we need this export function. If we replace what is in the `index.js` file with the following code:
 
@@ -102,15 +116,16 @@ Now if we include some JavaScript logic in the JSX we can do some more interesti
 ```jsx
 (condition)?("run if true"):("run if false")
 ```
+
 Try pasting the following code blocks into the terminal and see what happens:
 
 ```jsx
 (1===1)?("true"):("false")
 ```
+
 ```jsx
 (1===2)?("true"):("false")
 ```
-
 
 We can use this by changing the current code in `index.js` to:
 
@@ -128,14 +143,13 @@ export default function Home() {
 
 This should now be saying hello to me and telling me that I am the creator of the website. Try changing the variable to your name and see what happens.
 
-
-# Understanding NextJS pages
+## Understanding NextJS pages
 
 NextJS uses a file-based routing system. This means that each page in our website is represented by a file in the `pages` directory. For example, if we want to create a page at the URL `/about`, we can create a file called `about.js` in the `pages` directory. This file will then be rendered when we navigate to the `/about` URL.
 
 NextJS also supports dynamic routes. For example, if we want to create a page at the URL `/blog/[slug]`, we can create a file called `[slug].js` in the `pages/blog` directory. This file will then be rendered when we navigate to any URL that starts with `/blog/`. The value of the `slug` variable will be available in the `props` object of the page component.
 
-# Creating a new page
+## Creating a new page
 
 Let's create a new page for our website. We'll create a page at the URL `/blog/hello-world`. We can do this by creating a file called `hello-world.js` in the `pages/blog` directory (you will have to create a blog folder inside the generated pages folder). This file should contain the following code:
 
@@ -149,7 +163,7 @@ If we navigate to `localhost:3000/hello-world` in a browser, we should see the f
 
 ![Hello, world! page](https://yordevs.com/images/nextjs-tutorial-1/hello-world-again-page.png)
 
-# Creating a new dynamic page
+## Creating a new dynamic page
 
 Next, let's create a new dynamic page for our website. We'll create a page at the URL `/blog/[slug]`. We can do this by creating a file called `[slug].js` in the `pages/blog` directory. This file should contain the following code:
 
@@ -171,7 +185,7 @@ We can change the url to any other value and the page will update accordingly. F
 
 ![Dynamic page 2](https://yordevs.com/images/nextjs-tutorial-1/dynamic-page-2.png)
 
-# Deploying to Vercel
+## Deploying to Vercel
 
 Now that we have a basic NextJS website, we can deploy it to Vercel. Vercel is a cloud platform for static sites and Serverless Functions. It is developed by the creators of NextJS and is the easiest way to deploy NextJS websites.
 
