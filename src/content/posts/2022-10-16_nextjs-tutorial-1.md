@@ -78,6 +78,8 @@ This will render the a heading and two paragraphs. The first paragraph will cont
 
 ## What is needed to create a basic page
 
+Open the code directory in your favourite code editor. Open the `pages` directory, there should be some file. Open the `index.js` file.
+
 As can be seen from the `index.js` page there is a function that is being exported and therefore being displayed at the `/` route. The function must return some kind of JSX. The `<div></div>`, `<h1></h1>` and `<p></p>` tags are all HTML but also JSX.
 
 To display the most basic text we need this export function. If we replace what is in the `index.js` file with the following code:

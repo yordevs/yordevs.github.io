@@ -71,7 +71,9 @@ export default function Profile({name, jobTitle}) {
 }
 ```
 
-We can then pass the user's name and job title into the component as props. We can do this by changing the code in the `index.js` file to:
+The names of the variables are set in the function header `({name, jobTitle})`. These values are then allowed to be used within the component. These values could be of any type and can be used in any way. For example, we could use them to display text, images, or even other components.
+
+We can then pass the user's name and job title into the component as props, this sets the value of the variable in that component. We can do this by changing the code in the `index.js` file to:
 
 ```jsx
 import Profile from "../components/Profile";
@@ -111,7 +113,11 @@ export default function Home() {
 
 This should now be displaying a button on the home page. When you click the button, the number of followers should increase by 1.
 
-If we wanted to add this into the Profile component we could do this by changing the code in the `Profile.js` file to:
+We have imported the `useState` function from the React library. This function allows us to create a state variable and a state variable setter function. We can then use the `setFollowers` function (which is generated when we instantiate the sate variable) to change the value of the state variable `followers`. We can use the state variable in the same way as we would use a prop.
+
+When a state variable is changed, the component will be re-rendered. This means that any changes to the state variable will be displayed on the page.
+
+If we wanted to add this into the Profile component we would just move the state instantiation into the Profile component. This now gives each version of the component a different state and therefore a separate values if one of them is changed. This can be done by changing the code in the `Profile.js` file to:
 
 ```jsx
 import { useState } from "react";
