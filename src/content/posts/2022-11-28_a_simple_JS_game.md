@@ -64,12 +64,12 @@ Edit the title tag content to **Freeze the Frosties**, as so:
 And add a h1 tag to the body:
 
 ```
-...
+  <!-- ... -->
   <body>
 	<script src="main.js"></script>
 	<h1>Freeze the Frosties</h1>
   </body>
-...
+  <!-- ... -->
 ```
 
 You should now see the document title and h1 header text updated on the page.
@@ -228,7 +228,7 @@ To make the generators circular, we can introduce the `border-radius` property. 
 }
 ```
 
-# Frosty Creature
+## Frosty Creature
 
 To create our Frosty creature, we need to first create its element in a generator in index.html:
 
@@ -314,9 +314,11 @@ Now let's create a header where we can display the initial score on our game. Ad
 ```
 Note: `span` is an inbuilt HTML tag that is used to mark up a section of text, such that it can have individual styling, for example.
 
-## JavaScript Functionality
+## Functionality
 
-Alright, now we're ready to start adding functionality to our game! For this section we will primarily be adding stuff to the main.js file.
+Alright, now we're ready to start adding JavaScript functionality to our game! For this section we will primarily be adding stuff to the main.js file.
+
+### Random Generator Selection
 
 First, let's create a constant to keep an array of all the generators in: 
 
@@ -339,7 +341,11 @@ Since we would like for the Frosties to generate in random places on the game bo
     const generator = generators[r]
 ```
 
-We now know which generator the Frosty is going to appear in. Now, we need to extract the Frosty from index.html to main.js so that it can be added to different generators during runtime.
+We now know which generator the Frosty is going to appear in.
+
+### Frosty Creature
+
+Now, we need to extract the Frosty from index.html to main.js so that it can be added to different generators during runtime.
 
 ```
 function run() {
@@ -355,6 +361,8 @@ function run() {
     `
 }
 ```
+
+Note: Remember to remove the frosty-creature element and all of its child elements from index.html.
 
 Now we can append the Frosty to the randomly selected generator:
 
@@ -386,7 +394,7 @@ function run() {
 }
 ```
 
-# Scoring
+### Scoring
 
 We would like the score to increase when a Frosty is frozen (i.e clicked). To do this we would first need to grab the span within the score HTML element (as we need to edit this!) and create a constant for currentScore. These would go after the generators array at the top of the file.
 
@@ -397,7 +405,7 @@ let currentScore = 0
 // ...
 ```
 
-Next we need to add an event listener to the frostyCreature variable. Within the callback function, we need to increase the score every time a Frosty is clicked:
+Next we need to add an event listener to the frostyCreature variable. Within the callback function, we increase the score every time a Frosty is clicked:
 
 ```
 frostyCreature.addEventListener('click', () => {
@@ -406,7 +414,9 @@ frostyCreature.addEventListener('click', () => {
     })
 ```
 
-Now we're going to set a timer for how long the Frosty creature can survive without being frozen... Let's say 500ms here:
+### Timing
+
+Now we're going to set a timer for how long the Frosty creature can survive without melting completely... Let's say 500ms here:
 
 ```
     meltimer = setTimeout(() => {
@@ -420,7 +430,6 @@ You can toggle with this value to increase/decrease the difficulty of the game. 
 ![image](https://user-images.githubusercontent.com/68516952/204341792-029e19d1-9594-4213-a8ac-83a80213a3d6.png)
 
 If you would like, you can play around with the CSS a bit more, customise the cursor or even get CSS animate to make the Frosties ease in and out! Now let's start saving these snowy beings before they defrost into a sad puddle of water!
-
 
 # Credits:
 https://www.youtube.com/watch?v=b20YueeXwZg
