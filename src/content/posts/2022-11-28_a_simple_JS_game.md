@@ -1,3 +1,10 @@
+---
+slug: "/blog/freeze-the-frosties-tutorial"
+date: "2022-11-28"
+title: "Freeze the Frosties: A simple JS game tutorial"
+author: "Abir Rizwanullah"
+---
+
 # Freeze the Frosties Tutorial
 
 ## Intro
