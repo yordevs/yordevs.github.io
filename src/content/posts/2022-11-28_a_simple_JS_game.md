@@ -73,13 +73,15 @@ And add a h1 tag to the body:
 ```
   <!-- ... -->
   <body>
-	<script src="main.js"></script>
 	<h1>Freeze the Frosties</h1>
+	<script src="main.js"></script>
   </body>
   <!-- ... -->
 ```
 
 You should now see the document title and h1 header text updated on the page.
+
+Note: `<script src="main.js"></script>` should always be the last in the body element!
 
 ### `style.css`
 
@@ -316,7 +318,7 @@ Now let's create a header where we can display the initial score on our game. Ad
 ```
   <body>
     <!-- ... -->
-    <h2>Score: <span>000</span></h2>
+    <h2 class="score">Score: <span>000</span></h2>
   </body>
 ```
 Note: `span` is an inbuilt HTML tag that is used to mark up a section of text, such that it can have individual styling, for example.
