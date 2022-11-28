@@ -5,7 +5,7 @@ title: "Freeze the Frosties"
 author: "Abir Rizwanullah"
 ---
 
-# Freeze the Frosties: A simple JS game tutorial
+# Freeze the Frosties: A simple JS tutorial
 
 ## Intro
 
@@ -157,6 +157,8 @@ body {
     flex-direction: column;
 }
 ```
+
+### Generators
 
 Now we need to create the generators in the game board! Add nine generator elements within the board element as follows:
 
@@ -448,6 +450,8 @@ And there we have it! Now let's start saving these snowy beings!
 If you would like, you can play around with the CSS a bit more, customise the cursor or even get CSS animate to make the Frosties ease in and out or leave a sad puddle of water behind when they defrost too soon!
 
 # Final Code Samples
+
+You can check your work against these!
 
 ## `index.html`
 
