@@ -432,5 +432,5 @@ You can toggle with this value to increase/decrease the difficulty of the game. 
 If you would like, you can play around with the CSS a bit more, customise the cursor or even get CSS animate to make the Frosties ease in and out! Now let's start saving these snowy beings before they defrost into a sad puddle of water!
 
 # Credits:
-https://www.youtube.com/watch?v=b20YueeXwZg
-https://www.youtube.com/watch?v=rJU3tHLgb_c
+[Angle Brace](https://www.youtube.com/watch?v=b20YueeXwZg)  
+[Ania Kubow](https://www.youtube.com/watch?v=rJU3tHLgb_c)
