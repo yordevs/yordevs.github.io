@@ -1,11 +1,11 @@
 ---
 slug: "/blog/freeze-the-frosties-tutorial"
 date: "2022-11-28"
-title: "Freeze the Frosties: A simple JS game tutorial"
+title: "Freeze the Frosties"
 author: "Abir Rizwanullah"
 ---
 
-# Freeze the Frosties Tutorial
+# Freeze the Frosties: A simple JS game tutorial
 
 ## Intro
 
@@ -253,7 +253,7 @@ To create our Frosty creature, we need to first create its element in a generato
         </div>
 ```
 
-We can then style these elements in the CSS as so:
+We can then style these elements in the CSS, like so:
 
 ```
 .frosty-body {
@@ -350,11 +350,11 @@ Since we would like for the Frosties to generate in random places on the game bo
     const generator = generators[r]
 ```
 
-We now know which generator the Frosty is going to appear in.
+We now know which generator the Frosty is going to appear in next.
 
 ### Frosty Creature
 
-Now, we need to extract the Frosty from index.html to main.js so that it can be added to different generators during runtime.
+We need to extract the Frosty from index.html to main.js so that it can be added to different generators during runtime. In main.js, we add the frosty-creature class via JavaScript, but add the child elements in HTML via the innerHTML property.
 
 ```
 function run() {
@@ -425,20 +425,182 @@ frostyCreature.addEventListener('click', () => {
 
 ### Timing
 
-Now we're going to set a timer for how long the Frosty creature can survive without melting completely... Let's say 500ms here:
+Now we're going to set a timer for how long the Frosty creature can survive without melting completely. We do this by removing the frostyCreature element from a generator per time unit. Let's give it a very short lifespan and say 500ms here:
 
 ```
-    meltimer = setTimeout(() => {
+    let melTimer = null
+
+    // ...
+
+    melTimer = setTimeout(() => {
         generator.removeChild(frostyCreature);
         run()
     }, 500)
 ```
 
-You can toggle with this value to increase/decrease the difficulty of the game. And there we've done it!
+You can toggle with this value to increase or decrease the difficulty of the game.
+
+
+And there we have it! Now let's start saving these snowy beings!
 
 ![image](https://user-images.githubusercontent.com/68516952/204341792-029e19d1-9594-4213-a8ac-83a80213a3d6.png)
 
-If you would like, you can play around with the CSS a bit more, customise the cursor or even get CSS animate to make the Frosties ease in and out! Now let's start saving these snowy beings before they defrost into a sad puddle of water!
+If you would like, you can play around with the CSS a bit more, customise the cursor or even get CSS animate to make the Frosties ease in and out or leave a sad puddle of water behind when they defrost too soon!
+
+# Final Code Samples
+
+## `index.html`
+
+```
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Freeze the Frosties</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <h1>Freeze the Frosties</h1>
+    <div id="board">
+        <div class="generator"></div>
+        <div class="generator"></div>
+        <div class="generator"></div>
+        <div class="generator"></div>
+        <div class="generator"></div>
+        <div class="generator"></div>
+        <div class="generator"></div>
+        <div class="generator"></div>
+        <div class="generator"></div>
+    </div>
+    <h2 class="score">Score: <span>000</span></h2>
+	<script src="main.js"></script>
+  </body>
+</html>
+```
+
+## `style.css`
+
+```
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #aa211a;
+    color: #f7ed74;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#board {
+    height: 30em;
+    width: 30em;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 1em;
+}
+
+.generator {
+    background-color: #000;
+    border-radius: 50%;
+    box-shadow: inset 0em 1em 0em 0.25em #351506;
+}
+
+.frosty-body {
+    position: absolute;
+    background-color: #fff;
+    width: 5em;
+    height: 5em;
+    border-radius: 50%;
+}
+
+.frosty-right-eye {
+    position: absolute;
+    background-color: #000;
+    width: 0.5em; 
+    height: 0.5em;
+    border-radius: 50%;
+    margin-top: 1.5em;
+    margin-left: 1em;
+}
+
+.frosty-left-eye {
+    position: absolute;
+    background-color: #000;
+    width: 0.5em; 
+    height: 0.5em;
+    border-radius: 50%;
+    margin-top: 1.5em;
+    margin-left: 3em;
+}
+
+.frosty-nose {
+    position: absolute;
+    width: 0; 
+    height: 0; 
+    border-top: 0.3em solid transparent;
+    border-bottom: 0.3em solid transparent; 
+    border-right: 2em solid #aa211a;
+    margin-top: 2.5em;
+    margin-right: 2em;
+}
+
+.frosty-puddle {
+    position: absolute;
+    background-color: #D3D3D3;
+    width: 5em;
+    height: 1em;
+    border-radius: 50%;
+    margin-top: 5em;
+}
+
+.generator .frosty-creature {
+    position: relative;
+    top: 10%;
+    left: 25%;
+}
+```
+
+## `main.js`
+
+```
+const generators = [...document.querySelectorAll('.generator')]
+const scoreElement = document.querySelector('.score span')
+let currentScore = 0
+
+function run() {
+    const r = Math.floor(Math.random() * generators.length)
+    const generator = generators[r]
+    let meltimer = null
+
+    const frostyCreature = document.createElement('div');
+    frostyCreature.classList.add('frosty-creature');
+    frostyCreature.innerHTML = `
+        <div class="frosty-puddle"></div>
+        <div class="frosty-body"></div>
+        <div class="frosty-left-eye"></div>
+        <div class="frosty-right-eye"></div>
+        <div class="frosty-nose"></div>
+    `
+
+    frostyCreature.addEventListener('click', () => {
+        currentScore++
+        scoreElement.textContent = currentScore
+    })
+
+    generator.appendChild(frostyCreature)
+
+    meltimer = setTimeout(() => {
+        generator.removeChild(frostyCreature);
+        run()
+    }, 500)
+}
+
+run()
+
+```
 
 # Credits:
 [Angle Brace](https://www.youtube.com/watch?v=b20YueeXwZg)  
