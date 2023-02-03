@@ -38,7 +38,7 @@ npm run dev
 
 This will start a development server on `localhost:3000`. If we navigate to this address in a browser, we should see the following page:
 
-![NextJS Default Page](https://yordevs.com/images/nextjs-tutorial-1/nextjs-default-page.png)
+<img src="/nextjs-tutorial-1/nextjs-default-page.png" alt="NextJS Default Page" width="100%"/>
 
 ## Understanding JSX and React
 
@@ -96,7 +96,7 @@ export default function Home() {
 
 We will see the following page:
 
-![Hello world page](https://yordevs.com/images/nextjs-tutorial-1/hello-world-page.png)
+<img src="/nextjs-tutorial-1/hello-world-page.png" alt="Hello Worlds Test" width="100%"/>
 
 Lets now incorporate a variable into the page. We can do this by creating a variable in the function and then using it in the JSX. We can do this by changing the current code in `index.js` to:
 
@@ -163,7 +163,7 @@ export default function HelloWorld() {
 
 If we navigate to `localhost:3000/hello-world` in a browser, we should see the following page:
 
-![Hello, world! page](https://yordevs.com/images/nextjs-tutorial-1/hello-world-again-page.png)
+<img src="/nextjs-tutorial-1/hello-world-again-page.png" alt="Hello, world! page" width="100%"/>
 
 ## Creating a new dynamic page
 
@@ -181,11 +181,11 @@ export default function Post() {
 
 If we navigate to `localhost:3000/blog/hello-world` in a browser, we should see the following page:
 
-![Dynamic page](https://yordevs.com/images/nextjs-tutorial-1/dynamic-page.png)
+<img src="/nextjs-tutorial-1/dynamic-page.png" alt="Dynamic page" width="100%"/>
 
 We can change the url to any other value and the page will update accordingly. For example, if we navigate to `localhost:3000/blog/nextjs-tutorial-1`, we should see the following page:
 
-![Dynamic page 2](https://yordevs.com/images/nextjs-tutorial-1/dynamic-page-2.png)
+<img src="/nextjs-tutorial-1/dynamic-page-2.png" alt="Dynamic page 2" width="100%"/>
 
 ## Deploying to Vercel
 
@@ -198,3 +198,4 @@ Next, we need to select the repository that contains our website. Once we have s
 Vercel will now create a new project and deploy our website. Once the deployment is complete, we can click on the "Visit" button to view our website.
 
 Congratulations! We have now deployed our first NextJS website to Vercel.
+W

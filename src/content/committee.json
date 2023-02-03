@@ -1,31 +1,23 @@
 [
   {
-    "name": "Adam Barr",
-    "role": "President",
-    "course": "Computer Science",
-    "pronouns": "he/him",
-    "academicYear": "Fourth Year",
-    "picture": "../images/AdamTeamPhoto.jpg"
-  },
-  {
-    "name": "Ben Silverman",
-    "role": "Secretary",
-    "course": "Computer Science",
-    "pronouns": "he/him",
-    "academicYear": "Fourth Year",
-    "picture": "../images/BenTeamPhoto.jpg"
-  },
-  {
     "name": "Harry Wickham",
-    "role": "Treasurer",
+    "role": "President",
     "course": "Electronic Engineering",
     "pronouns": "he/him",
-    "academicYear": "Fourth Year",
+    "academicYear": "Fifth Year",
     "picture": "../images/BlankTeamPhoto.jpg"
   },
   {
+    "name": "Adam Barr",
+    "role": "Treasurer",
+    "course": "Computer Science",
+    "pronouns": "he/him",
+    "academicYear": "Fifth Year",
+    "picture": "../images/AdamTeamPhoto.jpg"
+  },
+  {
     "name": "Khalidaabir Rizwanullah",
-    "role": "Press and Publicity",
+    "role": "Secretary",
     "course": "Computer Science",
     "pronouns": "",
     "academicYear": "Fourth Year",
