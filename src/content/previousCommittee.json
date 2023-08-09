@@ -28,6 +28,73 @@
                 "picture": "../images/SarahTeamPhoto.jpg"
             }
         ]
+    },
+    {
+        "year":"2021-2022",
+        "members":[
+        {
+          "name": "Adam Barr",
+          "role": "President",
+          "course": "Computer Science",
+          "pronouns": "he/him",
+          "academicYear": "Fourth Year",
+          "picture": "../images/AdamTeamPhoto.jpg"
+        },
+        {
+          "name": "Ben Silverman",
+          "role": "Secretary",
+          "course": "Computer Science",
+          "pronouns": "he/him",
+          "academicYear": "Fourth Year",
+          "picture": "../images/BenTeamPhoto.jpg"
+        },
+        {
+          "name": "Harry Wickham",
+          "role": "Treasurer",
+          "course": "Electronic Engineering",
+          "pronouns": "he/him",
+          "academicYear": "Fourth Year",
+          "picture": "../images/BlankTeamPhoto.jpg"
+        },
+        {
+          "name": "Khalidaabir Rizwanullah",
+          "role": "Press and Publicity",
+          "course": "Computer Science",
+          "pronouns": "",
+          "academicYear": "Fourth Year",
+          "picture": "../images/BlankTeamPhoto.jpg"
+        }
+      ]
+    },
+    {
+        "year":"2022-2023",
+        "members":[
+        {
+          "name": "Harry Wickham",
+          "role": "President",
+          "course": "Electronic Engineering",
+          "pronouns": "he/him",
+          "academicYear": "Fifth Year",
+          "picture": "../images/BlankTeamPhoto.jpg"
+        },
+        {
+          "name": "Adam Barr",
+          "role": "Treasurer",
+          "course": "Computer Science",
+          "pronouns": "he/him",
+          "academicYear": "Fifth Year",
+          "picture": "../images/AdamTeamPhoto.jpg"
+        },
+        {
+          "name": "Khalidaabir Rizwanullah",
+          "role": "Secretary",
+          "course": "Computer Science",
+          "pronouns": "",
+          "academicYear": "Fifth Year",
+          "picture": "../images/BlankTeamPhoto.jpg"
+        }
+      ]
     }
+      
 ]
   
