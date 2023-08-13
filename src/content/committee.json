@@ -1,34 +1,34 @@
 [
   {
-    "name": "Adam Barr",
+    "name": "Stephen Ingham",
     "role": "President",
     "course": "Computer Science",
     "pronouns": "he/him",
-    "academicYear": "Fourth Year",
-    "picture": "../images/AdamTeamPhoto.jpg"
+    "academicYear": "Third Year",
+    "picture": "../images/StephenTeamPhoto.jpg"
   },
   {
-    "name": "Ben Silverman",
+    "name": "Roy Bright Asiku",
     "role": "Secretary",
     "course": "Computer Science",
     "pronouns": "he/him",
-    "academicYear": "Fourth Year",
-    "picture": "../images/BenTeamPhoto.jpg"
+    "academicYear": "Second Year",
+    "picture": "../images/RoyTeamPhoto.jpg"
   },
   {
-    "name": "Harry Wickham",
+    "name": "James Hensman",
     "role": "Treasurer",
-    "course": "Electronic Engineering",
+    "course": "Computer Science and Mathematics",
     "pronouns": "he/him",
     "academicYear": "Fourth Year",
-    "picture": "../images/BlankTeamPhoto.jpg"
+    "picture": "../images/JamesTeamPhoto.jpg"
   },
   {
-    "name": "Khalidaabir Rizwanullah",
+    "name": "Ben Harris",
     "role": "Press and Publicity",
     "course": "Computer Science",
-    "pronouns": "",
-    "academicYear": "Fourth Year",
-    "picture": "../images/BlankTeamPhoto.jpg"
+    "pronouns": "he/him",
+    "academicYear": "Third Year",
+    "picture": "../images/BenHTeamPhoto.jpg"
   }
 ]
