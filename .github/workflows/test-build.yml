@@ -11,7 +11,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [16.x]
+        node-version: [18.x]
 
     steps:
       - uses: actions/checkout@v3
@@ -20,5 +20,5 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
           cache: "npm"
-      - uses: bahmutov/npm-install@v1.6.0
+      - uses: bahmutov/npm-install@v1.8.35
       - run: npm run build --if-present
